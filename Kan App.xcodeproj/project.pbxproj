@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0570FA652935758600A36270 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570FA642935758600A36270 /* UIColorExt.swift */; };
 		059C8FDC2935599900AE456D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059C8FDB2935599900AE456D /* AppDelegate.swift */; };
 		059C8FDE2935599900AE456D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059C8FDD2935599900AE456D /* SceneDelegate.swift */; };
 		059C8FE02935599A00AE456D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059C8FDF2935599A00AE456D /* ViewController.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0570FA642935758600A36270 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		059C8FD82935599900AE456D /* Kan App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kan App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		059C8FDB2935599900AE456D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		059C8FDD2935599900AE456D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				05B4578F2935605E007E89D0 /* MainViewController.swift */,
 				05B457912935609C007E89D0 /* KayitViewController.swift */,
 				05B457932935613D007E89D0 /* Constants.swift */,
+				0570FA642935758600A36270 /* UIColorExt.swift */,
 			);
 			path = "Kan App";
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				05B457942935613D007E89D0 /* Constants.swift in Sources */,
 				05B457922935609C007E89D0 /* KayitViewController.swift in Sources */,
 				05B457902935605E007E89D0 /* MainViewController.swift in Sources */,
+				0570FA652935758600A36270 /* UIColorExt.swift in Sources */,
 				05B4578829356044007E89D0 /* SifreYenViewController.swift in Sources */,
 				059C8FDE2935599900AE456D /* SceneDelegate.swift in Sources */,
 			);
