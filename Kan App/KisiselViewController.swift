@@ -42,14 +42,27 @@ class KisiselViewController: UIViewController {
     //Picker nesneleri
     
     var dgDatePicker = UIDatePicker()
+    var kiloPicker = UIPickerView()
+    var boyPicker = UIPickerView()
+
+    //YerelTutucular
+    
+    var kiloVeriDizisi:[Int] = [Int]()
+    var boyVeriDizisi:[Int] = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dgPickerYukle()
         
+        kiloPicker.delegate = self
+        kiloPicker.dataSource = self
         
+        boyPicker.delegate = self
+        boyPicker.dataSource = self
         
+        kiloPickerYukle()
+        boyPickerYukle()
         
         let dokunmaAlgılama = UITapGestureRecognizer(target: self, action: #selector(self.dokunmaAlgılamaMetodu))
         
@@ -88,6 +101,28 @@ extension KisiselViewController{
 
     }
     
+    func kiloPickerYukle(){
+        
+        for i in 50...130{
+            
+            kiloVeriDizisi.append(i)
+        }
+        
+        kilotextField.inputView = kiloPicker
+        
+        
+    }
+    
+    func boyPickerYukle(){
+        
+        for i in 120...210{
+            
+            boyVeriDizisi.append(i)
+        }
+        
+        boyTextField.inputView = boyPicker
+    }
+    
     @objc func tarihGoster(dateVeri:UIDatePicker){
         
         let dateFormatter = DateFormatter()
@@ -115,5 +150,59 @@ extension KisiselViewController{
 
 
 
-
+extension KisiselViewController:UIPickerViewDelegate,UIPickerViewDataSource{
+    
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        var returnValue:Int?
+        
+        if pickerView == kiloPicker{
+            
+            returnValue = kiloVeriDizisi.count
+        }
+        else if pickerView == boyPicker{
+            
+            returnValue = boyVeriDizisi.count
+        }
+        
+        return returnValue!
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+     
+        var returnValue:String?
+        
+        if pickerView == kiloPicker{
+            
+            returnValue = String(self.kiloVeriDizisi[row])
+            
+        }
+        else if pickerView == boyPicker{
+            
+            returnValue = String(self.boyVeriDizisi[row])
+        }
+        return returnValue
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        if pickerView == kiloPicker{
+            
+            self.kilotextField.text = String(kiloVeriDizisi[row])
+            
+        }
+        else if pickerView == boyPicker{
+            
+            self.boyTextField.text = String(boyVeriDizisi[row])
+        }
+        
+    }
+    
+}
 
