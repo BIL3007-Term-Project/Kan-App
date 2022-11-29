@@ -12,29 +12,32 @@ import UIKit
 class KisiselViewController: UIViewController {
 
     
+    @IBOutlet weak var adCheckImageView: UIImageView!
+    @IBOutlet weak var soyadCheckImageView: UIImageView!
+    @IBOutlet weak var tcCheckImageView: UIImageView!
+    @IBOutlet weak var dgCheckImageView: UIImageView!
+    @IBOutlet weak var kiloCheckImageView: UIImageView!
+    @IBOutlet weak var boyCheckImageView: UIImageView!
+    @IBOutlet weak var cinsCheckImageView: UIImageView!
+    @IBOutlet weak var kanCheckImageView: UIImageView!
+    @IBOutlet weak var sehirCheckImageView: UIImageView!
+    @IBOutlet weak var ilceCheckImageView: UIImageView!
+    
+    
     @IBOutlet weak var ileriKButton: UIButton!
     
-    
+
     @IBOutlet weak var adTextField: UITextField!
-    
     @IBOutlet weak var soyadTextField: UITextField!
-    
     @IBOutlet weak var tcTextField: UITextField!
-    
     @IBOutlet weak var dogumTextField: UITextField!
-    
     @IBOutlet weak var kilotextField: UITextField!
-    
     @IBOutlet weak var boyTextField: UITextField!
-    
     @IBOutlet weak var cinsiyetTextField: UITextField!
-    
     @IBOutlet weak var kanGrupTextField: UITextField!
-    
     @IBOutlet weak var sehirTextField: UITextField!
-    
     @IBOutlet weak var ilceTextField: UITextField!
-        
+    
     @IBOutlet weak var kisiselProgressView: UIProgressView!
     
     //Picker nesneleri
@@ -62,6 +65,20 @@ class KisiselViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        adCheckImageView.alpha = 0
+        soyadCheckImageView.alpha = 0
+        tcCheckImageView.alpha = 0
+        dgCheckImageView.alpha = 0
+        kiloCheckImageView.alpha = 0
+        boyCheckImageView.alpha = 0
+        cinsCheckImageView.alpha = 0
+        kanCheckImageView.alpha = 0
+        sehirCheckImageView.alpha = 0
+        ilceCheckImageView.alpha = 0
+        
+        
         adTextField.keyboardType = .default
         adTextField.returnKeyType = .done
         adTextField.autocorrectionType = .no
@@ -70,6 +87,7 @@ class KisiselViewController: UIViewController {
         soyadTextField.autocorrectionType = .no
         soyadTextField.autocapitalizationType = .none
         tcTextField.keyboardType = .numberPad
+        
         
         dgPickerYukle()
         dgToolbarYukle(toolbar: dgToolbar)
@@ -100,10 +118,10 @@ class KisiselViewController: UIViewController {
         soyadTextField.delegate = self
         tcTextField.delegate = self
         
-        let dokunmaAlgılama = UITapGestureRecognizer(target: self, action: #selector(self.dokunmaAlgılamaMetodu))
-        
-        view.addGestureRecognizer(dokunmaAlgılama)
-        
+//        let dokunmaAlgılama = UITapGestureRecognizer(target: self, action: #selector(self.dokunmaAlgılamaMetodu))
+//
+//        view.addGestureRecognizer(dokunmaAlgılama)
+//
     }
     
 
@@ -136,6 +154,10 @@ extension KisiselViewController:UITextFieldDelegate{
         else if textField == tcTextField{
             
             tcTextField.placeholder = "11 Haneli TC kimlik numaranızı giriniz"
+        }
+        else if textField == dogumTextField{
+            
+            dogumTextField.placeholder = "Dogum Tarihi"
         }
         
         return true
@@ -201,21 +223,32 @@ extension KisiselViewController:UITextFieldDelegate{
                     
                     print("ad karakter sayısı istenen aralıkta")
                     
-                    //tik kontrolü ve bool değişkeni setlemesi
+                    UIView.animate(withDuration: 0.5, animations: {
+                        
+                        self.adCheckImageView.alpha = 1
+                    })
                 }
                 else if adSayı == 0{
                     
                     adTextField.placeholder = "Ad"
                     
+                    UIView.animate(withDuration: 0.5, animations: {
+                        
+                        self.adCheckImageView.alpha = 0
+                    })
                 }
                 
                 else{
                     
+                    UIView.animate(withDuration: 0.5, animations: {
+                        
+                        self.adCheckImageView.alpha = 0
+                    })
                     textField.placeholder = "ad 2-30 arasında olmalıdır"
                     textField.text = ""
                 }
             }
-        }
+        }//adtextfieldSonu
         else  if textField == soyadTextField{
             
             if let soyadSayı = textField.text?.count{
@@ -224,9 +257,18 @@ extension KisiselViewController:UITextFieldDelegate{
                     
                     print("soyad karakter sayısı istenen aralıkta")
                     
-                    //tik kontrolü ve bool değişkeni setlemesi
+                    UIView.animate(withDuration: 0.5, animations: {
+                        
+                        self.soyadCheckImageView.alpha = 1
+                    })
+                    
                 }
                 else if soyadSayı == 0{
+                    
+                    UIView.animate(withDuration: 0.5, animations: {
+                        
+                        self.soyadCheckImageView.alpha = 0
+                    })
                     
                     soyadTextField.placeholder = "Soyad"
                     
@@ -234,11 +276,15 @@ extension KisiselViewController:UITextFieldDelegate{
                 
                 else{
                     
+                    UIView.animate(withDuration: 0.5, animations: {
+                        
+                        self.soyadCheckImageView.alpha = 0
+                    })
                     textField.placeholder = "soyad 2-25 arasında olmalıdır"
                     textField.text = ""
                 }
             }
-        }
+        }//soyadtextfield sonu
         else if textField == tcTextField{
             
             if let tcSayı = textField.text?.count{
@@ -247,26 +293,115 @@ extension KisiselViewController:UITextFieldDelegate{
                     
                     print("tc 11 haneli")
                     
-                    //tik kontrolü ve bool değişkeni setlemesi
+                    UIView.animate(withDuration: 0.5, animations: {
+                        
+                        self.tcCheckImageView.alpha = 1
+                    })
                 }
                 else if tcSayı == 0{
                     
+                    UIView.animate(withDuration: 0.5, animations: {
+                        
+                        self.tcCheckImageView.alpha = 0
+                    })
                     tcTextField.placeholder = "TC"
                     
                 }
-                
                 else{
                     
+                    UIView.animate(withDuration: 0.5, animations: {
+                        
+                        self.tcCheckImageView.alpha = 0
+                    })
                     textField.placeholder = "TC 11 haneli olmalıdır"
                     textField.text = ""
                 }
                 
             }
             
+        }//tctextfieldSonu
+//        else if textField == dogumTextField{
+//
+//            if let dgSayı = textField.text?.count{
+//
+//                if dgSayı == 0{
+//
+//                    UIView.animate(withDuration: 0.5, animations: {
+//
+//                        self.dgCheckImageView.alpha = 0
+//                    })
+//
+//                }
+//                else{
+//
+//                    UIView.animate(withDuration: 0.5, animations: {
+//
+//                        self.dgCheckImageView.alpha = 1
+//                    })
+//                }
+//            }
+//
+//        }//dogumtextfield sonu
+//        else if textField == kilotextField{
+//
+//
+//        }//kilotextfiled sonu
+//        else if textField == boyTextField{
+//
+//
+//        }//boytextfield sonu
+//        else if textField == cinsiyetTextField{
+//
+//
+//        }//cinsiyettextfield sonu
+//        else if textField == kanGrupTextField{
+//
+//
+//        }//kangruptextfield sonu
+//        else if textField == sehirTextField{
+//
+//
+//        }//sehirtextfiled sonu
+//        else if textField == ilceTextField{
+//
+//
+//        }//ilce textfield sonu
+//
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == adTextField{
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                
+                self.adCheckImageView.alpha = 1
+            })
+            view.endEditing(true)
+        }
+        else if textField == soyadTextField{
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                
+                self.soyadCheckImageView.alpha = 1
+            })
+            view.endEditing(true)
+        }
+        else if textField == tcTextField{
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                
+                self.tcCheckImageView.alpha = 1
+            })
+            view.endEditing(true)
         }
         
         
+        return true
     }
+    
+    
 }
 
 //MARK: - Picker Fonksiyonları ve Ojective-C temelli fonksiyonlar
@@ -327,7 +462,7 @@ extension KisiselViewController{
         toolbar.tintColor = .black
         toolbar.sizeToFit()
         
-        let tamamButton = UIBarButtonItem(title: "Tamam", style: .plain, target: self, action: #selector(self.gelenTamamMetodu))
+        let tamamButton = UIBarButtonItem(title: "Tamam", style: .plain, target: self, action: #selector(self.dgTamamMetodu))
         
         let bosluk = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         
@@ -344,7 +479,7 @@ extension KisiselViewController{
         toolbar.tintColor = .black
         toolbar.sizeToFit()
         
-        let tamamButton = UIBarButtonItem(title: "Tamam", style: .plain, target: self, action: #selector(self.gelenTamamMetodu))
+        let tamamButton = UIBarButtonItem(title: "Tamam", style: .plain, target: self, action: #selector(self.kiloTamamMetodu))
         
         let bosluk = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         
@@ -361,7 +496,7 @@ extension KisiselViewController{
         toolbar.tintColor = .black
         toolbar.sizeToFit()
         
-        let tamamButton = UIBarButtonItem(title: "Tamam", style: .plain, target: self, action: #selector(self.gelenTamamMetodu))
+        let tamamButton = UIBarButtonItem(title: "Tamam", style: .plain, target: self, action: #selector(self.boyTamamMetodu))
         
         let bosluk = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         
@@ -378,7 +513,7 @@ extension KisiselViewController{
         toolbar.tintColor = .black
         toolbar.sizeToFit()
         
-        let tamamButton = UIBarButtonItem(title: "Tamam", style: .plain, target: self, action: #selector(self.gelenTamamMetodu))
+        let tamamButton = UIBarButtonItem(title: "Tamam", style: .plain, target: self, action: #selector(self.cinsiyetTamamMetodu))
         
         let bosluk = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         
@@ -395,7 +530,7 @@ extension KisiselViewController{
         toolbar.tintColor = .black
         toolbar.sizeToFit()
         
-        let tamamButton = UIBarButtonItem(title: "Tamam", style: .plain, target: self, action: #selector(self.gelenTamamMetodu))
+        let tamamButton = UIBarButtonItem(title: "Tamam", style: .plain, target: self, action: #selector(self.kanTamamMetodu))
         
         let bosluk = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         
@@ -413,17 +548,63 @@ extension KisiselViewController{
         let alınanTarihSonHal = dateFormatter.string(from: self.dgDatePicker.date)
         
         dogumTextField.text = alınanTarihSonHal
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            
+            self.dgCheckImageView.alpha = 1
+        })
     }
     
-    @objc func gelenTamamMetodu(){
-        
+    @objc func dgTamamMetodu(){
+        UIView.animate(withDuration: 0.5, animations: {
+
+            self.dgCheckImageView.alpha = 1
+        })
         view.endEditing(true)
     }
+    
+    @objc func kiloTamamMetodu(){
+//        UIView.animate(withDuration: 0.5, animations: {
+//
+//            self.kiloCheckImageView.alpha = 1
+//        })
+        view.endEditing(true)
+    }
+
+    @objc func boyTamamMetodu(){
+//        UIView.animate(withDuration: 0.5, animations: {
+//
+//            self.boyCheckImageView.alpha = 1
+//        })
+        view.endEditing(true)
+    }
+
+    @objc func cinsiyetTamamMetodu(){
+//        UIView.animate(withDuration: 0.5, animations: {
+//
+//            self.cinsCheckImageView.alpha = 1
+//        })
+        view.endEditing(true)
+    }
+
+    @objc func kanTamamMetodu(){
+//        UIView.animate(withDuration: 0.5, animations: {
+//
+//            self.kanCheckImageView.alpha = 1
+//        })
+        view.endEditing(true)
+    }
+
     
     @objc func dgİptalMetodu(){
         
         dogumTextField.text = ""
         dogumTextField.placeholder = "Dogum Tarihi"
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            
+            self.dgCheckImageView.alpha = 0
+        })
         view.endEditing(true)
         
     }
@@ -432,6 +613,11 @@ extension KisiselViewController{
         
         kilotextField.text = ""
         kilotextField.placeholder = "Kilo (kg)"
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            
+            self.kiloCheckImageView.alpha = 0
+        })
         view.endEditing(true)
         
     }
@@ -439,6 +625,10 @@ extension KisiselViewController{
         
         boyTextField.text = ""
         boyTextField.placeholder = "Boy (cm)"
+        UIView.animate(withDuration: 0.5, animations: {
+            
+            self.boyCheckImageView.alpha = 0
+        })
         view.endEditing(true)
         
     }
@@ -446,6 +636,11 @@ extension KisiselViewController{
         
         cinsiyetTextField.text = ""
         cinsiyetTextField.placeholder = "Cinsiyet"
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            
+            self.cinsCheckImageView.alpha = 0
+        })
         view.endEditing(true)
         
     }
@@ -453,6 +648,10 @@ extension KisiselViewController{
         
         kanGrupTextField.text = ""
         kanGrupTextField.placeholder = "Kan Grubu"
+        UIView.animate(withDuration: 0.5, animations: {
+            
+            self.kanCheckImageView.alpha = 0
+        })
         view.endEditing(true)
         
     }
@@ -464,10 +663,10 @@ extension KisiselViewController{
 
 extension KisiselViewController{
     
-    @objc func dokunmaAlgılamaMetodu(){
-        
-        view.endEditing(true)
-    }
+//    @objc func dokunmaAlgılamaMetodu(){
+//
+//        view.endEditing(true)
+//    }
 }
 
 //MARK: - Picker Protocolleri
@@ -534,21 +733,41 @@ extension KisiselViewController:UIPickerViewDelegate,UIPickerViewDataSource{
         
         if pickerView == kiloPicker{
             
+            UIView.animate(withDuration: 0.5, animations: {
+                
+                self.kiloCheckImageView.alpha = 1
+            })
+            
             self.kilotextField.text = String(kiloVeriDizisi[row])
             
         }
         else if pickerView == boyPicker{
+            UIView.animate(withDuration: 0.5, animations: {
+                
+                self.boyCheckImageView.alpha = 1
+            })
             
             self.boyTextField.text = String(boyVeriDizisi[row])
         }
         else if pickerView == cinsiyetPicker{
             
+            UIView.animate(withDuration: 0.5, animations: {
+                
+                self.cinsCheckImageView.alpha = 1
+            })
+            
             self.cinsiyetTextField.text = cinsiyetVeri[row]
         }
         else if pickerView == kanGrupPicker{
             
+            UIView.animate(withDuration: 0.5, animations: {
+                
+                self.kanCheckImageView.alpha = 1
+            })
             self.kanGrupTextField.text = kanGrupVerisi[row]
         }
+        
+
     }
     
 }

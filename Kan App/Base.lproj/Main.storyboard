@@ -388,17 +388,27 @@
                     </view>
                     <navigationItem key="navigationItem" title="Kişisel Bilgiler" id="VE0-Be-9jV"/>
                     <connections>
+                        <outlet property="adCheckImageView" destination="fJI-eG-Vny" id="Q6N-xe-6Uj"/>
                         <outlet property="adTextField" destination="iZJ-HP-ZVd" id="eZI-6c-3NH"/>
+                        <outlet property="boyCheckImageView" destination="iHH-UF-dSO" id="WgI-dp-0M8"/>
                         <outlet property="boyTextField" destination="2KX-s5-emX" id="A9K-Rw-UYQ"/>
+                        <outlet property="cinsCheckImageView" destination="61r-6T-0P0" id="3R1-ED-cWl"/>
                         <outlet property="cinsiyetTextField" destination="pRY-tE-m4n" id="lga-sL-w8F"/>
+                        <outlet property="dgCheckImageView" destination="M8i-nU-UnR" id="0iX-lh-Gys"/>
                         <outlet property="dogumTextField" destination="l4s-Br-wnR" id="dVF-XE-jYH"/>
+                        <outlet property="ilceCheckImageView" destination="Acb-vV-OlF" id="VsD-AH-Nwg"/>
                         <outlet property="ilceTextField" destination="v3U-nU-3Wu" id="6Dm-lp-VcF"/>
                         <outlet property="ileriKButton" destination="D0K-7V-Zg2" id="QYR-FV-Eo3"/>
+                        <outlet property="kanCheckImageView" destination="OT4-AU-f1M" id="A7h-o2-KZJ"/>
                         <outlet property="kanGrupTextField" destination="RDw-YH-6kt" id="ozM-CI-4bI"/>
+                        <outlet property="kiloCheckImageView" destination="ldS-Ey-ES2" id="olN-Q6-pTP"/>
                         <outlet property="kilotextField" destination="qOk-fA-cuL" id="HOs-Ij-2nN"/>
                         <outlet property="kisiselProgressView" destination="pPQ-ZO-Ggn" id="V42-gd-YcH"/>
+                        <outlet property="sehirCheckImageView" destination="vxJ-4k-r3z" id="sCT-qm-cSj"/>
                         <outlet property="sehirTextField" destination="FC5-1T-WHH" id="c3X-FU-CS3"/>
+                        <outlet property="soyadCheckImageView" destination="ZIP-e1-P3c" id="t22-76-UTk"/>
                         <outlet property="soyadTextField" destination="4Hz-Wz-e3H" id="3CQ-Lu-I3B"/>
+                        <outlet property="tcCheckImageView" destination="aYB-dU-TOU" id="s34-yd-CeQ"/>
                         <outlet property="tcTextField" destination="DHr-TP-Hm5" id="EPs-Kg-8Qk"/>
                         <segue destination="Brl-h9-K0E" kind="show" identifier="kisiseltoKayit" id="8wl-hr-m6h"/>
                     </connections>
