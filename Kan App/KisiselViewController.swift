@@ -47,6 +47,13 @@ class KisiselViewController: UIViewController {
     var cinsiyetPicker = UIPickerView()
     var kanGrupPicker = UIPickerView()
     
+    //Picker Buton toolbar
+    
+    var dgToolbar = UIToolbar()
+    var kiloToolbar = UIToolbar()
+    var boyToolbar = UIToolbar()
+    var cinsiyetToolbar = UIToolbar()
+    var kanToolbar = UIToolbar()
     
     //YerelTutucular
     
@@ -59,7 +66,7 @@ class KisiselViewController: UIViewController {
         super.viewDidLoad()
         
         dgPickerYukle()
-        
+        dgToolbarYukle(toolbar: dgToolbar)
         kiloPicker.delegate = self
         kiloPicker.dataSource = self
         
@@ -72,10 +79,18 @@ class KisiselViewController: UIViewController {
         kanGrupPicker.delegate = self
         kanGrupPicker.dataSource = self
         
+        
         kiloPickerYukle()
+        kiloToolbarYukle(toolbar: kiloToolbar)
         boyPickerYukle()
+        boyToolbarYukle(toolbar: boyToolbar)
         cinsiyetPickerYukle()
+        cinsiyetToolbarYukle(toolbar: cinsiyetToolbar)
         kanGrupPickerYukle()
+        KanToolbarYukle(toolbar: kanToolbar)
+        
+       
+        
         
         let dokunmaAlgılama = UITapGestureRecognizer(target: self, action: #selector(self.dokunmaAlgılamaMetodu))
         
@@ -107,6 +122,11 @@ extension KisiselViewController{
     
     func dgPickerYukle(){
         
+        if #available(İOS 13.4,*){
+            
+            dgDatePicker.preferredDatePickerStyle = .wheels
+        }
+        
         dgDatePicker.datePickerMode = .date
         dogumTextField.inputView = dgDatePicker
         
@@ -122,6 +142,7 @@ extension KisiselViewController{
         }
         
         kilotextField.inputView = kiloPicker
+        
         
         
     }
@@ -146,6 +167,91 @@ extension KisiselViewController{
         kanGrupTextField.inputView = kanGrupPicker
     }
     
+    func dgToolbarYukle(toolbar:UIToolbar){
+        
+        toolbar.backgroundColor = UIColor(rgb:0xFEFCF3)
+        toolbar.tintColor = .black
+        toolbar.sizeToFit()
+        
+        let tamamButton = UIBarButtonItem(title: "Tamam", style: .plain, target: self, action: #selector(self.gelenTamamMetodu))
+        
+        let bosluk = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        let iptaButton = UIBarButtonItem(title: "İptal", style: .plain, target: nil, action: #selector(dgİptalMetodu))
+        
+        toolbar.setItems([iptaButton,bosluk,tamamButton], animated: true)
+        
+        dogumTextField.inputAccessoryView = toolbar
+    }
+    
+    func kiloToolbarYukle(toolbar:UIToolbar){
+        
+        toolbar.backgroundColor = UIColor(rgb:0xFEFCF3)
+        toolbar.tintColor = .black
+        toolbar.sizeToFit()
+        
+        let tamamButton = UIBarButtonItem(title: "Tamam", style: .plain, target: self, action: #selector(self.gelenTamamMetodu))
+        
+        let bosluk = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        let iptaButton = UIBarButtonItem(title: "İptal", style: .plain, target: nil, action: #selector(kiloİptalMetodu))
+        
+        toolbar.setItems([iptaButton,bosluk,tamamButton], animated: true)
+        
+        kilotextField.inputAccessoryView = toolbar
+    }
+    
+    func boyToolbarYukle(toolbar:UIToolbar){
+        
+        toolbar.backgroundColor = UIColor(rgb:0xFEFCF3)
+        toolbar.tintColor = .black
+        toolbar.sizeToFit()
+        
+        let tamamButton = UIBarButtonItem(title: "Tamam", style: .plain, target: self, action: #selector(self.gelenTamamMetodu))
+        
+        let bosluk = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        let iptaButton = UIBarButtonItem(title: "İptal", style: .plain, target: nil, action: #selector(boyİptalMetodu))
+        
+        toolbar.setItems([iptaButton,bosluk,tamamButton], animated: true)
+        
+        boyTextField.inputAccessoryView = toolbar
+    }
+    
+    func cinsiyetToolbarYukle(toolbar:UIToolbar){
+        
+        toolbar.backgroundColor = UIColor(rgb:0xFEFCF3)
+        toolbar.tintColor = .black
+        toolbar.sizeToFit()
+        
+        let tamamButton = UIBarButtonItem(title: "Tamam", style: .plain, target: self, action: #selector(self.gelenTamamMetodu))
+        
+        let bosluk = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        let iptaButton = UIBarButtonItem(title: "İptal", style: .plain, target: nil, action: #selector(cinsiyetİptalMetodu))
+        
+        toolbar.setItems([iptaButton,bosluk,tamamButton], animated: true)
+        
+        cinsiyetTextField.inputAccessoryView = toolbar
+    }
+    
+    func KanToolbarYukle(toolbar:UIToolbar){
+        
+        toolbar.backgroundColor = UIColor(rgb:0xFEFCF3)
+        toolbar.tintColor = .black
+        toolbar.sizeToFit()
+        
+        let tamamButton = UIBarButtonItem(title: "Tamam", style: .plain, target: self, action: #selector(self.gelenTamamMetodu))
+        
+        let bosluk = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        let iptaButton = UIBarButtonItem(title: "İptal", style: .plain, target: nil, action: #selector(kanİptalMetodu))
+        
+        toolbar.setItems([iptaButton,bosluk,tamamButton], animated: true)
+        
+        kanGrupTextField.inputAccessoryView = toolbar
+    }
+    
     @objc func tarihGoster(dateVeri:UIDatePicker){
         
         let dateFormatter = DateFormatter()
@@ -155,6 +261,47 @@ extension KisiselViewController{
         dogumTextField.text = alınanTarihSonHal
     }
     
+    @objc func gelenTamamMetodu(){
+        
+        view.endEditing(true)
+    }
+    
+    @objc func dgİptalMetodu(){
+        
+        dogumTextField.text = ""
+        dogumTextField.placeholder = "Dogum Tarihi"
+        view.endEditing(true)
+        
+    }
+    
+    @objc func kiloİptalMetodu(){
+        
+        kilotextField.text = ""
+        kilotextField.placeholder = "Kilo (kg)"
+        view.endEditing(true)
+        
+    }
+    @objc func boyİptalMetodu(){
+        
+        boyTextField.text = ""
+        boyTextField.placeholder = "Boy (cm)"
+        view.endEditing(true)
+        
+    }
+    @objc func cinsiyetİptalMetodu(){
+        
+        cinsiyetTextField.text = ""
+        cinsiyetTextField.placeholder = "Cinsiyet"
+        view.endEditing(true)
+        
+    }
+    @objc func kanİptalMetodu(){
+        
+        kanGrupTextField.text = ""
+        kanGrupTextField.placeholder = "Kan Grubu"
+        view.endEditing(true)
+        
+    }
 }
 
 
