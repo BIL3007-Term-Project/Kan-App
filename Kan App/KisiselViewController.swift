@@ -66,6 +66,12 @@ class KisiselViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        kisiselProgressView.setProgress(0.3, animated: true)
+        
+        UIView.animate(withDuration: 2,delay: 1.5, animations: {
+            
+            self.kisiselProgressView.setProgress(0.6, animated: true)
+        })
         
         adCheckImageView.alpha = 0
         soyadCheckImageView.alpha = 0
