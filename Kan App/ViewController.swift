@@ -96,14 +96,20 @@ class ViewController: UIViewController {
     
     //
     @IBAction func girisButtonPressed(_ sender: UIButton) {
+        
+        self.performSegue(withIdentifier:K.gToMain, sender: nil)
     }
     
     
     @IBAction func kayıtButtonPressed(_ sender: UIButton) {
+        
+        self.performSegue(withIdentifier: K.gToYasal, sender: nil)
     }
     
     
     @IBAction func sifreUnButtonPressed(_ sender: UIBarButtonItem) {
+        
+        self.performSegue(withIdentifier: K.gToSifre, sender: nil)
     }
     
     

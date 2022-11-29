@@ -9,6 +9,9 @@ import UIKit
 
 class KisiselViewController: UIViewController {
 
+    
+    @IBOutlet weak var ileriKButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,14 +19,10 @@ class KisiselViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func ileriKButtonPressed(_ sender: UIButton) {
+        
+        self.performSegue(withIdentifier: K.kToKayit, sender: nil)
     }
-    */
+    
 
 }

@@ -24,6 +24,7 @@
 		05B457902935605E007E89D0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B4578F2935605E007E89D0 /* MainViewController.swift */; };
 		05B457922935609C007E89D0 /* KayitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B457912935609C007E89D0 /* KayitViewController.swift */; };
 		05B457942935613D007E89D0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B457932935613D007E89D0 /* Constants.swift */; };
+		05CBC2192935868500184140 /* UILabelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CBC2182935868500184140 /* UILabelExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		05B4578F2935605E007E89D0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		05B457912935609C007E89D0 /* KayitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KayitViewController.swift; sourceTree = "<group>"; };
 		05B457932935613D007E89D0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		05CBC2182935868500184140 /* UILabelExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				05B457912935609C007E89D0 /* KayitViewController.swift */,
 				05B457932935613D007E89D0 /* Constants.swift */,
 				0570FA642935758600A36270 /* UIColorExt.swift */,
+				05CBC2182935868500184140 /* UILabelExt.swift */,
 			);
 			path = "Kan App";
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				05B457902935605E007E89D0 /* MainViewController.swift in Sources */,
 				0570FA652935758600A36270 /* UIColorExt.swift in Sources */,
 				05B4578829356044007E89D0 /* SifreYenViewController.swift in Sources */,
+				05CBC2192935868500184140 /* UILabelExt.swift in Sources */,
 				059C8FDE2935599900AE456D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
