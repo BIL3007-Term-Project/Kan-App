@@ -45,13 +45,16 @@ class KisiselViewController: UIViewController {
     var kiloPicker = UIPickerView()
     var boyPicker = UIPickerView()
     var cinsiyetPicker = UIPickerView()
+    var kanGrupPicker = UIPickerView()
+    
     
     //YerelTutucular
     
     var kiloVeriDizisi:[Int] = [Int]()
     var boyVeriDizisi:[Int] = [Int]()
     var cinsiyetVeri:[String] = ["Bay","Bayan"]
-                             
+    var kanGrupVerisi:[String] = ["A+","A-","B+","B-","AB+","AB-","0+","0-"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,9 +69,13 @@ class KisiselViewController: UIViewController {
         cinsiyetPicker.delegate = self
         cinsiyetPicker.dataSource = self
         
+        kanGrupPicker.delegate = self
+        kanGrupPicker.dataSource = self
+        
         kiloPickerYukle()
         boyPickerYukle()
         cinsiyetPickerYukle()
+        kanGrupPickerYukle()
         
         let dokunmaAlgılama = UITapGestureRecognizer(target: self, action: #selector(self.dokunmaAlgılamaMetodu))
         
@@ -134,6 +141,11 @@ extension KisiselViewController{
         cinsiyetTextField.inputView = cinsiyetPicker
     }
     
+    func kanGrupPickerYukle(){
+        
+        kanGrupTextField.inputView = kanGrupPicker
+    }
+    
     @objc func tarihGoster(dateVeri:UIDatePicker){
         
         let dateFormatter = DateFormatter()
@@ -185,6 +197,10 @@ extension KisiselViewController:UIPickerViewDelegate,UIPickerViewDataSource{
             
             returnValue = cinsiyetVeri.count
         }
+        else if pickerView == kanGrupPicker{
+            
+            returnValue = kanGrupVerisi.count
+        }
         return returnValue!
     }
     
@@ -205,6 +221,10 @@ extension KisiselViewController:UIPickerViewDelegate,UIPickerViewDataSource{
             
             returnValue = cinsiyetVeri[row]
         }
+        else if pickerView == kanGrupPicker{
+            
+            returnValue = kanGrupVerisi[row]
+        }
         
         return returnValue
     }
@@ -223,6 +243,10 @@ extension KisiselViewController:UIPickerViewDelegate,UIPickerViewDataSource{
         else if pickerView == cinsiyetPicker{
             
             self.cinsiyetTextField.text = cinsiyetVeri[row]
+        }
+        else if pickerView == kanGrupPicker{
+            
+            self.kanGrupTextField.text = kanGrupVerisi[row]
         }
     }
     
