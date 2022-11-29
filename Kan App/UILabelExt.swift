@@ -5,7 +5,7 @@
 //  Created by Hüdahan Altun on 29.11.2022.
 //
 
-import Foundation
+import UIKit
 
 class UnderlinedLabel: UILabel {
 

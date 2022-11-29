@@ -25,6 +25,7 @@
 		05B457922935609C007E89D0 /* KayitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B457912935609C007E89D0 /* KayitViewController.swift */; };
 		05B457942935613D007E89D0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B457932935613D007E89D0 /* Constants.swift */; };
 		05CBC2192935868500184140 /* UILabelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CBC2182935868500184140 /* UILabelExt.swift */; };
+		05CBC21B29358DBD00184140 /* YasalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CBC21A29358DBD00184140 /* YasalTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		05B457912935609C007E89D0 /* KayitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KayitViewController.swift; sourceTree = "<group>"; };
 		05B457932935613D007E89D0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		05CBC2182935868500184140 /* UILabelExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExt.swift; sourceTree = "<group>"; };
+		05CBC21A29358DBD00184140 /* YasalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YasalTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				05B457932935613D007E89D0 /* Constants.swift */,
 				0570FA642935758600A36270 /* UIColorExt.swift */,
 				05CBC2182935868500184140 /* UILabelExt.swift */,
+				05CBC21A29358DBD00184140 /* YasalTableViewCell.swift */,
 			);
 			path = "Kan App";
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				05B457862935603A007E89D0 /* SSSViewController.swift in Sources */,
 				05B4578A2935604C007E89D0 /* YasalViewController.swift in Sources */,
 				05B457942935613D007E89D0 /* Constants.swift in Sources */,
+				05CBC21B29358DBD00184140 /* YasalTableViewCell.swift in Sources */,
 				05B457922935609C007E89D0 /* KayitViewController.swift in Sources */,
 				05B457902935605E007E89D0 /* MainViewController.swift in Sources */,
 				0570FA652935758600A36270 /* UIColorExt.swift in Sources */,

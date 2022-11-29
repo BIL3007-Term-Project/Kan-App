@@ -16,4 +16,12 @@ struct K{
     static let kToKayit:String = "kisiseltoKayit"
     static let kToMain:String = "kayitToMain"
     static let gToMain:String = "girisToMain"
+    
+    
+    struct Cell{
+        
+        static let yCell:String = "yasalCell"
+        
+    }
+    
 }
