@@ -34,10 +34,8 @@ class KisiselViewController: UIViewController {
     @IBOutlet weak var sehirTextField: UITextField!
     
     @IBOutlet weak var ilceTextField: UITextField!
-    
-    
+        
     @IBOutlet weak var kisiselProgressView: UIProgressView!
-    
     
     //Picker nesneleri
     
@@ -64,6 +62,13 @@ class KisiselViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        adTextField.keyboardType = .default
+        adTextField.autocorrectionType = .no
+        adTextField.autocapitalizationType = .none
+        soyadTextField.keyboardType = .default
+        soyadTextField.autocorrectionType = .no
+        soyadTextField.autocapitalizationType = .none
+        tcTextField.keyboardType = .numberPad
         
         dgPickerYukle()
         dgToolbarYukle(toolbar: dgToolbar)
@@ -89,9 +94,6 @@ class KisiselViewController: UIViewController {
         kanGrupPickerYukle()
         KanToolbarYukle(toolbar: kanToolbar)
         
-       
-        
-        
         let dokunmaAlgılama = UITapGestureRecognizer(target: self, action: #selector(self.dokunmaAlgılamaMetodu))
         
         view.addGestureRecognizer(dokunmaAlgılama)
@@ -112,7 +114,22 @@ class KisiselViewController: UIViewController {
 extension KisiselViewController:UITextFieldDelegate{
     
     
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool { //düzenlemeleye  return true ile başlıyoruz
+        
+    }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {//düzenlenmeye başlandı
+        
+        
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {//düzenleme retrun true ile bitecek
+        <#code#>
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) { //düzenleme bitti
+        
+    }
 }
 
 //MARK: - Picker Fonksiyonları ve Ojective-C temelli fonksiyonlar
