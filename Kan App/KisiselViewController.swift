@@ -44,12 +44,14 @@ class KisiselViewController: UIViewController {
     var dgDatePicker = UIDatePicker()
     var kiloPicker = UIPickerView()
     var boyPicker = UIPickerView()
-
+    var cinsiyetPicker = UIPickerView()
+    
     //YerelTutucular
     
     var kiloVeriDizisi:[Int] = [Int]()
     var boyVeriDizisi:[Int] = [Int]()
-    
+    var cinsiyetVeri:[String] = ["Bay","Bayan"]
+                             
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,8 +63,12 @@ class KisiselViewController: UIViewController {
         boyPicker.delegate = self
         boyPicker.dataSource = self
         
+        cinsiyetPicker.delegate = self
+        cinsiyetPicker.dataSource = self
+        
         kiloPickerYukle()
         boyPickerYukle()
+        cinsiyetPickerYukle()
         
         let dokunmaAlgılama = UITapGestureRecognizer(target: self, action: #selector(self.dokunmaAlgılamaMetodu))
         
@@ -123,6 +129,11 @@ extension KisiselViewController{
         boyTextField.inputView = boyPicker
     }
     
+    func cinsiyetPickerYukle(){
+        
+        cinsiyetTextField.inputView = cinsiyetPicker
+    }
+    
     @objc func tarihGoster(dateVeri:UIDatePicker){
         
         let dateFormatter = DateFormatter()
@@ -170,7 +181,10 @@ extension KisiselViewController:UIPickerViewDelegate,UIPickerViewDataSource{
             
             returnValue = boyVeriDizisi.count
         }
-        
+        else if pickerView == cinsiyetPicker{
+            
+            returnValue = cinsiyetVeri.count
+        }
         return returnValue!
     }
     
@@ -187,6 +201,11 @@ extension KisiselViewController:UIPickerViewDelegate,UIPickerViewDataSource{
             
             returnValue = String(self.boyVeriDizisi[row])
         }
+        else if pickerView == cinsiyetPicker{
+            
+            returnValue = cinsiyetVeri[row]
+        }
+        
         return returnValue
     }
     
@@ -201,7 +220,10 @@ extension KisiselViewController:UIPickerViewDelegate,UIPickerViewDataSource{
             
             self.boyTextField.text = String(boyVeriDizisi[row])
         }
-        
+        else if pickerView == cinsiyetPicker{
+            
+            self.cinsiyetTextField.text = cinsiyetVeri[row]
+        }
     }
     
 }
