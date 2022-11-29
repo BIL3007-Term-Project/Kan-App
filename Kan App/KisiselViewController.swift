@@ -63,6 +63,7 @@ class KisiselViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         adTextField.keyboardType = .default
+        adTextField.returnKeyType = .done
         adTextField.autocorrectionType = .no
         adTextField.autocapitalizationType = .none
         soyadTextField.keyboardType = .default
@@ -94,6 +95,11 @@ class KisiselViewController: UIViewController {
         kanGrupPickerYukle()
         KanToolbarYukle(toolbar: kanToolbar)
         
+        
+        adTextField.delegate = self
+        soyadTextField.delegate = self
+        tcTextField.delegate = self
+        
         let dokunmaAlgılama = UITapGestureRecognizer(target: self, action: #selector(self.dokunmaAlgılamaMetodu))
         
         view.addGestureRecognizer(dokunmaAlgılama)
@@ -116,18 +122,149 @@ extension KisiselViewController:UITextFieldDelegate{
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool { //düzenlemeleye  return true ile başlıyoruz
         
+        
+        if textField == adTextField{
+            
+            adTextField.placeholder = "2-40 karakter aralığında ad giriniz"
+        
+//            adTextField.reloadInputViews()
+        }
+        else if textField == soyadTextField{
+            
+            soyadTextField.placeholder = "2-30 karakter aralığında soyad giriniz"
+        }
+        else if textField == tcTextField{
+            
+            tcTextField.placeholder = "11 Haneli TC kimlik numaranızı giriniz"
+        }
+        
+        return true
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {//düzenlenmeye başlandı
         
         
+        
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {//düzenleme retrun true ile bitecek
-        <#code#>
+        
+        if textField == adTextField{
+            
+            if textField.text == ""{
+                
+                adTextField.placeholder = "Ad"
+            }
+            
+//            if let adSayı = textField.text?.count{
+//
+//                if (adSayı < 40){
+//
+//                    print("tamamdır.")
+//
+//                    //tik kontrolü
+//                }
+//                else if (adSayı > 40){
+//
+//
+//                    textField.placeholder = "Girilen ad 40 karakteri aşıyor."
+//                    textField.text = ""
+//                }
+//            }
+
+        }
+        else if textField == soyadTextField{
+            
+            if textField.text == ""{
+                
+                soyadTextField.placeholder = "Soyad"
+            }
+        }
+        else if textField == tcTextField{
+            
+            if textField.text == ""{
+                
+                tcTextField.placeholder = "Ad"
+            }
+        }
+        
+        return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) { //düzenleme bitti
+        
+        if textField == adTextField{
+            
+            if let adSayı = textField.text?.count{
+                
+                if (adSayı < 30) && (adSayı > 2){
+                    
+                    print("ad karakter sayısı istenen aralıkta")
+                    
+                    //tik kontrolü ve bool değişkeni setlemesi
+                }
+                else if adSayı == 0{
+                    
+                    adTextField.placeholder = "Ad"
+                    
+                }
+                
+                else{
+                    
+                    textField.placeholder = "ad 2-30 arasında olmalıdır"
+                    textField.text = ""
+                }
+            }
+        }
+        else  if textField == soyadTextField{
+            
+            if let soyadSayı = textField.text?.count{
+                
+                if (soyadSayı < 25) && (soyadSayı > 2){
+                    
+                    print("soyad karakter sayısı istenen aralıkta")
+                    
+                    //tik kontrolü ve bool değişkeni setlemesi
+                }
+                else if soyadSayı == 0{
+                    
+                    soyadTextField.placeholder = "Soyad"
+                    
+                }
+                
+                else{
+                    
+                    textField.placeholder = "soyad 2-25 arasında olmalıdır"
+                    textField.text = ""
+                }
+            }
+        }
+        else if textField == tcTextField{
+            
+            if let tcSayı = textField.text?.count{
+                
+                if tcSayı == 11{
+                    
+                    print("tc 11 haneli")
+                    
+                    //tik kontrolü ve bool değişkeni setlemesi
+                }
+                else if tcSayı == 0{
+                    
+                    tcTextField.placeholder = "TC"
+                    
+                }
+                
+                else{
+                    
+                    textField.placeholder = "TC 11 haneli olmalıdır"
+                    textField.text = ""
+                }
+                
+            }
+            
+        }
+        
         
     }
 }
