@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController { //giriş ekranı VC
 
     @IBOutlet weak var sifreUnButton: UIBarButtonItem!
     

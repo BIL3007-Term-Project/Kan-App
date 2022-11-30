@@ -31,14 +31,19 @@ class KayitViewController: UIViewController {
     @IBOutlet weak var gizlilikSwitch: UISwitch!
     
     @IBOutlet weak var questionMarkButton: UIBarButtonItem!
-    var güvenlikBildirimi:String = "Mail uzantısı @gmail veya @outlook olmalıdır.\n Sifre büyük,kücük harf ve sayı içermelidir"
     
-    
+//    MARK: - iOS Cycle fonskiyonları
     override func viewDidLoad() {
         super.viewDidLoad()
 
         kayitOlButton.alpha = 0
 
+        emailTextField.autocorrectionType = .no
+        emailTextField.autocapitalizationType = .none
+        sifreTextField.autocorrectionType = .no
+        sifreTextField.autocapitalizationType = .none
+        sifreTekTextField.autocorrectionType = .no
+        sifreTekTextField.autocapitalizationType = .none
         
         KKSwitch.isOn = false
         gizlilikSwitch.isOn = false
@@ -58,17 +63,14 @@ class KayitViewController: UIViewController {
         
     }
     
-    func kayitVerileriniAl(emailTF:UITextField,sifreTF:UITextField,sifreTkrTF:UITextField){
+    override func viewWillAppear(_ animated: Bool) {
         
-        if let mail = emailTF.text, let sifre = sifreTF.text, let sifreTkr = sifreTkrTF.text{
-            
-            
-            
-        }
-        
-        
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(hesapGuvAlert), userInfo: nil, repeats: false)
         
     }
+    
+
+//MARK: - IBAction fonksiyonları
     
 
     @IBAction func KKSwitchToggled(_ sender: UISwitch) {
@@ -119,14 +121,16 @@ class KayitViewController: UIViewController {
             self.kayitOlButton.isEnabled = true
         }
         
-        performSegue(withIdentifier: K.kToMain, sender: nil)
+        
+        kayitVerileriniAl(emailTF: emailTextField, sifreTF: sifreTextField, sifreTkrTF: sifreTekTextField)
+//        performSegue(withIdentifier: K.kToMain, sender: nil)
         
     }
     
     
     @IBAction func questionMarkPressed(_ sender: UIBarButtonItem) {
         
-        let alertController = UIAlertController(title: "Mail ve Şifre", message: güvenlikBildirimi, preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.hesapGuv, preferredStyle: .alert)
         
         let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
         
@@ -136,7 +140,113 @@ class KayitViewController: UIViewController {
         
     }
     
+}
+
+//MARK: - Güvenlik Kontrol fonksiyonları
+extension KayitViewController{
     
+    func kayitVerileriniAl(emailTF:UITextField,sifreTF:UITextField,sifreTkrTF:UITextField){
+        
+        if let mail = emailTF.text, let sifre = sifreTF.text, let sifreTkr = sifreTkrTF.text{
+            
+            //firebase
+
+            let check1 = alınanMailGuv(mail: mail)
+            let check2 = alınanSifreGuv(sifre: sifre)
+            
+            if check1 == true && check2 == true && sifre==sifreTkr{
+                
+                
+                print("hesap oluşturuldu yeğen")
+            }else{
+                
+                bilgilerYanlisAlert()
+            }
+            
+        }else{
+            
+            bosAlanHatası()
+            
+        }
+        
+        
+        
+    }
+    
+    func alınanMailGuv(mail:String)->Bool{
+        
+        
+        let range = mail.index(mail.endIndex,offsetBy:-10) ..< mail.endIndex
+        let arraySlicer = mail[range]
+        let newArray = Array(arraySlicer)
+        
+        if newArray == K.gmailCheck{
+            
+            print("hesap gmail")
+            return true
+        }else{
+            print("hesap gmail değil")
+            return false
+        }
+        
+    }
+    
+    func alınanSifreGuv(sifre:String)->Bool{
+        
+        //regular expression temelli sifre kontrolü( özel karakter,8 karakter,bir büyük harf ve bir sayı)
+        let password = NSPredicate(format: "SELF MATCHES %@ ", "^(?=.*[a-z])(?=.*[.,$@$#!%*?&])(?=.*[0-9])(?=.*[A-Z]).{8,}$")
+        
+        return password.evaluate(with: sifre)
+        
+    }
 }
 
 
+//MARK: - OBJ-c trigger ve alert fonksiyonları fonksiyonları
+extension KayitViewController{
+    
+    
+    @objc func hesapGuvAlert(){
+        
+        let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.hesapGuv, preferredStyle: .alert)
+        
+        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
+        
+        alertController.addAction(tamamButton)
+        
+        self.present(alertController, animated: true)
+        
+    }
+    
+    func bilgilerYanlisAlert(){
+        
+        let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.guvHata, preferredStyle: .alert)
+        
+        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
+        
+        alertController.addAction(tamamButton)
+        
+        self.present(alertController, animated: true)
+        
+    }
+    
+    func bosAlanHatası(){
+        
+        let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.bosAlanHata, preferredStyle: .alert)
+        
+        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
+        
+        alertController.addAction(tamamButton)
+        
+        self.present(alertController, animated: true)
+        
+    }
+    
+}
+
+//MARK: - TextField Protocol Fonksiyonları
+extension KayitViewController:UITextFieldDelegate{
+    
+    
+    
+}

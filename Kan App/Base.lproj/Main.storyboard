@@ -431,33 +431,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rz8-w5-kOi">
-                                <rect key="frame" x="16" y="768" width="361" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Kayıt Ol" backgroundImage="button_rect_1"/>
-                                <connections>
-                                    <action selector="girisButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tA6-l1-nUg"/>
-                                    <action selector="kayitOlButtonPressed:" destination="Brl-h9-K0E" eventType="touchUpInside" id="LL3-nU-hyc"/>
-                                </connections>
-                            </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cK8-aG-4tM">
-                                <rect key="frame" x="324" y="646" width="49" height="31"/>
+                                <rect key="frame" x="324" y="554" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="KKSwitchToggled:" destination="Brl-h9-K0E" eventType="valueChanged" id="bCj-fY-4hV"/>
                                 </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z0e-o0-Wfo">
-                                <rect key="frame" x="324" y="705" width="49" height="31"/>
+                                <rect key="frame" x="324" y="613" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="gizlilikSwitchToggled:" destination="Brl-h9-K0E" eventType="valueChanged" id="Ukd-7t-ikP"/>
                                 </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gkd-bR-E3n">
-                                <rect key="frame" x="22" y="646" width="294" height="35"/>
+                                <rect key="frame" x="22" y="554" width="294" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Kullanım Koşulları">
@@ -468,7 +457,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsq-s6-9JX">
-                                <rect key="frame" x="22" y="701" width="294" height="35"/>
+                                <rect key="frame" x="22" y="609" width="294" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Gizlilik">
@@ -512,6 +501,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rz8-w5-kOi">
+                                <rect key="frame" x="16" y="768" width="361" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Kayıt Ol" backgroundImage="button_rect_1"/>
+                                <connections>
+                                    <action selector="girisButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tA6-l1-nUg"/>
+                                    <action selector="kayitOlButtonPressed:" destination="Brl-h9-K0E" eventType="touchUpInside" id="LL3-nU-hyc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fpR-9C-1SH"/>
                         <color key="backgroundColor" red="1" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -655,7 +655,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4hv-A6-9aI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1837" y="-785"/>
+            <point key="canvasLocation" x="1835.8778625954199" y="-785.21126760563379"/>
         </scene>
         <!--SifreYen VC-->
         <scene sceneID="xW8-op-aVw">

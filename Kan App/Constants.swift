@@ -24,4 +24,10 @@ struct K{
         
     }
     
+    static let hesapGuv:String = "Mail adresiniz \"@gmail\" olmalıdır.\nŞifreniz en az 8 karakter olmalıdır ayrıca en az bir büyük harf, küçük harf, sayı ve .,$@$#!%*?& içermelidir"
+    
+    static let guvHata:String = "Lütfen hesap bilgilerinizi kontrol ediniz.Gereksinimler için soru işaretine tıklayabilirsiniz."
+    
+    static let bosAlanHata:String = "Boş alan bırakılamaz!"
+    static let gmailCheck:[Substring.Element] = ["@", "g", "m", "a", "i", "l", ".", "c", "o", "m"]
 }
