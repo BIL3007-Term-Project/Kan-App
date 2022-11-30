@@ -32,19 +32,41 @@ class KayitViewController: UIViewController {
     
     @IBOutlet weak var questionMarkButton: UIBarButtonItem!
     
+    var mailGlobalCheck:Bool = false
+    var sifreGlobalCheck:Bool = false
+    var sifreTekGlobalCheck:Bool = false
+    var kayitCheck:Bool = false
+    
+    
 //    MARK: - iOS Cycle fonskiyonları
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        kayitOlButton.alpha = 0
 
+        kayitOlButton.alpha = 0 // başlangıçta buton gözükmüyor
+
+        //textfield klavye düzenlemeleri
         emailTextField.autocorrectionType = .no
         emailTextField.autocapitalizationType = .none
+        emailTextField.keyboardType = .default
+        emailTextField.returnKeyType = .done
         sifreTextField.autocorrectionType = .no
         sifreTextField.autocapitalizationType = .none
+        sifreTextField.keyboardType = .default
+        sifreTextField.returnKeyType = .done
         sifreTekTextField.autocorrectionType = .no
         sifreTekTextField.autocapitalizationType = .none
+        sifreTekTextField.keyboardType = .default
+        sifreTekTextField.returnKeyType = .done
         
+        sifreTextField.isSecureTextEntry = true
+        sifreTekTextField.isSecureTextEntry = true
+        //protocol bağlantısı
+        emailTextField.delegate = self
+        sifreTextField.delegate = self
+        sifreTekTextField.delegate = self
+        
+        //stwitch'ler başlangıçta kapalı durumdadır.
         KKSwitch.isOn = false
         gizlilikSwitch.isOn = false
         
@@ -75,6 +97,7 @@ class KayitViewController: UIViewController {
 
     @IBAction func KKSwitchToggled(_ sender: UISwitch) {
         
+        //switch'e tıklayınca iki switch in true olmasına göre kayıt ol butonu görünür olacak.
         if sender.isOn{
             if gizlilikSwitch.isOn{
                 UIView.animate(withDuration: 1, animations: {
@@ -95,6 +118,7 @@ class KayitViewController: UIViewController {
     
     @IBAction func gizlilikSwitchToggled(_ sender: UISwitch) {
         
+        //switch'e tıklayınca iki switch in true olmasına göre kayıt ol butonu görünür olacak.
         if sender.isOn{
             if KKSwitch.isOn{
                 UIView.animate(withDuration: 1, animations: {
@@ -115,20 +139,14 @@ class KayitViewController: UIViewController {
                          
     
     @IBAction func kayitOlButtonPressed(_ sender: Any) {
-        
-        if KKSwitch.isOn && gizlilikSwitch.isOn{
-            
-            self.kayitOlButton.isEnabled = true
-        }
-        
-        
+    
         kayitVerileriniAl(emailTF: emailTextField, sifreTF: sifreTextField, sifreTkrTF: sifreTekTextField)
 //        performSegue(withIdentifier: K.kToMain, sender: nil)
         
     }
     
     
-    @IBAction func questionMarkPressed(_ sender: UIBarButtonItem) {
+    @IBAction func questionMarkPressed(_ sender: UIBarButtonItem) {//ekranın sag üst kösesindeki soru isareti fonksiyonu
         
         let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.hesapGuv, preferredStyle: .alert)
         
@@ -147,29 +165,45 @@ extension KayitViewController{
     
     func kayitVerileriniAl(emailTF:UITextField,sifreTF:UITextField,sifreTkrTF:UITextField){
         
+    
         if let mail = emailTF.text, let sifre = sifreTF.text, let sifreTkr = sifreTkrTF.text{
             
-            //firebase
 
-            let check1 = alınanMailGuv(mail: mail)
-            let check2 = alınanSifreGuv(sifre: sifre)
+//            let check1 = alınanMailGuv(mail: mail)
+//            let check2 = alınanSifreGuv(sifre: sifre)
             
-            if check1 == true && check2 == true && sifre==sifreTkr{
+            
+            if mailGlobalCheck == true && sifreGlobalCheck == true && sifreTekGlobalCheck == true{
+                // Tf içerikleri artık dolu olduğu kesindir.1.asama güvenlik
                 
-                
-                print("hesap oluşturuldu yeğen")
+                let check1 = alınanMailGuv(mail: mail)
+                let check2 = alınanSifreGuv(sifre: sifre)
+                if check1 == true && check2 == true && sifre == sifreTkr{
+                    //2.asama güvenlik
+                    //mail ve sifre istenen özelliklere sahip ayrıca sifre ile sifre tekrarı bir eşit.
+                    
+//                    kayitOlButton.isEnabled = true // buton aktif artık kayıt ol butonuna basılabilir
+                    
+                    print("hesap oluşturulabilir knk")
+                    
+                    
+                }else{
+                    
+                    bilgilerYanlisAlert()
+                    
+                }
             }else{
                 
-                bilgilerYanlisAlert()
+                bosAlanHatası()
             }
+            
             
         }else{
             
             bosAlanHatası()
+//
             
         }
-        
-        
         
     }
     
@@ -245,8 +279,154 @@ extension KayitViewController{
 }
 
 //MARK: - TextField Protocol Fonksiyonları
+
+
 extension KayitViewController:UITextFieldDelegate{
     
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        
+        if textField == emailTextField{
+            
+            textField.placeholder = "Email"
+        }
+        else if textField == sifreTextField{
+            
+            textField.placeholder = "Sifre"
+        }
+        else if textField == sifreTekTextField{
+            
+            textField.placeholder = "Sifreyi Tekrarla"
+        }
+        
+        return true
+    }//TFShouldBeginEditing sonu
     
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        
+        if textField == emailTextField{
+            
+            if textField.text == ""{
+                
+                emailTextField.placeholder = "Email"
+            }
+
+        }
+        else if textField == sifreTextField{
+            
+            if textField.text == ""{
+                
+                sifreTextField.placeholder = "Sifre"
+            }
+        }
+        else if textField == sifreTekTextField{
+            
+            if textField.text == ""{
+                
+                sifreTekTextField.placeholder = "Sifreyi Tekrarlab"
+            }
+        }
+        
+        return true
+        
+    }//TFShouldEndEditing sonu
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        
+        if textField == emailTextField{
+            
+            if let mailSayi = textField.text?.count{
+                
+                if mailSayi > 11 && mailSayi < 30{
+                    mailGlobalCheck = true
+                    print("mail1.asama :\(mailGlobalCheck)")
+                    print("mail 11 haneden büyük 30 dan küçük istenen aralıkta")
+                    
+                }
+                else if mailSayi == 0{
+                    mailGlobalCheck = false
+                    print("mail1.asama :\(mailGlobalCheck)")
+                    emailTextField.text = ""
+                    emailTextField.placeholder = "Email"
+                    
+                    print("mail boş bırakıldı")
+                }
+                else{
+                    mailGlobalCheck = false
+                    print("mail1.asama :\(mailGlobalCheck)")
+                    emailTextField.text = ""
+                    emailTextField.placeholder = "Email"
+                    
+                    print("mail istenen aralıkta değil")
+                }
+                
+            }
+        }//emailTF check sonu
+        else if textField == sifreTextField{
+            
+            if let sifreSayi = textField.text?.count{
+                
+                if sifreSayi > 0 && sifreSayi < 15{
+                    
+                    sifreGlobalCheck = true
+                    print("sifre1.asama :\(sifreGlobalCheck)")
+                    print("sifre 0-15 aralıgında")
+                }
+                else if sifreSayi == 0{
+                    sifreGlobalCheck = false
+                    print("sifre1.asama :\(sifreGlobalCheck)")
+                    sifreTextField.text = ""
+                    sifreTextField.placeholder = "Sifre"
+                    print("sifre bos")
+                }
+                else{
+                    
+                    sifreGlobalCheck = false
+                    print("sifre1.asama :\(sifreGlobalCheck)")
+                    sifreTextField.text = ""
+                    sifreTextField.placeholder = "Sifre"
+                    print("sifre istenen aralıkta değil")
+                }
+            }
+            
+        }//sifreTF check sonu
+        else if textField == sifreTekTextField{
+            
+            if let sifreTekSayi = textField.text?.count{
+                
+                if sifreTekSayi > 0 && sifreTekSayi < 15{
+                    
+                    sifreTekGlobalCheck = true
+                    print("sifretek1.asama :\(sifreTekGlobalCheck)")
+                    print("sifre  tekrar 0-15 aralıgında")
+                }
+                else if sifreTekSayi == 0{
+                    sifreTekGlobalCheck = false
+                    print("sifretek1.asama :\(sifreTekGlobalCheck)")
+                    sifreTekTextField.text = ""
+                    sifreTekTextField.placeholder = "Sifre"
+                    print("sifre terar bos")
+                }
+                else{
+                    
+                    sifreTekGlobalCheck = false
+                    print("sifretek1.asama :\(sifreTekGlobalCheck)")
+                    sifreTekTextField.text = ""
+                    sifreTekTextField.placeholder = "Sifre"
+                    print("sifre tekrar istenen aralıkta değil")
+                }
+                
+            }
+        }//sifreTF checksonu
+        
+        
+        
+        
+    }//TFDidEndEditing sonu
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        view.endEditing(true)
+    }//TFShouldReturn Sonu
     
 }

@@ -24,7 +24,7 @@ struct K{
         
     }
     
-    static let hesapGuv:String = "Mail adresiniz \"@gmail\" olmalıdır.\nŞifreniz en az 8 karakter olmalıdır ayrıca en az bir büyük harf, küçük harf, sayı ve .,$@$#!%*?& içermelidir"
+    static let hesapGuv:String = "Mail adresiniz \"@gmail.com\" uzantılı olmalıdır.\nŞifreniz 8-15 karakter aralığında olmalıdır.Ayrıca sifreniz en az bir büyük harf, küçük harf, sayı ve .,$@$#!%*?& içermelidir"
     
     static let guvHata:String = "Lütfen hesap bilgilerinizi kontrol ediniz.Gereksinimler için soru işaretine tıklayabilirsiniz."
     

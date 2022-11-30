@@ -183,22 +183,6 @@ extension KisiselViewController:UITextFieldDelegate{
                 
                 adTextField.placeholder = "Ad"
             }
-            
-//            if let adSayı = textField.text?.count{
-//
-//                if (adSayı < 40){
-//
-//                    print("tamamdır.")
-//
-//                    //tik kontrolü
-//                }
-//                else if (adSayı > 40){
-//
-//
-//                    textField.placeholder = "Girilen ad 40 karakteri aşıyor."
-//                    textField.text = ""
-//                }
-//            }
 
         }
         else if textField == soyadTextField{
