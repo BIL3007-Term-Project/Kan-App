@@ -59,8 +59,8 @@ class KayitViewController: UIViewController {
         sifreTekTextField.keyboardType = .default
         sifreTekTextField.returnKeyType = .done
         
-        sifreTextField.isSecureTextEntry = true
-        sifreTekTextField.isSecureTextEntry = true
+//        sifreTextField.isSecureTextEntry = true
+//        sifreTekTextField.isSecureTextEntry = true
         //protocol bağlantısı
         emailTextField.delegate = self
         sifreTextField.delegate = self
@@ -168,7 +168,6 @@ extension KayitViewController{
     
         if let mail = emailTF.text, let sifre = sifreTF.text, let sifreTkr = sifreTkrTF.text{
             
-
 //            let check1 = alınanMailGuv(mail: mail)
 //            let check2 = alınanSifreGuv(sifre: sifre)
             
@@ -181,7 +180,7 @@ extension KayitViewController{
                 if check1 == true && check2 == true && sifre == sifreTkr{
                     //2.asama güvenlik
                     //mail ve sifre istenen özelliklere sahip ayrıca sifre ile sifre tekrarı bir eşit.
-                    
+                    performSegue(withIdentifier: K.kToMain, sender: nil)
 //                    kayitOlButton.isEnabled = true // buton aktif artık kayıt ol butonuna basılabilir
                     
                     print("hesap oluşturulabilir knk")

@@ -376,7 +376,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="r4s-Y3-aNw"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Kişisel Bilgiler" id="VE0-Be-9jV"/>
                     <connections>
@@ -545,6 +545,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Okudum" backgroundImage="button_rect_1"/>
                                 <connections>
+                                    <action selector="KKButtonPressed:" destination="6ZC-NG-lEx" eventType="touchUpInside" id="msI-fr-pAn"/>
                                     <action selector="girisButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Xr-nf-M4o"/>
                                     <action selector="kayitOlButtonPressed:" destination="Brl-h9-K0E" eventType="touchUpInside" id="Opq-d1-qVG"/>
                                 </connections>
@@ -570,6 +571,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="KKButton" destination="mRu-v9-N5B" id="4B2-2E-W5a"/>
                         <outlet property="kullanimKosLabel" destination="jka-2z-GuS" id="UPC-Ds-XB7"/>
                         <outlet property="kullanimKosTextview" destination="cLC-RL-fYf" id="KFi-he-MuE"/>
                     </connections>
@@ -594,6 +596,7 @@
                                 <state key="normal" title="Okudum" backgroundImage="button_rect_1"/>
                                 <connections>
                                     <action selector="girisButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TvD-vA-wfv"/>
+                                    <action selector="gizlilikButtonPressed:" destination="fcR-oB-bDo" eventType="touchUpInside" id="Pys-p8-Bar"/>
                                     <action selector="kayitOlButtonPressed:" destination="Brl-h9-K0E" eventType="touchUpInside" id="obh-aU-lMM"/>
                                 </connections>
                             </button>
@@ -618,6 +621,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="gizlilikButton" destination="PQK-cg-jlQ" id="g70-zu-RDY"/>
                         <outlet property="gizlilikLabel" destination="5Lm-4o-5RE" id="rV0-i1-Egx"/>
                         <outlet property="gizlilikTextView" destination="Dvt-dl-l43" id="0sG-oc-hQ2"/>
                     </connections>
@@ -786,6 +790,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

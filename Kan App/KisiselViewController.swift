@@ -49,7 +49,7 @@ class KisiselViewController: UIViewController {
     var kanGrupPicker = UIPickerView()
     
     //Picker Buton toolbar
-    
+    var tcToolbar = UIToolbar()
     var dgToolbar = UIToolbar()
     var kiloToolbar = UIToolbar()
     var boyToolbar = UIToolbar()
@@ -93,7 +93,9 @@ class KisiselViewController: UIViewController {
         soyadTextField.autocorrectionType = .no
         soyadTextField.autocapitalizationType = .none
         tcTextField.keyboardType = .numberPad
+        tcTextField.returnKeyType = .done
         
+        tcToolbarYukle(toolbar: tcToolbar)
         
         dgPickerYukle()
         dgToolbarYukle(toolbar: dgToolbar)
@@ -446,12 +448,32 @@ extension KisiselViewController{
         kanGrupTextField.inputView = kanGrupPicker
     }
     
-    func dgToolbarYukle(toolbar:UIToolbar){
+    func tcToolbarYukle(toolbar:UIToolbar){
         
-        toolbar.backgroundColor = UIColor(rgb:0xFEFCF3)
+        
+        toolbar.isOpaque = false
         toolbar.tintColor = .black
         toolbar.sizeToFit()
+        toolbar.isTranslucent = true
+        toolbar.isOpaque = true
         
+        let tamamButton = UIBarButtonItem(title: "Tamam", style: .plain, target: self, action: #selector(self.tcTamamMetodu))
+        
+        let bosluk = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        
+        toolbar.setItems([bosluk,tamamButton], animated: true)
+        
+        tcTextField.inputAccessoryView = toolbar
+    }
+    
+    func dgToolbarYukle(toolbar:UIToolbar){
+        
+        
+        toolbar.tintColor = .black
+        toolbar.sizeToFit()
+        toolbar.isTranslucent = true
+        toolbar.isOpaque = true
         let tamamButton = UIBarButtonItem(title: "Tamam", style: .plain, target: self, action: #selector(self.dgTamamMetodu))
         
         let bosluk = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
@@ -465,10 +487,11 @@ extension KisiselViewController{
     
     func kiloToolbarYukle(toolbar:UIToolbar){
         
-        toolbar.backgroundColor = UIColor(rgb:0xFEFCF3)
+        
         toolbar.tintColor = .black
         toolbar.sizeToFit()
-        
+        toolbar.isTranslucent = true
+        toolbar.isOpaque = true
         let tamamButton = UIBarButtonItem(title: "Tamam", style: .plain, target: self, action: #selector(self.kiloTamamMetodu))
         
         let bosluk = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
@@ -482,10 +505,11 @@ extension KisiselViewController{
     
     func boyToolbarYukle(toolbar:UIToolbar){
         
-        toolbar.backgroundColor = UIColor(rgb:0xFEFCF3)
+       
         toolbar.tintColor = .black
         toolbar.sizeToFit()
-        
+        toolbar.isTranslucent = true
+        toolbar.isOpaque = true
         let tamamButton = UIBarButtonItem(title: "Tamam", style: .plain, target: self, action: #selector(self.boyTamamMetodu))
         
         let bosluk = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
@@ -499,10 +523,11 @@ extension KisiselViewController{
     
     func cinsiyetToolbarYukle(toolbar:UIToolbar){
         
-        toolbar.backgroundColor = UIColor(rgb:0xFEFCF3)
+        
         toolbar.tintColor = .black
         toolbar.sizeToFit()
-        
+        toolbar.isTranslucent = true
+        toolbar.isOpaque = true
         let tamamButton = UIBarButtonItem(title: "Tamam", style: .plain, target: self, action: #selector(self.cinsiyetTamamMetodu))
         
         let bosluk = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
@@ -516,10 +541,10 @@ extension KisiselViewController{
     
     func KanToolbarYukle(toolbar:UIToolbar){
         
-        toolbar.backgroundColor = UIColor(rgb:0xFEFCF3)
         toolbar.tintColor = .black
         toolbar.sizeToFit()
-        
+        toolbar.isTranslucent = true
+        toolbar.isOpaque = true
         let tamamButton = UIBarButtonItem(title: "Tamam", style: .plain, target: self, action: #selector(self.kanTamamMetodu))
         
         let bosluk = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
@@ -543,6 +568,14 @@ extension KisiselViewController{
             
             self.dgCheckImageView.alpha = 1
         })
+    }
+    
+    @objc func tcTamamMetodu(){
+//        UIView.animate(withDuration: 0.5, animations: {
+//
+//            self.kiloCheckImageView.alpha = 1
+//        })
+        view.endEditing(true)
     }
     
     @objc func dgTamamMetodu(){
