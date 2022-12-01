@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		053359E5293696A3000B2DDF /* Kisi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053359E4293696A3000B2DDF /* Kisi.swift */; };
 		0570FA652935758600A36270 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570FA642935758600A36270 /* UIColorExt.swift */; };
+		058660CC2938BB3800EA4313 /* GizlilikViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058660CB2938BB3800EA4313 /* GizlilikViewController.swift */; };
+		058660CE2938BB4F00EA4313 /* KullanimKosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058660CD2938BB4F00EA4313 /* KullanimKosViewController.swift */; };
 		059C8FDC2935599900AE456D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059C8FDB2935599900AE456D /* AppDelegate.swift */; };
 		059C8FDE2935599900AE456D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059C8FDD2935599900AE456D /* SceneDelegate.swift */; };
 		059C8FE02935599A00AE456D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059C8FDF2935599A00AE456D /* ViewController.swift */; };
@@ -49,6 +51,8 @@
 /* Begin PBXFileReference section */
 		053359E4293696A3000B2DDF /* Kisi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kisi.swift; sourceTree = "<group>"; };
 		0570FA642935758600A36270 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
+		058660CB2938BB3800EA4313 /* GizlilikViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GizlilikViewController.swift; sourceTree = "<group>"; };
+		058660CD2938BB4F00EA4313 /* KullanimKosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KullanimKosViewController.swift; sourceTree = "<group>"; };
 		059C8FD82935599900AE456D /* Kan App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kan App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		059C8FDB2935599900AE456D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		059C8FDD2935599900AE456D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 				05CBC2182935868500184140 /* UILabelExt.swift */,
 				05CBC21A29358DBD00184140 /* YasalTableViewCell.swift */,
 				053359E4293696A3000B2DDF /* Kisi.swift */,
+				058660CB2938BB3800EA4313 /* GizlilikViewController.swift */,
+				058660CD2938BB4F00EA4313 /* KullanimKosViewController.swift */,
 			);
 			path = "Kan App";
 			sourceTree = "<group>";
@@ -294,8 +300,10 @@
 				059C8FE02935599A00AE456D /* ViewController.swift in Sources */,
 				059C8FDC2935599900AE456D /* AppDelegate.swift in Sources */,
 				05B4578C29356052007E89D0 /* KisiselViewController.swift in Sources */,
+				058660CE2938BB4F00EA4313 /* KullanimKosViewController.swift in Sources */,
 				05B457862935603A007E89D0 /* SSSViewController.swift in Sources */,
 				05B4578A2935604C007E89D0 /* YasalViewController.swift in Sources */,
+				058660CC2938BB3800EA4313 /* GizlilikViewController.swift in Sources */,
 				05B457942935613D007E89D0 /* Constants.swift in Sources */,
 				05CBC21B29358DBD00184140 /* YasalTableViewCell.swift in Sources */,
 				05B457922935609C007E89D0 /* KayitViewController.swift in Sources */,

@@ -1,23 +1,23 @@
 //
-//  SSSViewController.swift
+//  GizlilikViewController.swift
 //  Kan App
 //
-//  Created by Hüdahan Altun on 29.11.2022.
+//  Created by Hüdahan Altun on 1.12.2022.
 //
 
 import UIKit
 
-class SSSViewController: UIViewController {
+class GizlilikViewController: UIViewController {
 
-    @IBOutlet weak var SSSLabel: UILabel!
+    @IBOutlet weak var gizlilikLabel: UILabel!
     
-    
-    @IBOutlet weak var SSSTextView: UITextView!
+    @IBOutlet weak var gizlilikTextView: UITextView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Do any additional setup after loading the view.
     }
     
 

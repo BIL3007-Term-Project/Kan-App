@@ -12,15 +12,14 @@ class YasalViewController: UIViewController {
    
     @IBOutlet weak var okudumAnladimButton: UIButton!
     
-    @IBOutlet weak var yasalTableView: UITableView!
     
     @IBOutlet weak var yasalProgressView: UIProgressView!
     
+    @IBOutlet weak var yasalUyarıTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        yasalTableView.delegate = self
-        yasalTableView.dataSource = self
+        yasalUyarıTextView.isEditable = false // textView düzenlemesi yasaklandı.
         
         yasalProgressView.progress = 0
         
@@ -37,26 +36,4 @@ class YasalViewController: UIViewController {
     }
     
 
-}
-
-extension YasalViewController:UITableViewDelegate,UITableViewDataSource{
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier:K.Cell.yCell ,for:indexPath ) as! YasalTableViewCell
-        
-        cell.yasalLabel.text = ""
-        
-        return cell
-    }
 }

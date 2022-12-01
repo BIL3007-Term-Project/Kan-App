@@ -10,6 +10,7 @@ import Foundation
 
 struct K{
     
+    //segue identifier
     static let gToSifre:String = "girisToSifreYen"
     static let gToYasal:String = "girisToYasal"
     static let yToKisi:String = "yasalToKisisel"
@@ -17,17 +18,20 @@ struct K{
     static let kToMain:String = "kayitToMain"
     static let gToMain:String = "girisToMain"
     
-    
-    struct Cell{
-        
-        static let yCell:String = "yasalCell"
-        
-    }
-    
+
+    //kayitVC güvenlik check
     static let hesapGuv:String = "Mail adresiniz \"@gmail.com\" uzantılı olmalıdır.\nŞifreniz 8-15 karakter aralığında olmalıdır.Ayrıca sifreniz en az bir büyük harf, küçük harf, sayı ve .,$@$#!%*?& içermelidir"
     
     static let guvHata:String = "Lütfen hesap bilgilerinizi kontrol ediniz.Gereksinimler için soru işaretine tıklayabilirsiniz."
     
     static let bosAlanHata:String = "Boş alan bırakılamaz!"
     static let gmailCheck:[Substring.Element] = ["@", "g", "m", "a", "i", "l", ".", "c", "o", "m"]
+    
+    
+    //yasalVC için Yasal Uyarı,KKVC için kullanım kosulları,gizlilikVC için gizlilik koşulları.
+    
+    static let yasalUyari:String = ""
+    static let kullanimKosullari:String = ""
+    static let gizlilikKosullari:String = ""
+   
 }

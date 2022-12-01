@@ -1,23 +1,22 @@
 //
-//  SSSViewController.swift
+//  KullanimKosViewController.swift
 //  Kan App
 //
-//  Created by Hüdahan Altun on 29.11.2022.
+//  Created by Hüdahan Altun on 1.12.2022.
 //
 
 import UIKit
 
-class SSSViewController: UIViewController {
+class KullanimKosViewController: UIViewController {
 
-    @IBOutlet weak var SSSLabel: UILabel!
+    @IBOutlet weak var kullanimKosLabel: UILabel!
     
     
-    @IBOutlet weak var SSSTextView: UITextView!
-    
-    
+    @IBOutlet weak var kullanimKosTextview: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Do any additional setup after loading the view.
     }
     
 
