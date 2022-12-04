@@ -146,6 +146,7 @@ class KisiselViewController: UIViewController {
 
     @IBAction func ileriKButtonPressed(_ sender: UIButton) {
         
+//        self.performSegue(withIdentifier: K.kToKayit, sender: nil)
         
         if adCheck == true && soyadCheck == true && tcCheck == true && kiloCheck == true && boyCheck == true && cinsiyetCheck == true && kanCheck == true && dgCheck == true{
             
@@ -403,7 +404,7 @@ extension KisiselViewController{
     
     func dgPickerYukle(){
         
-        if #available(İOS 13.4,*){
+        if #available(iOS 13.4,*){
             
             dgDatePicker.preferredDatePickerStyle = .wheels
         }

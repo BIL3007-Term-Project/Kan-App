@@ -22,6 +22,8 @@ class KullanimKosViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func KKButtonPressed(_ sender: Any) {
+        
+        self.dismiss(animated: true,completion: nil)
     }
     
 }
