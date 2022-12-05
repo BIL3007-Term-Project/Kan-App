@@ -1,21 +1,29 @@
 //
-//  MainViewController.swift
+//  BagisViewController.swift
 //  Kan App
 //
-//  Created by Hüdahan Altun on 29.11.2022.
+//  Created by Hüdahan Altun on 5.12.2022.
 //
 
 import UIKit
 
-class MainViewController: UIViewController {
+class BagisViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.tabBarController?.navigationItem.hidesBackButton = true
+        navigationItem.hidesBackButton = true
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        
+        navigationItem.hidesBackButton = true
+    }
+    @IBAction func bagisButtonPressed(_ sender: Any) {
+        
+        performSegue(withIdentifier: "bagisToKan", sender: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

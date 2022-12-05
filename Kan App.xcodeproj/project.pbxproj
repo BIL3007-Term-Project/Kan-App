@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		053359E5293696A3000B2DDF /* Kisi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053359E4293696A3000B2DDF /* Kisi.swift */; };
 		0570FA652935758600A36270 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570FA642935758600A36270 /* UIColorExt.swift */; };
+		057AA88B293E7C2D00C11524 /* HaritaAcilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057AA88A293E7C2D00C11524 /* HaritaAcilViewController.swift */; };
+		057AA88D293E7FAF00C11524 /* BagisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057AA88C293E7FAF00C11524 /* BagisViewController.swift */; };
 		058660CC2938BB3800EA4313 /* GizlilikViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058660CB2938BB3800EA4313 /* GizlilikViewController.swift */; };
 		058660CE2938BB4F00EA4313 /* KullanimKosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058660CD2938BB4F00EA4313 /* KullanimKosViewController.swift */; };
 		059C8FDC2935599900AE456D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059C8FDB2935599900AE456D /* AppDelegate.swift */; };
@@ -50,6 +52,8 @@
 /* Begin PBXFileReference section */
 		053359E4293696A3000B2DDF /* Kisi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kisi.swift; sourceTree = "<group>"; };
 		0570FA642935758600A36270 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
+		057AA88A293E7C2D00C11524 /* HaritaAcilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaritaAcilViewController.swift; sourceTree = "<group>"; };
+		057AA88C293E7FAF00C11524 /* BagisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagisViewController.swift; sourceTree = "<group>"; };
 		058660CB2938BB3800EA4313 /* GizlilikViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GizlilikViewController.swift; sourceTree = "<group>"; };
 		058660CD2938BB4F00EA4313 /* KullanimKosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KullanimKosViewController.swift; sourceTree = "<group>"; };
 		059C8FD82935599900AE456D /* Kan App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kan App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +146,8 @@
 				053359E4293696A3000B2DDF /* Kisi.swift */,
 				058660CB2938BB3800EA4313 /* GizlilikViewController.swift */,
 				058660CD2938BB4F00EA4313 /* KullanimKosViewController.swift */,
+				057AA88A293E7C2D00C11524 /* HaritaAcilViewController.swift */,
+				057AA88C293E7FAF00C11524 /* BagisViewController.swift */,
 			);
 			path = "Kan App";
 			sourceTree = "<group>";
@@ -294,6 +300,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				057AA88D293E7FAF00C11524 /* BagisViewController.swift in Sources */,
+				057AA88B293E7C2D00C11524 /* HaritaAcilViewController.swift in Sources */,
 				059C8FE02935599A00AE456D /* ViewController.swift in Sources */,
 				059C8FDC2935599900AE456D /* AppDelegate.swift in Sources */,
 				05B4578C29356052007E89D0 /* KisiselViewController.swift in Sources */,

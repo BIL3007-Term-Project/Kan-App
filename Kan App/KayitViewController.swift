@@ -167,11 +167,7 @@ extension KayitViewController{
         
     
         if let mail = emailTF.text, let sifre = sifreTF.text, let sifreTkr = sifreTkrTF.text{
-            
-//            let check1 = alınanMailGuv(mail: mail)
-//            let check2 = alınanSifreGuv(sifre: sifre)
-            
-            
+
             if mailGlobalCheck == true && sifreGlobalCheck == true && sifreTekGlobalCheck == true{
                 // Tf içerikleri artık dolu olduğu kesindir.1.asama güvenlik
                 
@@ -181,9 +177,10 @@ extension KayitViewController{
                     //2.asama güvenlik
                     //mail ve sifre istenen özelliklere sahip ayrıca sifre ile sifre tekrarı bir eşit.
                     performSegue(withIdentifier: K.kToMain, sender: nil)
+                    
 //                    kayitOlButton.isEnabled = true // buton aktif artık kayıt ol butonuna basılabilir
                     
-                    print("hesap oluşturulabilir knk")
+                    print("diğer sayfaya güvenli gecis")
                     
                     
                 }else{

@@ -17,8 +17,13 @@ struct K{
     static let kToKayit:String = "kisiseltoKayit"
     static let kToMain:String = "kayitToMain"
     static let gToMain:String = "girisToMain"
+    static let bToKan:String = "bagisToKan"
+    static let bToOrgan:String = "bagisToOrgan"
+    static let bToKok:String = "bagisToKok"
+    static let bToKemik:String = "bagisToKemik"
     
-
+    
+    
     //kayitVC güvenlik check
     static let hesapGuv:String = "Mail adresiniz \"@gmail.com\" uzantılı olmalıdır.\nŞifreniz 8-15 karakter aralığında olmalıdır.Ayrıca sifreniz en az bir büyük harf, küçük harf, sayı ve .,$@$#!%*?& içermelidir"
     
