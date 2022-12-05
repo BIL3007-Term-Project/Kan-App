@@ -106,6 +106,9 @@ class KisiselViewController: UIViewController {
         tcTextField.keyboardType = .numberPad
         tcTextField.returnKeyType = .done
         
+        
+        sehirTextField.isEnabled = false
+        ilceTextField.isEnabled = false
         tcToolbarYukle(toolbar: tcToolbar)
         
         dgPickerYukle()

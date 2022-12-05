@@ -19,11 +19,7 @@ class BagisViewController: UIViewController {
         
         navigationItem.hidesBackButton = true
     }
-    @IBAction func bagisButtonPressed(_ sender: Any) {
-        
-        performSegue(withIdentifier: "bagisToKan", sender: nil)
-    }
-    
+   
     /*
     // MARK: - Navigation
 

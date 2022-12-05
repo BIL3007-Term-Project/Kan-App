@@ -32,6 +32,8 @@ class KayitViewController: UIViewController {
     
     @IBOutlet weak var questionMarkButton: UIBarButtonItem!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     var mailGlobalCheck:Bool = false
     var sifreGlobalCheck:Bool = false
     var sifreTekGlobalCheck:Bool = false
@@ -43,6 +45,7 @@ class KayitViewController: UIViewController {
         super.viewDidLoad()
 
 
+        activityIndicator.alpha = 0
         kayitOlButton.alpha = 0 // başlangıçta buton gözükmüyor
 
         //textfield klavye düzenlemeleri
@@ -87,11 +90,17 @@ class KayitViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
+        activityIndicator.alpha = 0
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(hesapGuvAlert), userInfo: nil, repeats: false)
         
     }
     
 
+    override func viewDidDisappear(_ animated: Bool) {
+        
+        activityIndicator.stopAnimating()
+        activityIndicator.alpha = 0
+    }
 //MARK: - IBAction fonksiyonları
     
 
@@ -176,8 +185,17 @@ extension KayitViewController{
                 if check1 == true && check2 == true && sifre == sifreTkr{
                     //2.asama güvenlik
                     //mail ve sifre istenen özelliklere sahip ayrıca sifre ile sifre tekrarı bir eşit.
-                    performSegue(withIdentifier: K.kToMain, sender: nil)
                     
+                    DispatchQueue.main.async {
+                        self.activityIndicator.alpha = 1
+                        self.activityIndicator.startAnimating()
+                    }
+                    
+                    Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(gecisYap), userInfo: nil, repeats: false)
+                    
+//                    self.performSegue(withIdentifier: K.kToMain, sender: nil)
+                    
+                   
 //                    kayitOlButton.isEnabled = true // buton aktif artık kayıt ol butonuna basılabilir
                     
                     print("diğer sayfaya güvenli gecis")
@@ -203,6 +221,11 @@ extension KayitViewController{
         
     }
     
+    @objc func gecisYap(){
+        
+        self.performSegue(withIdentifier: K.kToMain, sender: nil)
+       
+    }
     func alınanMailGuv(mail:String)->Bool{
         
         
