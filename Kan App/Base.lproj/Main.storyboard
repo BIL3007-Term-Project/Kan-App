@@ -645,26 +645,10 @@
             </objects>
             <point key="canvasLocation" x="4267.93893129771" y="1609.8591549295775"/>
         </scene>
-        <!--KemikBagisVC-->
-        <scene sceneID="ZXF-ts-Df1">
-            <objects>
-                <viewController title="KemikBagisVC" id="xvP-CF-vQb" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="01R-KN-343">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="EEA-jh-Fqm"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Kemik İlik Bağışı" id="yG3-wf-SRk"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="w3E-F4-sm6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4874" y="-1308"/>
-        </scene>
         <!--KokHucreBagisVC-->
         <scene sceneID="axk-wF-Wz9">
             <objects>
-                <viewController title="KokHucreBagisVC" id="VA6-yn-b0d" sceneMemberID="viewController">
+                <viewController title="KokHucreBagisVC" id="VA6-yn-b0d" customClass="ViewControllerKokHucreBagis" customModule="Kan_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KjD-hf-sH1">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -675,28 +659,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t8S-dR-n8e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5862" y="-1308"/>
+            <point key="canvasLocation" x="4891" y="-1347"/>
         </scene>
-        <!--OrganBagisVC-->
-        <scene sceneID="Wh6-Hh-qUG">
+        <!--ImmuneVC-->
+        <scene sceneID="DnU-ce-sN0">
             <objects>
-                <viewController title="OrganBagisVC" id="vs2-Ib-N1V" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Lgt-1S-83H">
+                <viewController title="ImmuneVC" id="KEB-E0-ZfV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AmU-qN-ZNI">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="hy8-90-cuh"/>
+                        <viewLayoutGuide key="safeArea" id="5HR-jd-tfX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Organ Bağışı" id="Oz7-u5-akH"/>
+                    <navigationItem key="navigationItem" title="Immün Bagışı" id="s9T-SG-wF5"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SjK-xB-K3t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8do-kA-5bK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7425" y="-1308"/>
+            <point key="canvasLocation" x="5816" y="-1347"/>
+        </scene>
+        <!--Trombosit-->
+        <scene sceneID="CPN-tW-eNd">
+            <objects>
+                <viewController title="Trombosit" id="Ga7-5k-kOt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uzh-t4-ymx">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="xSE-Mw-NlZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Aferez Bağışı" id="Ya3-Lt-dCn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kBf-1v-A18" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7309" y="-1347"/>
         </scene>
         <!--KanBagisVC-->
         <scene sceneID="mcO-cG-qv8">
             <objects>
-                <viewController title="KanBagisVC" id="bKn-vS-i7o" sceneMemberID="viewController">
+                <viewController title="KanBagisVC" id="bKn-vS-i7o" customClass="ViewControllerKanBagis" customModule="Kan_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SDS-jD-oc5">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -707,7 +707,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AmK-dK-Q8q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8393" y="-1308"/>
+            <point key="canvasLocation" x="8358" y="-1347"/>
         </scene>
         <!--bagisVC-->
         <scene sceneID="tpw-hZ-5eD">
@@ -717,40 +717,104 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="k88-p2-OcF">
-                                <rect key="frame" x="0.0" y="103" width="393" height="651"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kan_bagis" translatesAutoresizingMaskIntoConstraints="NO" id="tcu-eO-aUF">
+                                <rect key="frame" x="5" y="103" width="180" height="290"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="dNn-Ew-2zH">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dNn-Ew-2zH" id="0rk-do-b0g">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VpT-1o-k00">
-                                                    <rect key="frame" x="175" y="11" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="immun_bagis" translatesAutoresizingMaskIntoConstraints="NO" id="fge-qt-2Zo">
+                                <rect key="frame" x="5" y="433" width="180" height="290"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="aferez_bagis" translatesAutoresizingMaskIntoConstraints="NO" id="9ol-41-Rq4">
+                                <rect key="frame" x="208" y="103" width="180" height="290"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kok_bagis" translatesAutoresizingMaskIntoConstraints="NO" id="FO9-RA-qO4">
+                                <rect key="frame" x="208" y="432" width="180" height="290"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="İmmun " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBh-h8-wAF">
+                                <rect key="frame" x="63" y="731" width="65" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aferez(Trombosit)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xq8-yc-vrh">
+                                <rect key="frame" x="219" y="400" width="158" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hh-eE-TtD">
+                                <rect key="frame" x="78" y="401" width="34" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAQ-nK-e4s">
+                                <rect key="frame" x="208" y="103" width="169" height="289"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="aferezButtonPressed:" destination="bdv-3C-Kb6" eventType="touchUpInside" id="0cF-Rb-n6x"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OzL-lI-eaP">
+                                <rect key="frame" x="5" y="103" width="180" height="289"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="kanButtonPressed:" destination="bdv-3C-Kb6" eventType="touchUpInside" id="zvX-gG-jb2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGJ-a2-Qc8">
+                                <rect key="frame" x="5" y="433" width="180" height="289"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="immuneButtonPressed:" destination="bdv-3C-Kb6" eventType="touchUpInside" id="bfy-LW-wJJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NgW-4k-ldU">
+                                <rect key="frame" x="208" y="433" width="180" height="289"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="kokButtonPressed:" destination="bdv-3C-Kb6" eventType="touchUpInside" id="b1T-zz-aD5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kök Hücre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtf-UT-UWP">
+                                <rect key="frame" x="253" y="730" width="91" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="28Z-T3-dAM"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Bağış" image="drop.circle" catalog="system" id="QNV-AJ-2Mq"/>
                     <connections>
-                        <segue destination="xvP-CF-vQb" kind="show" identifier="bagisToKemik" id="UsP-iD-8Xc"/>
+                        <outlet property="aferezButton" destination="xAQ-nK-e4s" id="OiD-Ys-9u4"/>
+                        <outlet property="aferezImageView" destination="9ol-41-Rq4" id="x6E-dF-jQm"/>
+                        <outlet property="immunImageView" destination="fge-qt-2Zo" id="Ry7-AF-13K"/>
+                        <outlet property="immuneButton" destination="mGJ-a2-Qc8" id="65d-iY-77w"/>
+                        <outlet property="kanButton" destination="OzL-lI-eaP" id="irU-tp-d3O"/>
+                        <outlet property="kanImageView" destination="tcu-eO-aUF" id="Vra-tY-Rv0"/>
+                        <outlet property="kokButton" destination="NgW-4k-ldU" id="ALC-Gc-TN9"/>
+                        <outlet property="kokİmageView" destination="FO9-RA-qO4" id="uWS-yL-kqG"/>
                         <segue destination="VA6-yn-b0d" kind="show" identifier="bagisToKok" id="d0x-cn-ijT"/>
-                        <segue destination="vs2-Ib-N1V" kind="show" identifier="bagisToOrgan" id="e27-Yo-b7m"/>
                         <segue destination="bKn-vS-i7o" kind="show" identifier="bagisToKan" id="bC1-lP-v77"/>
+                        <segue destination="Ga7-5k-kOt" kind="show" identifier="bagisToAferez" id="xTF-rC-TXf"/>
+                        <segue destination="KEB-E0-ZfV" kind="show" identifier="bagisToImmune" id="dM0-j9-3Zu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oYe-gz-L6E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -951,15 +1015,19 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nZs-md-AUb"/>
+        <segue reference="J1r-Th-nyp"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="aferez_bagis" width="170.66667175292969" height="170.66667175292969"/>
         <image name="background_1" width="246" height="533.33331298828125"/>
         <image name="button_rect_1" width="100" height="12.666666984558105"/>
         <image name="button_rect_3" width="322" height="68"/>
         <image name="checkmark.circle" catalog="system" width="128" height="123"/>
         <image name="drop.circle" catalog="system" width="128" height="123"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
+        <image name="immun_bagis" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="kan_bagis" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="kok_bagis" width="170.66667175292969" height="170.66667175292969"/>
         <image name="map" catalog="system" width="128" height="112"/>
         <image name="person.circle" catalog="system" width="128" height="123"/>
         <image name="questionmark" catalog="system" width="94" height="128"/>

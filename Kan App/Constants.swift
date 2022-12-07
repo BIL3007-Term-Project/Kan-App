@@ -18,9 +18,9 @@ struct K{
     static let kToMain:String = "kayitToMain"
     static let gToMain:String = "girisToMain"
     static let bToKan:String = "bagisToKan"
-    static let bToOrgan:String = "bagisToOrgan"
     static let bToKok:String = "bagisToKok"
-    static let bToKemik:String = "bagisToKemik"
+    static let bToImmun:String = "bagisToImmune"
+    static let bToAferez:String = "bagisToAferez"
     
     
     

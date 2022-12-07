@@ -9,6 +9,23 @@ import UIKit
 
 class BagisViewController: UIViewController {
 
+    @IBOutlet weak var aferezImageView: UIImageView!
+    
+    @IBOutlet weak var kanImageView: UIImageView!
+    
+    @IBOutlet weak var immunImageView: UIImageView!
+    
+    @IBOutlet weak var kokİmageView: UIImageView!
+    
+    
+    @IBOutlet weak var aferezButton: UIButton!
+    
+    @IBOutlet weak var kanButton: UIButton!
+    
+    @IBOutlet weak var immuneButton: UIButton!
+    
+    @IBOutlet weak var kokButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,14 +37,23 @@ class BagisViewController: UIViewController {
         navigationItem.hidesBackButton = true
     }
    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func aferezButtonPressed(_ sender: Any) {
+        
+        performSegue(withIdentifier: K.bToAferez, sender: nil)
     }
-    */
-
+    
+    @IBAction func kanButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: K.bToKan, sender: nil)
+    }
+    
+    
+    @IBAction func immuneButtonPressed(_ sender: Any) {
+        
+        performSegue(withIdentifier: K.bToImmun, sender: nil)
+    }
+    
+    @IBAction func kokButtonPressed(_ sender: Any) {
+        
+        performSegue(withIdentifier: K.bToKok, sender: nil)
+    }
 }
