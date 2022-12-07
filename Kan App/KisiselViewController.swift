@@ -75,7 +75,7 @@ class KisiselViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        ileriKButton.layer.cornerRadius = ileriKButton.frame.height/2.6
         kisiselProgressView.setProgress(0.3, animated: true)
         
         UIView.animate(withDuration: 2,delay: 1.5, animations: {

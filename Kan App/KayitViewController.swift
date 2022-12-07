@@ -44,6 +44,7 @@ class KayitViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        kayitOlButton.layer.cornerRadius = kayitOlButton.frame.height/2.6
 
         activityIndicator.alpha = 0
         kayitOlButton.alpha = 0 // başlangıçta buton gözükmüyor

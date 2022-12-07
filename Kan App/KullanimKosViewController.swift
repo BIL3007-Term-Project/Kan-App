@@ -19,6 +19,7 @@ class KullanimKosViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        KKButton.layer.cornerRadius = KKButton.frame.height/2.6
         // Do any additional setup after loading the view.
     }
     @IBAction func KKButtonPressed(_ sender: Any) {

@@ -18,6 +18,7 @@ class GizlilikViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        gizlilikButton.layer.cornerRadius = gizlilikButton.frame.height/2.6
         // Do any additional setup after loading the view.
     }
     @IBAction func gizlilikButtonPressed(_ sender: Any) {
