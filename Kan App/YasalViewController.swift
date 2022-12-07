@@ -20,6 +20,7 @@ class YasalViewController: UIViewController {
         super.viewDidLoad()
 
         okudumAnladimButton.layer.cornerRadius = okudumAnladimButton.frame.height/2.6
+       
         yasalUyarıTextView.isEditable = false // textView düzenlemesi yasaklandı.
         
         yasalProgressView.progress = 0

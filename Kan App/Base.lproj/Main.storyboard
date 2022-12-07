@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -204,7 +205,7 @@
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Okudum ve Onaylıyorum" backgroundImage="button_rect_1">
-                                    <color key="titleColor" name="AccentColor"/>
+                                    <color key="titleColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="girisButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="54i-f2-bhE"/>
@@ -256,7 +257,7 @@
                                 <color key="backgroundColor" red="1" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="İleri" backgroundImage="button_rect_1">
-                                    <color key="titleColor" name="AccentColor"/>
+                                    <color key="titleColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="girisButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dsY-2P-E8N"/>
@@ -512,7 +513,7 @@
                                 <color key="backgroundColor" red="1" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Kayıt Ol" backgroundImage="button_rect_1">
-                                    <color key="titleColor" name="AccentColor"/>
+                                    <color key="titleColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="girisButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tA6-l1-nUg"/>
@@ -845,12 +846,6 @@
                     <view key="view" contentMode="scaleToFill" id="pdV-gr-E2x">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="square.and.arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NUL-4E-BTg">
-                                <rect key="frame" x="109" y="305" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="bQN-bJ-eYB"/>
                         <color key="backgroundColor" red="1" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -868,6 +863,13 @@
                     <view key="view" contentMode="scaleToFill" id="mPg-jT-NGd">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KYC-cD-AsP">
+                                <rect key="frame" x="76" y="127" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="uhn-0W-E1A"/>
                         <color key="backgroundColor" red="1" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -999,6 +1001,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="P3T-f7-Dhz">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1019,6 +1022,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="wre-CV-hxQ" kind="relationship" relationship="viewControllers" id="G7I-gc-bG7"/>
@@ -1032,7 +1036,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="J1r-Th-nyp"/>
+        <segue reference="nZs-md-AUb"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="aferez_bagis" width="170.66667175292969" height="170.66667175292969"/>
@@ -1048,7 +1052,6 @@
         <image name="map" catalog="system" width="128" height="112"/>
         <image name="person.circle" catalog="system" width="128" height="123"/>
         <image name="questionmark" catalog="system" width="94" height="128"/>
-        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="textfield_bg" width="298" height="93"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
