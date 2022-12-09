@@ -21,8 +21,8 @@ struct K{
     static let bToKok:String = "bagisToKok"
     static let bToImmun:String = "bagisToImmune"
     static let bToAferez:String = "bagisToAferez"
-    
-    
+    static let bToDetay:String = "kanBagisToDetay"
+    static let hToHDetay:String = "haritaToHaritaDetay"
     
     //kayitVC güvenlik check
     static let hesapGuv:String = "Mail adresiniz \"@gmail.com\" uzantılı olmalıdır.\nŞifreniz 8-15 karakter aralığında olmalıdır.Ayrıca sifreniz en az bir büyük harf, küçük harf, sayı ve .,$@$#!%*?& içermelidir"

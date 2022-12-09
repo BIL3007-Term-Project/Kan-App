@@ -115,7 +115,7 @@ class ViewController: UIViewController { //giriş ekranı VC
     }
     
     
-    //MARK: - extra fonksiyonlar
+    //MARK: - animasyon fonksiyonu
     
     
     func runNameAnimation(){
@@ -146,3 +146,22 @@ class ViewController: UIViewController { //giriş ekranı VC
 
 }
 
+extension ViewController:UITextFieldDelegate{
+    
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+    }
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        
+        return true
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+    }
+}
