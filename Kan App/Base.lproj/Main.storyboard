@@ -122,6 +122,10 @@
                                             <action selector="kayıtButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zpS-Eb-fKE"/>
                                         </connections>
                                     </button>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="BKW-1Q-Zg1">
+                                        <rect key="frame" x="186" y="272" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="M1K-Ta-WIo" firstAttribute="top" secondItem="9lx-i3-yml" secondAttribute="bottom" constant="50" id="1Sh-h3-PKZ"/>
@@ -171,6 +175,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="VCActivityIndicator" destination="BKW-1Q-Zg1" id="Y60-QB-PzQ"/>
                         <outlet property="appİmage" destination="hQQ-cV-Y9K" id="Pny-FI-sSk"/>
                         <outlet property="appName" destination="6nu-rN-yJ2" id="1fz-lw-FaJ"/>
                         <outlet property="bilgiLabel" destination="CYM-SD-Js6" id="17N-qB-RsC"/>

@@ -27,21 +27,27 @@ class ViewController: UIViewController { //giriş ekranı VC
     
     @IBOutlet weak var bilgiLabel: UILabel!
     
+    @IBOutlet weak var VCActivityIndicator: UIActivityIndicatorView!
+    
+    
     var textLabel:String = "Kan Application"
     
-    
+    //t
     var mailGirisCheck:Bool = false
     var sifreGirisCheck:Bool = false
+    
     //MARK: - iOS döngü fonksiyonları
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
    
+        VCActivityIndicator.color = .white
         emailTextField.delegate = self
         sifreTextField.delegate = self
         bilgiLabel.alpha = 0
         kayıtButton.alpha = 0
+        VCActivityIndicator.alpha = 0
         
         emailTextField.alpha = 1
         sifreTextField.alpha = 1
@@ -72,6 +78,12 @@ class ViewController: UIViewController { //giriş ekranı VC
 
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        
+        VCActivityIndicator.stopAnimating()
+        VCActivityIndicator.alpha = 0
+    }
+    
     
 
     
@@ -79,7 +91,7 @@ class ViewController: UIViewController { //giriş ekranı VC
     
     @IBAction func twoSVPressed(_ sender: UISegmentedControl) {
         
-        if sender.selectedSegmentIndex == 0{
+        if sender.selectedSegmentIndex == 0{//giris yap secili
             
             bilgiLabel.alpha = 0
             kayıtButton.alpha = 0
@@ -89,7 +101,7 @@ class ViewController: UIViewController { //giriş ekranı VC
             girisButton.alpha = 1
         }
         
-        if sender.selectedSegmentIndex == 1{
+        if sender.selectedSegmentIndex == 1{//kayıt ol secili
             
             bilgiLabel.alpha = 1
             kayıtButton.alpha = 1
@@ -131,7 +143,16 @@ class ViewController: UIViewController { //giriş ekranı VC
                 
                 
                 
-                self.performSegue(withIdentifier: K.gToMain, sender: nil)
+
+                
+                //animasyon çalışır
+                DispatchQueue.main.async {
+                    self.VCActivityIndicator.alpha = 1
+                    self.VCActivityIndicator.startAnimating()
+                }
+                
+                //2 sn içinde geçiş yapılır.burası 2.sql güvenlik katmanının için e koyulacak
+                Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(mainGecisYap), userInfo: nil, repeats: false)
                 
             }else{
                 
@@ -145,6 +166,11 @@ class ViewController: UIViewController { //giriş ekranı VC
         
         
         
+    }
+    
+    @objc func mainGecisYap(){
+        
+        self.performSegue(withIdentifier: K.gToMain, sender: nil)
     }
     
     func runNameAnimation(){//giriş yazı animasyon fonksiyonu

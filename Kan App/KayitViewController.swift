@@ -196,7 +196,7 @@ extension KayitViewController{
                     
                     
                     //sqlite ile veritabanına veri yaz insert işlemleri(hesap bilgileri)
-                    self.performSegue(withIdentifier: K.kToMain, sender: nil)
+//                    self.performSegue(withIdentifier: K.kToMain, sender: nil)
                     
                     
                     print("diğer sayfaya güvenli gecis")
