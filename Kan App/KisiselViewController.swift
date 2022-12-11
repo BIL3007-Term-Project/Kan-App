@@ -154,6 +154,9 @@ class KisiselViewController: UIViewController {
         if adCheck == true && soyadCheck == true && tcCheck == true && kiloCheck == true && boyCheck == true && cinsiyetCheck == true && kanCheck == true && dgCheck == true{
             
             print("gecis basarılı")
+            
+            //sqlite ile kisi bilgilerini yaz.Kisi tablosu 
+            
             self.performSegue(withIdentifier: K.kToKayit, sender: nil)
             
         }else{

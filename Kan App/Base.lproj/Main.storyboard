@@ -705,7 +705,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kBf-1v-A18" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7309" y="-1347"/>
+            <point key="canvasLocation" x="7376" y="-1347"/>
         </scene>
         <!--KanBagisVC-->
         <scene sceneID="mcO-cG-qv8">
@@ -1098,7 +1098,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nZs-md-AUb"/>
+        <segue reference="J1r-Th-nyp"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="aferez_bagis" width="170.66667175292969" height="170.66667175292969"/>

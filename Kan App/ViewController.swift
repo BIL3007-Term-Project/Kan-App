@@ -29,13 +29,17 @@ class ViewController: UIViewController { //giriş ekranı VC
     
     var textLabel:String = "Kan Application"
     
+    
+    var mailGirisCheck:Bool = false
+    var sifreGirisCheck:Bool = false
     //MARK: - iOS döngü fonksiyonları
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
    
-        
+        emailTextField.delegate = self
+        sifreTextField.delegate = self
         bilgiLabel.alpha = 0
         kayıtButton.alpha = 0
         
@@ -46,7 +50,8 @@ class ViewController: UIViewController { //giriş ekranı VC
         emailTextField.keyboardType = .default
         emailTextField.autocorrectionType = .no
         emailTextField.autocapitalizationType = .none
-        
+        emailTextField.returnKeyType = .done
+        sifreTextField.returnKeyType = .done
         girisButton.tintColor = UIColor(rgb: 0x393E46)
         kayıtButton.tintColor = UIColor(rgb: 0x393E46)
         
@@ -99,7 +104,9 @@ class ViewController: UIViewController { //giriş ekranı VC
     //
     @IBAction func girisButtonPressed(_ sender: UIButton) {
         
-        self.performSegue(withIdentifier:K.gToMain, sender: nil)
+        veriDoğrula(emailTF: emailTextField, sifreTF: sifreTextField)
+        
+        
     }
     
     
@@ -114,11 +121,33 @@ class ViewController: UIViewController { //giriş ekranı VC
         self.performSegue(withIdentifier: K.gToSifre, sender: nil)
     }
     
+    //MARK: - Giris hesap kontrol fonksiyonu
     
-    //MARK: - animasyon fonksiyonu
+    func veriDoğrula(emailTF:UITextField,sifreTF:UITextField){
+        
+        if let id = emailTF.text , let sifre = sifreTF.text{
+            
+            if mailGirisCheck == true && sifreGirisCheck == true{
+                
+                
+                
+                self.performSegue(withIdentifier: K.gToMain, sender: nil)
+                
+            }else{
+                
+                bosAlanHatası()
+            }
+            
+        }else{
+            
+            bosAlanHatası()
+        }
+        
+        
+        
+    }
     
-    
-    func runNameAnimation(){
+    func runNameAnimation(){//giriş yazı animasyon fonksiyonu
         
         appName.alpha = 1
         appName.text = ""
@@ -146,22 +175,152 @@ class ViewController: UIViewController { //giriş ekranı VC
 
 }
 
+extension ViewController{
+    
+    func bilgilerYanlisAlert(){
+        
+        let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.bilgYanlis, preferredStyle: .alert)
+        
+        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
+        
+        alertController.addAction(tamamButton)
+        
+        self.present(alertController, animated: true)
+        
+    }
+    
+    func bosAlanHatası(){
+        
+        let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.bosAlanHata, preferredStyle: .alert)
+        
+        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
+        
+        alertController.addAction(tamamButton)
+        
+        emailTextField.text = ""
+        sifreTextField.text = ""
+        self.present(alertController, animated: true)
+        
+    }
+    
+}
+//MARK: - textfieldDelegate protocolleri
+
 extension ViewController:UITextFieldDelegate{
     
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         
+        if textField == emailTextField{
+            
+            textField.placeholder = "Email"
+        }
+        else if textField == sifreTextField{
+            
+            textField.placeholder = "Sifre"
+        }
         return true
-    }
+    }//TFShouldBeginEditing sonu
+    
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
     }
+    
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         
-        return true
-    }
-    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == emailTextField{
+            
+            if textField.text == ""{
+                
+                emailTextField.placeholder = "Email"
+            }
+
+        }
+        else if textField == sifreTextField{
+            
+            if textField.text == ""{
+                
+                sifreTextField.placeholder = "Sifre"
+            }
+        }
         
-    }
+        return true
+        
+    }//TFShouldEndEditing sonu
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+
+
+        if textField == emailTextField{
+
+            if let mailSayi = textField.text?.count{
+
+                if mailSayi > 11 && mailSayi < 30{
+                    mailGirisCheck = true
+                    print("mail1.asama :\(mailGirisCheck)")
+                    print("mail 11 haneden büyük 30 dan küçük istenen aralıkta")
+
+                }
+                else if mailSayi == 0{
+                    mailGirisCheck = false
+                    print("mail1.asama :\(mailGirisCheck)")
+                    emailTextField.text = ""
+                    emailTextField.placeholder = "Email"
+
+                    print("mail boş bırakıldı")
+                }
+                else{
+                    mailGirisCheck = false
+                    print("mail1.asama :\(mailGirisCheck)")
+                    emailTextField.text = ""
+                    emailTextField.placeholder = "Email"
+
+                    print("mail istenen aralıkta değil")
+                }
+
+            }
+        }//emailTF check sonu
+        else if textField == sifreTextField{
+
+            if let sifreSayi = textField.text?.count{
+
+                if sifreSayi > 0 && sifreSayi < 15{
+
+                    sifreGirisCheck = true
+                    print("sifre1.asama :\(sifreGirisCheck)")
+                    print("sifre 0-15 aralıgında")
+                }
+                else if sifreSayi == 0{
+                    sifreGirisCheck = false
+                    print("sifre1.asama :\(sifreGirisCheck)")
+                    sifreTextField.text = ""
+                    sifreTextField.placeholder = "Sifre"
+                    print("sifre bos")
+                }
+                else{
+
+                    sifreGirisCheck = false
+                    print("sifre1.asama :\(sifreGirisCheck)")
+                    sifreTextField.text = ""
+                    sifreTextField.placeholder = "Sifre"
+                    print("sifre istenen aralıkta değil")
+                }
+            }
+
+        }//sifreTF check sonu
+
+
+
+
+
+    }//TFDidEndEditing sonu
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        view.endEditing(true)
+    }//TFShouldReturn Sonu
+    
+    
+    
 }

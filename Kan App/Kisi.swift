@@ -70,8 +70,7 @@ class Kisi{
     }
     
     
-    func serKisi_ad(kisi_ad:String){
-        
+    func setKisi_ad(kisi_ad:String){
         self.kisi_ad = kisi_ad
     }
     func setKisi_soyad(kisi_soyad:String){

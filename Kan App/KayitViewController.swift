@@ -34,9 +34,9 @@ class KayitViewController: UIViewController {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    var mailGlobalCheck:Bool = false
-    var sifreGlobalCheck:Bool = false
-    var sifreTekGlobalCheck:Bool = false
+    var mailKayitCheck:Bool = false
+    var sifreKayitCheck:Bool = false
+    var sifreTekKayitCheck:Bool = false
     var kayitCheck:Bool = false
     
     
@@ -178,7 +178,7 @@ extension KayitViewController{
     
         if let mail = emailTF.text, let sifre = sifreTF.text, let sifreTkr = sifreTkrTF.text{
 
-            if mailGlobalCheck == true && sifreGlobalCheck == true && sifreTekGlobalCheck == true{
+            if mailKayitCheck == true && sifreKayitCheck == true && sifreTekKayitCheck == true{
                 // Tf içerikleri artık dolu olduğu kesindir.1.asama güvenlik
                 
                 let check1 = alınanMailGuv(mail: mail)
@@ -194,10 +194,10 @@ extension KayitViewController{
                     
                     Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(gecisYap), userInfo: nil, repeats: false)
                     
-//                    self.performSegue(withIdentifier: K.kToMain, sender: nil)
                     
-                   
-//                    kayitOlButton.isEnabled = true // buton aktif artık kayıt ol butonuna basılabilir
+                    //sqlite ile veritabanına veri yaz insert işlemleri(hesap bilgileri)
+                    self.performSegue(withIdentifier: K.kToMain, sender: nil)
+                    
                     
                     print("diğer sayfaya güvenli gecis")
                     
@@ -358,22 +358,22 @@ extension KayitViewController:UITextFieldDelegate{
             if let mailSayi = textField.text?.count{
                 
                 if mailSayi > 11 && mailSayi < 30{
-                    mailGlobalCheck = true
-                    print("mail1.asama :\(mailGlobalCheck)")
+                    mailKayitCheck = true
+                    print("mail1.asama :\(mailKayitCheck)")
                     print("mail 11 haneden büyük 30 dan küçük istenen aralıkta")
                     
                 }
                 else if mailSayi == 0{
-                    mailGlobalCheck = false
-                    print("mail1.asama :\(mailGlobalCheck)")
+                    mailKayitCheck = false
+                    print("mail1.asama :\(mailKayitCheck)")
                     emailTextField.text = ""
                     emailTextField.placeholder = "Email"
                     
                     print("mail boş bırakıldı")
                 }
                 else{
-                    mailGlobalCheck = false
-                    print("mail1.asama :\(mailGlobalCheck)")
+                    mailKayitCheck = false
+                    print("mail1.asama :\(mailKayitCheck)")
                     emailTextField.text = ""
                     emailTextField.placeholder = "Email"
                     
@@ -388,21 +388,21 @@ extension KayitViewController:UITextFieldDelegate{
                 
                 if sifreSayi > 0 && sifreSayi < 15{
                     
-                    sifreGlobalCheck = true
-                    print("sifre1.asama :\(sifreGlobalCheck)")
+                    sifreKayitCheck = true
+                    print("sifre1.asama :\(sifreKayitCheck)")
                     print("sifre 0-15 aralıgında")
                 }
                 else if sifreSayi == 0{
-                    sifreGlobalCheck = false
-                    print("sifre1.asama :\(sifreGlobalCheck)")
+                    sifreKayitCheck = false
+                    print("sifre1.asama :\(sifreKayitCheck)")
                     sifreTextField.text = ""
                     sifreTextField.placeholder = "Sifre"
                     print("sifre bos")
                 }
                 else{
                     
-                    sifreGlobalCheck = false
-                    print("sifre1.asama :\(sifreGlobalCheck)")
+                    sifreKayitCheck = false
+                    print("sifre1.asama :\(sifreKayitCheck)")
                     sifreTextField.text = ""
                     sifreTextField.placeholder = "Sifre"
                     print("sifre istenen aralıkta değil")
@@ -416,21 +416,21 @@ extension KayitViewController:UITextFieldDelegate{
                 
                 if sifreTekSayi > 0 && sifreTekSayi < 15{
                     
-                    sifreTekGlobalCheck = true
-                    print("sifretek1.asama :\(sifreTekGlobalCheck)")
+                    sifreTekKayitCheck = true
+                    print("sifretek1.asama :\(sifreTekKayitCheck)")
                     print("sifre  tekrar 0-15 aralıgında")
                 }
                 else if sifreTekSayi == 0{
-                    sifreTekGlobalCheck = false
-                    print("sifretek1.asama :\(sifreTekGlobalCheck)")
+                    sifreTekKayitCheck = false
+                    print("sifretek1.asama :\(sifreTekKayitCheck)")
                     sifreTekTextField.text = ""
                     sifreTekTextField.placeholder = "Sifre"
                     print("sifre terar bos")
                 }
                 else{
                     
-                    sifreTekGlobalCheck = false
-                    print("sifretek1.asama :\(sifreTekGlobalCheck)")
+                    sifreTekKayitCheck = false
+                    print("sifretek1.asama :\(sifreTekKayitCheck)")
                     sifreTekTextField.text = ""
                     sifreTekTextField.placeholder = "Sifre"
                     print("sifre tekrar istenen aralıkta değil")
