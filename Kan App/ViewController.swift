@@ -141,10 +141,6 @@ class ViewController: UIViewController { //giriş ekranı VC
             
             if mailGirisCheck == true && sifreGirisCheck == true{
                 
-                
-                
-
-                
                 //animasyon çalışır
                 DispatchQueue.main.async {
                     self.VCActivityIndicator.alpha = 1

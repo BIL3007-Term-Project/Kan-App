@@ -15,6 +15,7 @@ class KisiselViewController: UIViewController {
     @IBOutlet weak var adCheckImageView: UIImageView!
     @IBOutlet weak var soyadCheckImageView: UIImageView!
     @IBOutlet weak var tcCheckImageView: UIImageView!
+    @IBOutlet weak var telCheckImageView: UIImageView!
     @IBOutlet weak var dgCheckImageView: UIImageView!
     @IBOutlet weak var kiloCheckImageView: UIImageView!
     @IBOutlet weak var boyCheckImageView: UIImageView!
@@ -30,6 +31,7 @@ class KisiselViewController: UIViewController {
     @IBOutlet weak var adTextField: UITextField!
     @IBOutlet weak var soyadTextField: UITextField!
     @IBOutlet weak var tcTextField: UITextField!
+    @IBOutlet weak var telTextField: UITextField!
     @IBOutlet weak var dogumTextField: UITextField!
     @IBOutlet weak var kilotextField: UITextField!
     @IBOutlet weak var boyTextField: UITextField!
@@ -45,6 +47,7 @@ class KisiselViewController: UIViewController {
     var adCheck:Bool?
     var soyadCheck:Bool?
     var tcCheck:Bool?
+    var telCheck:Bool?
     var dgCheck:Bool?
     var kiloCheck:Bool?
     var boyCheck:Bool?
@@ -60,6 +63,7 @@ class KisiselViewController: UIViewController {
     
     //Picker Buton toolbar
     var tcToolbar = UIToolbar()
+    var telToolbar = UIToolbar()
     var dgToolbar = UIToolbar()
     var kiloToolbar = UIToolbar()
     var boyToolbar = UIToolbar()
@@ -83,9 +87,12 @@ class KisiselViewController: UIViewController {
             self.kisiselProgressView.setProgress(0.6, animated: true)
         })
         
+        
+        //resimler  sayfa ilk yüklenince gözükmesin
         adCheckImageView.alpha = 0
         soyadCheckImageView.alpha = 0
         tcCheckImageView.alpha = 0
+        telCheckImageView.alpha = 0
         dgCheckImageView.alpha = 0
         kiloCheckImageView.alpha = 0
         boyCheckImageView.alpha = 0
@@ -94,7 +101,7 @@ class KisiselViewController: UIViewController {
         sehirCheckImageView.alpha = 0
         ilceCheckImageView.alpha = 0
         
-        
+        //textfield ayarlamaları
         adTextField.keyboardType = .default
         adTextField.returnKeyType = .done
         adTextField.autocorrectionType = .no
@@ -105,14 +112,23 @@ class KisiselViewController: UIViewController {
         soyadTextField.returnKeyType = .done
         tcTextField.keyboardType = .numberPad
         tcTextField.returnKeyType = .done
+        telTextField.keyboardType = .numberPad
+        telTextField.returnKeyType = .done
         
         
+        //sabit konum bilgileri
         sehirTextField.isEnabled = false
         ilceTextField.isEnabled = false
-        tcToolbarYukle(toolbar: tcToolbar)
         
+        //tel ve tc toolbar yüklemeleri
+        tcToolbarYukle(toolbar: tcToolbar)
+        telToolbarYukle(toolbar: telToolbar)
+        
+        //dg picker ve toolbar yüklemeleri
         dgPickerYukle()
         dgToolbarYukle(toolbar: dgToolbar)
+        
+        //picker porotocol bağlantıları
         kiloPicker.delegate = self
         kiloPicker.dataSource = self
         
@@ -125,7 +141,7 @@ class KisiselViewController: UIViewController {
         kanGrupPicker.delegate = self
         kanGrupPicker.dataSource = self
         
-        
+        //pickerView ve toolbar  yüklemeleri
         kiloPickerYukle()
         kiloToolbarYukle(toolbar: kiloToolbar)
         boyPickerYukle()
@@ -136,9 +152,12 @@ class KisiselViewController: UIViewController {
         KanToolbarYukle(toolbar: kanToolbar)
         
         
+        //textfield protocol yüklemeleri
         adTextField.delegate = self
         soyadTextField.delegate = self
         tcTextField.delegate = self
+        telTextField.delegate = self
+        
         
 //        let dokunmaAlgılama = UITapGestureRecognizer(target: self, action: #selector(self.dokunmaAlgılamaMetodu))
 //
@@ -151,7 +170,7 @@ class KisiselViewController: UIViewController {
         
 //        self.performSegue(withIdentifier: K.kToKayit, sender: nil)
         
-        if adCheck == true && soyadCheck == true && tcCheck == true && kiloCheck == true && boyCheck == true && cinsiyetCheck == true && kanCheck == true && dgCheck == true{
+        if adCheck == true && soyadCheck == true && tcCheck == true && telCheck == true && kiloCheck == true && boyCheck == true && cinsiyetCheck == true && kanCheck == true && dgCheck == true{
             
             print("gecis basarılı")
             
@@ -201,6 +220,10 @@ extension KisiselViewController:UITextFieldDelegate{
             
             tcTextField.placeholder = "11 Haneli TC kimlik numaranızı giriniz"
         }
+        else if textField == telTextField{
+            
+            telTextField.placeholder = "10 haneli telefon numarası giriniz"
+        }
         else if textField == dogumTextField{
             
             dogumTextField.placeholder = "Dogum Tarihi"
@@ -239,12 +262,20 @@ extension KisiselViewController:UITextFieldDelegate{
                 tcTextField.placeholder = "Ad"
             }
         }
+        else if textField == telTextField{
+            
+            if textField.text == ""{
+                
+                telTextField.placeholder = "Telefon"
+            }
+        }
         
         return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) { //düzenleme bitti
         
+        //içerik kontrolleri
         if textField == adTextField{
             
             if let adSayı = textField.text?.count{
@@ -364,6 +395,46 @@ extension KisiselViewController:UITextFieldDelegate{
             }
             
         }//tctextfieldSonu
+        else if textField == telTextField{
+            
+            if let tcSayı = textField.text?.count{
+                
+                if tcSayı == 10{
+                    
+                    print("tel 10 haneli")
+                    
+                    UIView.animate(withDuration: 0.5, animations: {
+                        
+                        self.telCheckImageView.alpha = 1
+                    })
+                    
+                    telCheck = true
+                }
+                else if tcSayı == 0{
+                    
+                    UIView.animate(withDuration: 0.5, animations: {
+                        
+                        self.telCheckImageView.alpha = 0
+                    })
+                    telTextField.placeholder = "Telefon"
+                    
+                    telCheck = false
+                }
+                else{
+                    
+                    UIView.animate(withDuration: 0.5, animations: {
+                        
+                        self.telCheckImageView.alpha = 0
+                    })
+                    textField.placeholder = "Tel 10 haneli olmalıdır"
+                    textField.text = ""
+                    
+                    telCheck = false
+                }
+                
+            }
+            
+        }//telTextField Sonu
         
         
 
@@ -394,6 +465,15 @@ extension KisiselViewController:UITextFieldDelegate{
                 self.tcCheckImageView.alpha = 1
             })
             view.endEditing(true)
+        }
+        else if textField == telTextField{
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                
+                self.telCheckImageView.alpha = 1
+            })
+            view.endEditing(true)
+            
         }
         
         
@@ -472,6 +552,25 @@ extension KisiselViewController{
         toolbar.setItems([bosluk,tamamButton], animated: true)
         
         tcTextField.inputAccessoryView = toolbar
+    }
+    
+    func telToolbarYukle(toolbar:UIToolbar){
+        
+        
+        toolbar.isOpaque = false
+        toolbar.tintColor = .black
+        toolbar.sizeToFit()
+        toolbar.isTranslucent = true
+        toolbar.isOpaque = true
+        
+        let tamamButton = UIBarButtonItem(title: "Tamam", style: .plain, target: self, action: #selector(self.tcTamamMetodu))
+        
+        let bosluk = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        
+        toolbar.setItems([bosluk,tamamButton], animated: true)
+        
+        telTextField.inputAccessoryView = toolbar
     }
     
     func dgToolbarYukle(toolbar:UIToolbar){
@@ -580,6 +679,14 @@ extension KisiselViewController{
     }
     
     @objc func tcTamamMetodu(){
+//        UIView.animate(withDuration: 0.5, animations: {
+//
+//            self.kiloCheckImageView.alpha = 1
+//        })
+        view.endEditing(true)
+    }
+    
+    @objc func telTamamMetodu(){
 //        UIView.animate(withDuration: 0.5, animations: {
 //
 //            self.kiloCheckImageView.alpha = 1
