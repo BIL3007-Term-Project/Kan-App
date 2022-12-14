@@ -84,28 +84,32 @@ class kullanicilarDAO{
         
         return gelenMobilKullanici
     }
-//    
-//    func OrtakDonorEkle(donor_name:String)->Bool{
-//        //donor ekleme
-//        db?.open()
-//
-//
-//        do{
-//
-//            try db!.executeUpdate("INSERT INTO  app_donor(donor_name) VALUES(?)", values: [donor_name])
-//
-//            print("OrtakDonor kisi kayıt başarılı!")
-//
-//            db!.close()
-//            return true
-//        }catch{
-//
-//            print("OrtakDonor kisi kayıt başarısız!")
-//            db!.close()
-//            return false
-//
-//        }
-//
-//
-//    }
+
+    
+    func ortakKullaniciEkle(donor_name:String,donor_surname:String,id_number:String,date_of_birth:String,weight:Int,height:Int,gender:String,blood_type:String,phone:String,mail:String){
+        
+        
+        
+        db?.open()
+        
+        
+        do{
+           
+            try db!.executeUpdate("INSERT INTO  app_donor(donor_name,donor_surname,id_number,date_of_birth,weight,height,gender,blood_type,phone,mail) VALUES(?,?,?,?,?,?,?,?,?,?)", values: [donor_name,donor_name,id_number,date_of_birth,weight,height,gender,blood_type,phone,mail])
+            
+            
+            print("KullanicilarDAO ortak kullanici eklemek başarılı!")
+
+           
+            
+        }catch{
+            
+            print("KullanicilarDAO ortak kullanici eklemek başarısız!")
+            
+           
+            
+        }
+        
+        db!.close()
+    }
 }
