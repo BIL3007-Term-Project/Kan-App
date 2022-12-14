@@ -9,11 +9,6 @@ import Foundation
 
 
 class Kisi{
-    
-    
-    private var kisi_mail:String?
-    private var kisi_sifre:String?
-    
     private var kisi_id:Int?
     private var kisi_ad:String?
     private var kisi_soyad:String?
@@ -27,10 +22,13 @@ class Kisi{
     private var il:String?
     private var ilce:String?
     
-    init(kisi_mail:String,kisi_sifre:String,kisi_id:Int,kisi_ad:String,kisi_soyad:String,kisi_tc:String,kisi_tel:String,kisi_dg:Date,kisi_kilo:Int,kisi_boy:Int,cinsiyet:String?,kan_grup:String,il:String,ilce:String){
+    init(){
         
-        self.kisi_mail = kisi_mail
-        self.kisi_sifre = kisi_sifre
+        
+    }
+    init(kisi_id:Int,kisi_ad:String,kisi_soyad:String,kisi_tc:String,kisi_tel:String,kisi_dg:Date,kisi_kilo:Int,kisi_boy:Int,cinsiyet:String?,kan_grup:String,il:String,ilce:String){
+        
+      
         self.kisi_id = kisi_id
         self.kisi_ad = kisi_ad
         self.kisi_soyad = kisi_soyad
@@ -46,16 +44,8 @@ class Kisi{
     }
     
     
-    func getKisi_mail()->String{
-        
-        return kisi_mail!
-    }
-    func getKisi_sifre()->String{
-        
-        return kisi_sifre!
-    }
+
     func getKisi_id()->Int{
-        
         return kisi_id!
     }
     func getKisi_ad()->String{
@@ -93,14 +83,7 @@ class Kisi{
     }
     
     
-    func setKisi_mail(kisi_mail:String){
-        
-        self.kisi_mail = kisi_mail
-    }
-    func setKisi_sifre(kisi_sifre:String){
-        
-        self.kisi_sifre = kisi_sifre
-    }
+    
     func setKisi_ad(kisi_ad:String){
         self.kisi_ad = kisi_ad
     }

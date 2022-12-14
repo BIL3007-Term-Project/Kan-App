@@ -26,7 +26,6 @@
 		059C8FF32935599A00AE456D /* Kan_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059C8FF22935599A00AE456D /* Kan_AppTests.swift */; };
 		059C8FFD2935599A00AE456D /* Kan_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059C8FFC2935599A00AE456D /* Kan_AppUITests.swift */; };
 		059C8FFF2935599A00AE456D /* Kan_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059C8FFE2935599A00AE456D /* Kan_AppUITestsLaunchTests.swift */; };
-		059D9B5029466D5000816A21 /* KisiDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D9B4F29466D5000816A21 /* KisiDAO.swift */; };
 		05B457862935603A007E89D0 /* SSSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B457852935603A007E89D0 /* SSSViewController.swift */; };
 		05B4578829356044007E89D0 /* SifreYenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B4578729356044007E89D0 /* SifreYenViewController.swift */; };
 		05B4578A2935604C007E89D0 /* YasalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B457892935604C007E89D0 /* YasalViewController.swift */; };
@@ -78,7 +77,6 @@
 		059C8FF82935599A00AE456D /* Kan AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kan AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		059C8FFC2935599A00AE456D /* Kan_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kan_AppUITests.swift; sourceTree = "<group>"; };
 		059C8FFE2935599A00AE456D /* Kan_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kan_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		059D9B4F29466D5000816A21 /* KisiDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisiDAO.swift; sourceTree = "<group>"; };
 		05B457852935603A007E89D0 /* SSSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSViewController.swift; sourceTree = "<group>"; };
 		05B4578729356044007E89D0 /* SifreYenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SifreYenViewController.swift; sourceTree = "<group>"; };
 		05B457892935604C007E89D0 /* YasalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YasalViewController.swift; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 				0570FA642935758600A36270 /* UIColorExt.swift */,
 				05CBC2182935868500184140 /* UILabelExt.swift */,
 				053359E4293696A3000B2DDF /* Kisi.swift */,
-				059D9B4F29466D5000816A21 /* KisiDAO.swift */,
 				05B4578F2935605E007E89D0 /* MainViewController.swift */,
 				057AA88A293E7C2D00C11524 /* HaritaAcilViewController.swift */,
 				057AA88C293E7FAF00C11524 /* BagisViewController.swift */,
@@ -331,7 +328,6 @@
 				05B457922935609C007E89D0 /* KayitViewController.swift in Sources */,
 				05781C5C29433C8E00C45DAE /* ViewControllerKanDetay.swift in Sources */,
 				05B457902935605E007E89D0 /* MainViewController.swift in Sources */,
-				059D9B5029466D5000816A21 /* KisiDAO.swift in Sources */,
 				053359E5293696A3000B2DDF /* Kisi.swift in Sources */,
 				0570FA652935758600A36270 /* UIColorExt.swift in Sources */,
 				05B4578829356044007E89D0 /* SifreYenViewController.swift in Sources */,
