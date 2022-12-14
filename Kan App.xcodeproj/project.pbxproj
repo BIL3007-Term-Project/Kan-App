@@ -11,6 +11,15 @@
 		05262AC32940F557000B3D19 /* ViewControllerKokHucreBagis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262AC22940F557000B3D19 /* ViewControllerKokHucreBagis.swift */; };
 		05262AC92940F75A000B3D19 /* ViewControllerAferezBagis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262AC82940F75A000B3D19 /* ViewControllerAferezBagis.swift */; };
 		053359E5293696A3000B2DDF /* Kisi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053359E4293696A3000B2DDF /* Kisi.swift */; };
+		0541DC782949EA3300D238F4 /* bagiscilar.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0541DC772949EA3300D238F4 /* bagiscilar.sqlite */; };
+		0541DC7F2949EFE900D238F4 /* Kullanicilar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0541DC7E2949EFE900D238F4 /* Kullanicilar.swift */; };
+		0541DC812949EFF300D238F4 /* KullanicilarDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0541DC802949EFF300D238F4 /* KullanicilarDAO.swift */; };
+		0541DC8E2949F33800D238F4 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0541DC832949F33700D238F4 /* FMDatabaseAdditions.m */; };
+		0541DC8F2949F33800D238F4 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0541DC852949F33800D238F4 /* FMDatabase.m */; };
+		0541DC902949F33800D238F4 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0541DC872949F33800D238F4 /* FMDatabasePool.m */; };
+		0541DC912949F33800D238F4 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 0541DC882949F33800D238F4 /* FMResultSet.m */; };
+		0541DC922949F33800D238F4 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0541DC8C2949F33800D238F4 /* FMDatabaseQueue.m */; };
+		0541DC952949F35A00D238F4 /* libsqlite3.tbd in Resources */ = {isa = PBXBuildFile; fileRef = 0541DC942949F35300D238F4 /* libsqlite3.tbd */; };
 		0570FA652935758600A36270 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570FA642935758600A36270 /* UIColorExt.swift */; };
 		05781C5C29433C8E00C45DAE /* ViewControllerKanDetay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05781C5B29433C8E00C45DAE /* ViewControllerKanDetay.swift */; };
 		057AA88B293E7C2D00C11524 /* HaritaAcilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057AA88A293E7C2D00C11524 /* HaritaAcilViewController.swift */; };
@@ -58,6 +67,22 @@
 		05262AC22940F557000B3D19 /* ViewControllerKokHucreBagis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerKokHucreBagis.swift; sourceTree = "<group>"; };
 		05262AC82940F75A000B3D19 /* ViewControllerAferezBagis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAferezBagis.swift; sourceTree = "<group>"; };
 		053359E4293696A3000B2DDF /* Kisi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kisi.swift; sourceTree = "<group>"; };
+		0541DC772949EA3300D238F4 /* bagiscilar.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = bagiscilar.sqlite; sourceTree = "<group>"; };
+		0541DC7E2949EFE900D238F4 /* Kullanicilar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kullanicilar.swift; sourceTree = "<group>"; };
+		0541DC802949EFF300D238F4 /* KullanicilarDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KullanicilarDAO.swift; sourceTree = "<group>"; };
+		0541DC822949F33700D238F4 /* Kan App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kan App-Bridging-Header.h"; sourceTree = "<group>"; };
+		0541DC832949F33700D238F4 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		0541DC842949F33800D238F4 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		0541DC852949F33800D238F4 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		0541DC862949F33800D238F4 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		0541DC872949F33800D238F4 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		0541DC882949F33800D238F4 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		0541DC892949F33800D238F4 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		0541DC8A2949F33800D238F4 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		0541DC8B2949F33800D238F4 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		0541DC8C2949F33800D238F4 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		0541DC8D2949F33800D238F4 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		0541DC942949F35300D238F4 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		0570FA642935758600A36270 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		05781C5B29433C8E00C45DAE /* ViewControllerKanDetay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerKanDetay.swift; sourceTree = "<group>"; };
 		057AA88A293E7C2D00C11524 /* HaritaAcilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaritaAcilViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +137,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0541DC932949F35300D238F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0541DC942949F35300D238F4 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		059C8FCF2935599900AE456D = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +152,7 @@
 				059C8FF12935599A00AE456D /* Kan AppTests */,
 				059C8FFB2935599A00AE456D /* Kan AppUITests */,
 				059C8FD92935599900AE456D /* Products */,
+				0541DC932949F35300D238F4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,6 +176,7 @@
 				059C8FE42935599A00AE456D /* Assets.xcassets */,
 				059C8FE62935599A00AE456D /* LaunchScreen.storyboard */,
 				059C8FE92935599A00AE456D /* Info.plist */,
+				0541DC772949EA3300D238F4 /* bagiscilar.sqlite */,
 				05B457852935603A007E89D0 /* SSSViewController.swift */,
 				05B4578729356044007E89D0 /* SifreYenViewController.swift */,
 				05B457892935604C007E89D0 /* YasalViewController.swift */,
@@ -160,6 +195,20 @@
 				05262AC82940F75A000B3D19 /* ViewControllerAferezBagis.swift */,
 				05262ABC2940F531000B3D19 /* ViewControllerKanBagis.swift */,
 				05781C5B29433C8E00C45DAE /* ViewControllerKanDetay.swift */,
+				0541DC7E2949EFE900D238F4 /* Kullanicilar.swift */,
+				0541DC802949EFF300D238F4 /* KullanicilarDAO.swift */,
+				0541DC862949F33800D238F4 /* FMDatabase.h */,
+				0541DC852949F33800D238F4 /* FMDatabase.m */,
+				0541DC8B2949F33800D238F4 /* FMDatabaseAdditions.h */,
+				0541DC832949F33700D238F4 /* FMDatabaseAdditions.m */,
+				0541DC8D2949F33800D238F4 /* FMDatabasePool.h */,
+				0541DC872949F33800D238F4 /* FMDatabasePool.m */,
+				0541DC892949F33800D238F4 /* FMDatabaseQueue.h */,
+				0541DC8C2949F33800D238F4 /* FMDatabaseQueue.m */,
+				0541DC842949F33800D238F4 /* FMDB.h */,
+				0541DC8A2949F33800D238F4 /* FMResultSet.h */,
+				0541DC882949F33800D238F4 /* FMResultSet.m */,
+				0541DC822949F33700D238F4 /* Kan App-Bridging-Header.h */,
 			);
 			path = "Kan App";
 			sourceTree = "<group>";
@@ -249,6 +298,7 @@
 				TargetAttributes = {
 					059C8FD72935599900AE456D = {
 						CreatedOnToolsVersion = 14.1;
+						LastSwiftMigration = 1410;
 					};
 					059C8FED2935599A00AE456D = {
 						CreatedOnToolsVersion = 14.1;
@@ -285,8 +335,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0541DC952949F35A00D238F4 /* libsqlite3.tbd in Resources */,
 				059C8FE82935599A00AE456D /* LaunchScreen.storyboard in Resources */,
 				059C8FE52935599A00AE456D /* Assets.xcassets in Resources */,
+				0541DC782949EA3300D238F4 /* bagiscilar.sqlite in Resources */,
 				059C8FE32935599A00AE456D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,19 +372,26 @@
 				059C8FDC2935599900AE456D /* AppDelegate.swift in Sources */,
 				05262ABD2940F531000B3D19 /* ViewControllerKanBagis.swift in Sources */,
 				05B4578C29356052007E89D0 /* KisiselViewController.swift in Sources */,
+				0541DC7F2949EFE900D238F4 /* Kullanicilar.swift in Sources */,
 				058660CE2938BB4F00EA4313 /* KullanimKosViewController.swift in Sources */,
 				05B457862935603A007E89D0 /* SSSViewController.swift in Sources */,
 				05B4578A2935604C007E89D0 /* YasalViewController.swift in Sources */,
 				058660CC2938BB3800EA4313 /* GizlilikViewController.swift in Sources */,
+				0541DC8F2949F33800D238F4 /* FMDatabase.m in Sources */,
 				05B457942935613D007E89D0 /* Constants.swift in Sources */,
+				0541DC912949F33800D238F4 /* FMResultSet.m in Sources */,
+				0541DC902949F33800D238F4 /* FMDatabasePool.m in Sources */,
+				0541DC922949F33800D238F4 /* FMDatabaseQueue.m in Sources */,
 				05B457922935609C007E89D0 /* KayitViewController.swift in Sources */,
 				05781C5C29433C8E00C45DAE /* ViewControllerKanDetay.swift in Sources */,
 				05B457902935605E007E89D0 /* MainViewController.swift in Sources */,
 				053359E5293696A3000B2DDF /* Kisi.swift in Sources */,
+				0541DC812949EFF300D238F4 /* KullanicilarDAO.swift in Sources */,
 				0570FA652935758600A36270 /* UIColorExt.swift in Sources */,
 				05B4578829356044007E89D0 /* SifreYenViewController.swift in Sources */,
 				05CBC2192935868500184140 /* UILabelExt.swift in Sources */,
 				059C8FDE2935599900AE456D /* SceneDelegate.swift in Sources */,
+				0541DC8E2949F33800D238F4 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +566,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -524,6 +584,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Hu-dahan-Altun.Kan-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Kan App/Kan App-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -534,6 +596,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -551,6 +614,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Hu-dahan-Altun.Kan-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Kan App/Kan App-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

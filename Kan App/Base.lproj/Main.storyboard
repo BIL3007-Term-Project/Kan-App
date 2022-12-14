@@ -1128,7 +1128,7 @@
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="immun_bagis" width="170.66667175292969" height="170.66667175292969"/>
         <image name="kan_bagis" width="170.66667175292969" height="170.66667175292969"/>
-        <image name="kok_bagis" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="kok_bagis" width="170" height="170"/>
         <image name="map" catalog="system" width="128" height="112"/>
         <image name="person.circle" catalog="system" width="128" height="123"/>
         <image name="questionmark" catalog="system" width="94" height="128"/>
