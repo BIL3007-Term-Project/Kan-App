@@ -29,7 +29,9 @@ class ViewController: UIViewController { //giriş ekranı VC
     
     @IBOutlet weak var VCActivityIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var emailImageView: UIImageView!
     
+    @IBOutlet weak var sifreImageView: UIImageView!
     var textLabel:String = "Kan Application"
     
     //t
@@ -51,6 +53,8 @@ class ViewController: UIViewController { //giriş ekranı VC
         
         emailTextField.alpha = 1
         sifreTextField.alpha = 1
+        emailImageView.alpha = 1
+        sifreImageView.alpha = 1
         girisButton.alpha = 1
         
         emailTextField.keyboardType = .default
@@ -100,6 +104,8 @@ class ViewController: UIViewController { //giriş ekranı VC
             
             emailTextField.alpha = 1
             sifreTextField.alpha = 1
+            emailImageView.alpha = 1
+            sifreImageView.alpha = 1
             girisButton.alpha = 1
         }
         
@@ -110,6 +116,8 @@ class ViewController: UIViewController { //giriş ekranı VC
             
             emailTextField.alpha = 0
             sifreTextField.alpha = 0
+            emailImageView.alpha = 0
+            sifreImageView.alpha = 0
             girisButton.alpha = 0
             
         }
