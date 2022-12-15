@@ -40,6 +40,8 @@ class KayitViewController: UIViewController {
     var kayitCheck:Bool = false
     
     
+    var KisiselVCdenGelenMobilTempNesnesi:mobilKullanicilar?
+    
 //    MARK: - iOS Cycle fonskiyonları
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -149,9 +151,64 @@ class KayitViewController: UIViewController {
                          
     
     @IBAction func kayitOlButtonPressed(_ sender: Any) {
-    
-        kayitVerileriniAl(emailTF: emailTextField, sifreTF: sifreTextField, sifreTkrTF: sifreTekTextField)
-//        performSegue(withIdentifier: K.kToMain, sender: nil)
+        
+        var mobilKullaniciKayitCheck:Bool?
+        
+        
+        if let mail = emailTextField.text, let sifre = sifreTextField.text, let sifreTkr = sifreTekTextField.text, let gelenNesne = KisiselVCdenGelenMobilTempNesnesi{
+
+            print("bilgiler alındı")
+            if mailKayitCheck == true && sifreKayitCheck == true && sifreTekKayitCheck == true{
+                // Tf içerikleri artık dolu olduğu kesindir.1.asama güvenlik
+                print("1.aşama güvenlik")
+                
+                let check1 = alınanMailGuv(mail: mail)
+                let check2 = alınanSifreGuv(sifre: sifre)
+                if check1 == true && check2 == true && sifre == sifreTkr{
+                    //2.asama güvenlik
+                    //mail ve sifre istenen özelliklere sahip ayrıca sifre ile sifre tekrarı bir eşit.
+                    
+                    print("2.aşama güvenlik")
+                   
+                    
+                    
+                     mobilKullaniciKayitCheck = kullanicilarDAO().mobilKullaniciEkle(k_mail: mail, k_sifre: sifre, k_ad: gelenNesne.getK_Ad(), k_soyad: gelenNesne.getK_Soyad(), k_tc: gelenNesne.getK_TC(), k_tel: gelenNesne.getK_Tel(), k_dogumgunu: gelenNesne.getK_dogumgunu(), k_kilo: gelenNesne.getK_Kilo(), k_boy: gelenNesne.getK_Boy(), k_cinsiyet: gelenNesne.getK_Cinsiyet(), k_kangrup: gelenNesne.getK_Kangrup())
+                    
+                    if mobilKullaniciKayitCheck == true{
+                        
+                        print("kullanıcı başarıyla veritabanına eklendi geçiş yapılacak")
+                        DispatchQueue.main.async {
+                            self.activityIndicator.alpha = 1
+                            self.activityIndicator.startAnimating()
+                        }
+                        
+                        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(mainVCGecisYap), userInfo: nil, repeats: false)
+                        
+                        
+                        
+                    }else{
+                        
+                        hesapOlusturmaAlert()
+                        
+                    }
+                    
+                    
+                }else{
+                    
+                    bilgilerYanlisAlert()
+                    
+                }
+            }else{
+                
+                bosAlanHatası()
+                
+            }
+        }else{
+            
+            bosAlanHatası()
+//
+            
+        }
         
     }
     
@@ -173,59 +230,60 @@ class KayitViewController: UIViewController {
 //MARK: - Güvenlik Kontrol fonksiyonları
 extension KayitViewController{
     
-    func kayitVerileriniAl(emailTF:UITextField,sifreTF:UITextField,sifreTkrTF:UITextField){
-        
-    
-        if let mail = emailTF.text, let sifre = sifreTF.text, let sifreTkr = sifreTkrTF.text{
-
-            if mailKayitCheck == true && sifreKayitCheck == true && sifreTekKayitCheck == true{
-                // Tf içerikleri artık dolu olduğu kesindir.1.asama güvenlik
-                
-                let check1 = alınanMailGuv(mail: mail)
-                let check2 = alınanSifreGuv(sifre: sifre)
-                if check1 == true && check2 == true && sifre == sifreTkr{
-                    //2.asama güvenlik
-                    //mail ve sifre istenen özelliklere sahip ayrıca sifre ile sifre tekrarı bir eşit.
-                    
-                    DispatchQueue.main.async {
-                        self.activityIndicator.alpha = 1
-                        self.activityIndicator.startAnimating()
-                    }
-                    
-                    Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(gecisYap), userInfo: nil, repeats: false)
-                    
-                    
-                    //sqlite ile veritabanına veri yaz insert işlemleri(hesap bilgileri)
-//                    self.performSegue(withIdentifier: K.kToMain, sender: nil)
-                    
-                    
-                    print("diğer sayfaya güvenli gecis")
-                    
-                    
-                }else{
-                    
-                    bilgilerYanlisAlert()
-                    
-                }
-            }else{
-                
-                bosAlanHatası()
-            }
-            
-            
-        }else{
-            
-            bosAlanHatası()
+//    func kayitVerileriniAl(emailTF:UITextField,sifreTF:UITextField,sifreTkrTF:UITextField){
 //
-            
-        }
-        
-    }
-    
-    @objc func gecisYap(){
+//
+//        if let mail = emailTF.text, let sifre = sifreTF.text, let sifreTkr = sifreTkrTF.text{
+//
+//            if mailKayitCheck == true && sifreKayitCheck == true && sifreTekKayitCheck == true{
+//                // Tf içerikleri artık dolu olduğu kesindir.1.asama güvenlik
+//
+//                let check1 = alınanMailGuv(mail: mail)
+//                let check2 = alınanSifreGuv(sifre: sifre)
+//                if check1 == true && check2 == true && sifre == sifreTkr{
+//                    //2.asama güvenlik
+//                    //mail ve sifre istenen özelliklere sahip ayrıca sifre ile sifre tekrarı bir eşit.
+//
+//                    DispatchQueue.main.async {
+//                        self.activityIndicator.alpha = 1
+//                        self.activityIndicator.startAnimating()
+//                    }
+//
+//                    Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(gecisYap), userInfo: nil, repeats: false)
+//
+//
+//                    //sqlite ile veritabanına veri yaz insert işlemleri(hesap bilgileri)
+////                    self.performSegue(withIdentifier: K.kToMain, sender: nil)
+//
+//
+//                    print("diğer sayfaya güvenli gecis")
+//
+//
+//                }else{
+//
+//                    bilgilerYanlisAlert()
+//
+//                }
+//            }else{
+//
+//                bosAlanHatası()
+//            }
+//
+//
+//        }else{
+//
+//            bosAlanHatası()
+////
+//
+//        }
+//
+//    }
+//
+    @objc func mainVCGecisYap(){
         
         self.performSegue(withIdentifier: K.kToMain, sender: nil)
        
+        print("geçiş yapğıldı")
     }
     func alınanMailGuv(mail:String)->Bool{
         
@@ -275,6 +333,18 @@ extension KayitViewController{
     func bilgilerYanlisAlert(){
         
         let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.guvHata, preferredStyle: .alert)
+        
+        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
+        
+        alertController.addAction(tamamButton)
+        
+        self.present(alertController, animated: true)
+        
+    }
+    
+    func hesapOlusturmaAlert(){
+        
+        let alertController = UIAlertController(title: "Hesap Oluşturma", message: K.hesapOlusturma, preferredStyle: .alert)
         
         let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
         

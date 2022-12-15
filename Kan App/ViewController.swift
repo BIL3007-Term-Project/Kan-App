@@ -61,6 +61,8 @@ class ViewController: UIViewController { //giriş ekranı VC
         girisButton.tintColor = UIColor(rgb: 0x393E46)
         kayıtButton.tintColor = UIColor(rgb: 0x393E46)
         
+        ozelVeritabaniKopyala()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -116,7 +118,41 @@ class ViewController: UIViewController { //giriş ekranı VC
     //
     @IBAction func girisButtonPressed(_ sender: UIButton) {
         
-        veriDoğrula(emailTF: emailTextField, sifreTF: sifreTextField)
+        var dbGelenMobilKul:mobilKullanicilar?
+        
+        if let mail = emailTextField.text , let sifre = sifreTextField.text{
+            
+            if mailGirisCheck == true && sifreGirisCheck == true{
+                
+                //animasyon çalışır
+                DispatchQueue.main.async {
+                    self.VCActivityIndicator.alpha = 1
+                    self.VCActivityIndicator.startAnimating()
+                }
+                
+                
+                dbGelenMobilKul = kullanicilarDAO().MobilKullaniciGetir(k_mail: mail)
+                
+                if mail == dbGelenMobilKul?.getK_Mail() && sifre == dbGelenMobilKul?.getK_Sifre(){
+                    
+                    Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(mainGecisYap), userInfo: nil, repeats: false)
+                    
+                    
+                }else{
+                    
+                    bilgilerYanlisAlert()
+                }
+                //2 sn içinde geçiş yapılır.burası 2.sql güvenlik katmanının için e koyulacak
+                
+            }else{
+                
+                bosAlanHatası()
+            }
+            
+        }else{
+            
+            bosAlanHatası()
+        }
         
         
     }
@@ -133,41 +169,79 @@ class ViewController: UIViewController { //giriş ekranı VC
         self.performSegue(withIdentifier: K.gToSifre, sender: nil)
     }
     
-    //MARK: - Giris hesap kontrol fonksiyonu
+  
     
-    func veriDoğrula(emailTF:UITextField,sifreTF:UITextField){
-        
-        if let id = emailTF.text , let sifre = sifreTF.text{
-            
-            if mailGirisCheck == true && sifreGirisCheck == true{
-                
-                //animasyon çalışır
-                DispatchQueue.main.async {
-                    self.VCActivityIndicator.alpha = 1
-                    self.VCActivityIndicator.startAnimating()
-                }
-                
-                //2 sn içinde geçiş yapılır.burası 2.sql güvenlik katmanının için e koyulacak
-                Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(mainGecisYap), userInfo: nil, repeats: false)
-                
-            }else{
-                
-                bosAlanHatası()
-            }
-            
-        }else{
-            
-            bosAlanHatası()
-        }
-        
-        
-        
-    }
     
     @objc func mainGecisYap(){
         
         self.performSegue(withIdentifier: K.gToMain, sender: nil)
     }
+    
+ 
+
+}
+extension ViewController{
+    
+    
+    func ozelVeritabaniKopyala(){
+       
+        let bundleYolu = Bundle.main.path(forResource: "bagiscilar", ofType: ".sqlite")
+        
+        let hedefYol = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        
+        let fileManager = FileManager.default
+        
+        let kopyala = URL(fileURLWithPath: hedefYol).appendingPathComponent("bagiscilar.sqlite")
+        
+        if fileManager.fileExists(atPath: kopyala.path){
+            
+            print("veritabanı yolu\(kopyala.path)")
+            print("bagiscilar veritabanı zaten kopyalandı")
+        }else{
+            
+            do{
+                
+                try fileManager.copyItem(atPath: bundleYolu!, toPath: kopyala.path)
+                print("bagiscilar veritabanı kopyalama başarılı!")
+                
+            }catch{
+                
+                print("bagiscilar veritabanı kopyalamada hata!")
+            }
+        }
+        
+    }
+    
+    func ortakVeriTabanikopyala(){
+        
+        let bundleYolu = Bundle.main.path(forResource: "db", ofType: ".sqlite3")
+        
+        let hedefYol = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        
+        let fileManager = FileManager.default
+        
+        let kopyala = URL(fileURLWithPath: hedefYol).appendingPathComponent("db.sqlite3")
+        
+        if fileManager.fileExists(atPath: kopyala.path){
+            
+            print(kopyala.path)
+            print("ortak veritabanı zaten kopyalandı")
+        }else{
+            
+            do{
+                
+                try fileManager.copyItem(atPath: bundleYolu!, toPath: kopyala.path)
+                print("ortak veritabanı kopyalama başarılı!")
+                
+            }catch{
+                
+                print("ortak veritabanı kopyalamada hata!")
+            }
+        }
+    }
+}
+//MARK: - animasyon fonksiyonları
+extension ViewController{
     
     func runNameAnimation(){//giriş yazı animasyon fonksiyonu
         
@@ -194,7 +268,6 @@ class ViewController: UIViewController { //giriş ekranı VC
         })
     }
     
-
 }
 
 extension ViewController{

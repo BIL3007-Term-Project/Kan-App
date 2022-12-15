@@ -29,10 +29,11 @@ struct K{
     
     static let guvHata:String = "Lütfen hesap bilgilerinizi kontrol ediniz.Gereksinimler için soru işaretine tıklayabilirsiniz."
     
+    static let hesapOlusturma:String = "Girilen mail adresiyle kayıtlı başka bir kullanıcı mevcut.Lütfen farklı mail adresi deneyiniz."
     static let bosAlanHata:String = "Boş alan bırakılamaz!"
     static let gmailCheck:[Substring.Element] = ["@", "g", "m", "a", "i", "l", ".", "c", "o", "m"]
     
-    static let bilgYanlis:String = "Girdiğiniz bilgiler yanlis lütfen tekrar deneyiniz."
+    static let bilgYanlis:String = "Girdiğiniz bilgiler yanlış lütfen tekrar deneyiniz."
     
     //yasalVC için Yasal Uyarı,KKVC için kullanım kosulları,gizlilikVC için gizlilik koşulları.
     

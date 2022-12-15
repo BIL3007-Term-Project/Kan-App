@@ -27,7 +27,7 @@ class mobilKullanicilar{
         
     }
     
-    init(k_mail:String,k_sifre:String,k_ad:String,k_soyad:String,k_tc:String,k_tel:String,k_dogumgunu:String,k_kilo:Int,k_boy:Int,k_cinsiyet:String?,k_kangrup:String){
+    init(k_mail:String,k_sifre:String,k_ad:String,k_soyad:String,k_tc:String,k_tel:String,k_dogumgunu:String,k_kilo:Int,k_boy:Int,k_cinsiyet:String,k_kangrup:String){
         
       
         self.k_mail = k_mail
@@ -115,8 +115,5 @@ class ortakKullanıcılar{
         self.mail = mail
         
     }
-    
-    
-    
     
 }

@@ -10,7 +10,6 @@
 		05262ABD2940F531000B3D19 /* ViewControllerKanBagis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262ABC2940F531000B3D19 /* ViewControllerKanBagis.swift */; };
 		05262AC32940F557000B3D19 /* ViewControllerKokHucreBagis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262AC22940F557000B3D19 /* ViewControllerKokHucreBagis.swift */; };
 		05262AC92940F75A000B3D19 /* ViewControllerAferezBagis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262AC82940F75A000B3D19 /* ViewControllerAferezBagis.swift */; };
-		053359E5293696A3000B2DDF /* Kisi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053359E4293696A3000B2DDF /* Kisi.swift */; };
 		0541DC782949EA3300D238F4 /* bagiscilar.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0541DC772949EA3300D238F4 /* bagiscilar.sqlite */; };
 		0541DC7F2949EFE900D238F4 /* Kullanicilar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0541DC7E2949EFE900D238F4 /* Kullanicilar.swift */; };
 		0541DC812949EFF300D238F4 /* KullanicilarDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0541DC802949EFF300D238F4 /* KullanicilarDAO.swift */; };
@@ -66,7 +65,6 @@
 		05262ABC2940F531000B3D19 /* ViewControllerKanBagis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerKanBagis.swift; sourceTree = "<group>"; };
 		05262AC22940F557000B3D19 /* ViewControllerKokHucreBagis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerKokHucreBagis.swift; sourceTree = "<group>"; };
 		05262AC82940F75A000B3D19 /* ViewControllerAferezBagis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAferezBagis.swift; sourceTree = "<group>"; };
-		053359E4293696A3000B2DDF /* Kisi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kisi.swift; sourceTree = "<group>"; };
 		0541DC772949EA3300D238F4 /* bagiscilar.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = bagiscilar.sqlite; sourceTree = "<group>"; };
 		0541DC7E2949EFE900D238F4 /* Kullanicilar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kullanicilar.swift; sourceTree = "<group>"; };
 		0541DC802949EFF300D238F4 /* KullanicilarDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KullanicilarDAO.swift; sourceTree = "<group>"; };
@@ -187,7 +185,6 @@
 				05B457932935613D007E89D0 /* Constants.swift */,
 				0570FA642935758600A36270 /* UIColorExt.swift */,
 				05CBC2182935868500184140 /* UILabelExt.swift */,
-				053359E4293696A3000B2DDF /* Kisi.swift */,
 				05B4578F2935605E007E89D0 /* MainViewController.swift */,
 				057AA88A293E7C2D00C11524 /* HaritaAcilViewController.swift */,
 				057AA88C293E7FAF00C11524 /* BagisViewController.swift */,
@@ -385,7 +382,6 @@
 				05B457922935609C007E89D0 /* KayitViewController.swift in Sources */,
 				05781C5C29433C8E00C45DAE /* ViewControllerKanDetay.swift in Sources */,
 				05B457902935605E007E89D0 /* MainViewController.swift in Sources */,
-				053359E5293696A3000B2DDF /* Kisi.swift in Sources */,
 				0541DC812949EFF300D238F4 /* KullanicilarDAO.swift in Sources */,
 				0570FA652935758600A36270 /* UIColorExt.swift in Sources */,
 				05B4578829356044007E89D0 /* SifreYenViewController.swift in Sources */,

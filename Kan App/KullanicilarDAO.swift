@@ -10,7 +10,7 @@ import Foundation
 
 class kullanicilarDAO{
     
-    var db:FMDatabase?
+    var db:FMDatabase? //veritabanı değişkeni
     
     init(){
         
@@ -26,7 +26,7 @@ class kullanicilarDAO{
     
     
     
-    func mobilKullaniciEkle(k_mail:String,k_sifre:String,k_ad:String,k_soyad:String,k_tc:String,k_tel:String,k_dogumgunu:Date,k_kilo:Int,k_boy:Int,k_cinsiyet:String,k_kangrup:String)->Bool{
+    func mobilKullaniciEkle(k_mail:String,k_sifre:String,k_ad:String,k_soyad:String,k_tc:String,k_tel:String,k_dogumgunu:String,k_kilo:Int,k_boy:Int,k_cinsiyet:String,k_kangrup:String)->Bool{
         
         db?.open()
         
@@ -35,16 +35,18 @@ class kullanicilarDAO{
             
             try db!.executeUpdate("INSERT INTO  Kullanicilar(k_mail,k_sifre,k_ad,k_soyad,k_tc,k_tel,k_dogumgunu,k_kilo,k_boy,k_cinsiyet,k_kangrup) VALUES(?,?,?,?,?,?,?,?,?,?,?)", values: [k_mail,k_sifre,k_ad,k_soyad,k_tc,k_tel,k_dogumgunu,k_kilo,k_boy,k_cinsiyet,k_kangrup])
             
-            print(" Mobil kullanici eklemek başarılı!")
+            print(" Mobil kullanici ekleme başarılı!")
 
             db!.close()
+            
             return true
             
         }catch{
             
-            print("mobil kullanici eklemek başarısız!")
+            print("mobil kullanici ekleme başarısız!")
             
             db!.close()
+            
             return false
             
         }
@@ -55,7 +57,7 @@ class kullanicilarDAO{
     
     
     
-    func MobilKullaniciGetir(k_mail:String)->mobilKullanicilar{//anaVC doğrulama ve diğer doğrulamalar için
+    func MobilKullaniciGetir(k_mail:String)->mobilKullanicilar{//kullanıcı doğrulama ve diğer doğrulamalar için
         
         var gelenMobilKullanici:mobilKullanicilar = mobilKullanicilar()
         

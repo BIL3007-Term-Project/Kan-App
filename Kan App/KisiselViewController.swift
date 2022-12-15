@@ -166,17 +166,35 @@ class KisiselViewController: UIViewController {
     }
     
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        if let gelenMobilTempNesnesi = sender as? mobilKullanicilar{
+            
+            let gidilecekKayitVC = segue.destination as! KayitViewController
+            
+            gidilecekKayitVC.KisiselVCdenGelenMobilTempNesnesi = gelenMobilTempNesnesi
+            
+            print("Nesne başarıyla kayitVc ye aktarıldı")
+        }
+    }
     @IBAction func ileriKButtonPressed(_ sender: UIButton) {
         
 //        self.performSegue(withIdentifier: K.kToKayit, sender: nil)
         
-        if adCheck == true && soyadCheck == true && tcCheck == true && telCheck == true && kiloCheck == true && boyCheck == true && cinsiyetCheck == true && kanCheck == true && dgCheck == true{
+        if adCheck == true && soyadCheck == true && tcCheck == true && dgCheck == true && telCheck == true && kiloCheck == true && boyCheck == true && cinsiyetCheck == true && kanCheck == true{
             
-            print("gecis basarılı")
+            if let ad = adTextField.text, let soyad = soyadTextField.text, let tc = tcTextField.text, let tel = telTextField.text ,let dg = dogumTextField.text, let kilo = kilotextField.text, let boy = boyTextField.text, let cinsiyet = cinsiyetTextField.text, let kang = kanGrupTextField.text{
+                
+                
+                let tempMobilK = mobilKullanicilar(k_mail: "@gmail", k_sifre: "123", k_ad: ad, k_soyad: soyad, k_tc: tc, k_tel: tel, k_dogumgunu: dg, k_kilo: Int(kilo)!, k_boy: Int(boy)!, k_cinsiyet: cinsiyet, k_kangrup: kang)
+                
+                self.performSegue(withIdentifier: K.kToKayit, sender: tempMobilK)
+                
+                print("KayitVc'ye gecis basarılı")
+                
+            }
             
-            //sqlite ile kisi bilgilerini yaz.Kisi tablosu 
-            
-            self.performSegue(withIdentifier: K.kToKayit, sender: nil)
             
         }else{
             
