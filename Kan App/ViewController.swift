@@ -133,15 +133,16 @@ class ViewController: UIViewController { //giriş ekranı VC
             if mailGirisCheck == true && sifreGirisCheck == true{
                 
                 //animasyon çalışır
-                DispatchQueue.main.async {
-                    self.VCActivityIndicator.alpha = 1
-                    self.VCActivityIndicator.startAnimating()
-                }
-                
+               
                 
                 dbGelenMobilKul = kullanicilarDAO().MobilKullaniciGetir(k_mail: mail)
                 
                 if mail == dbGelenMobilKul?.getK_Mail() && sifre == dbGelenMobilKul?.getK_Sifre(){
+                    
+                    DispatchQueue.main.async {
+                        self.VCActivityIndicator.alpha = 1
+                        self.VCActivityIndicator.startAnimating()
+                    }
                     
                     Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(mainGecisYap), userInfo: nil, repeats: false)
                     

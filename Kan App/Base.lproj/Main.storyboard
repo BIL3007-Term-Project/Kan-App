@@ -111,7 +111,7 @@
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VdX-kL-699">
                                         <rect key="frame" x="20" y="24" width="34" height="33.999999999999986"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="34" id="oG9-4Q-hBN"/>
                                             <constraint firstAttribute="height" constant="35.329999999999998" id="s8R-uV-NJ2"/>
@@ -136,7 +136,7 @@
                                     </activityIndicatorView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2Ye-c1-bYn">
                                         <rect key="frame" x="20" y="90" width="34" height="34.000000000000014"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="34" id="3uw-EP-ftu"/>
                                             <constraint firstAttribute="height" constant="35.329999999999998" id="Zqm-fh-gJz"/>
@@ -927,15 +927,108 @@
                     <view key="view" contentMode="scaleToFill" id="pdV-gr-E2x">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profil_arkaplan" translatesAutoresizingMaskIntoConstraints="NO" id="SD0-Hx-CfF">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_arkaplan" translatesAutoresizingMaskIntoConstraints="NO" id="Bvt-2A-2Rs">
+                                <rect key="frame" x="10" y="320" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_arkaplan" translatesAutoresizingMaskIntoConstraints="NO" id="TXz-wk-z3M">
+                                <rect key="frame" x="109" y="321" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_arkaplan" translatesAutoresizingMaskIntoConstraints="NO" id="fAF-GY-ij6">
+                                <rect key="frame" x="204" y="321" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_arkaplan" translatesAutoresizingMaskIntoConstraints="NO" id="w38-JR-hAD">
+                                <rect key="frame" x="300" y="320" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="boy_icon" translatesAutoresizingMaskIntoConstraints="NO" id="IhG-gj-Cyy">
+                                <rect key="frame" x="123" y="328" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uS4-EG-CUB">
+                                <rect key="frame" x="109" y="73" width="175" height="175"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hüdahan Altun" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRJ-nP-SPz">
+                                <rect key="frame" x="109" y="256" width="175" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yas_icon" translatesAutoresizingMaskIntoConstraints="NO" id="XGn-xE-VMX">
+                                <rect key="frame" x="25" y="328" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kilo_icon" translatesAutoresizingMaskIntoConstraints="NO" id="QYS-i8-vm2">
+                                <rect key="frame" x="219" y="328" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kan_icon" translatesAutoresizingMaskIntoConstraints="NO" id="A3U-gh-Jj8">
+                                <rect key="frame" x="315" y="328" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vyo-Uc-H8p">
+                                <rect key="frame" x="40" y="378" width="21" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="170 cm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buw-89-w0r">
+                                <rect key="frame" x="121" y="380" width="55" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="70 kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="486-Ui-DwE">
+                                <rect key="frame" x="223" y="380" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A +" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5L-27-oDH">
+                                <rect key="frame" x="327" y="378" width="26" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="menu_icon" translatesAutoresizingMaskIntoConstraints="NO" id="UNU-hk-j3q">
+                                <rect key="frame" x="340" y="72" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="bQN-bJ-eYB"/>
                         <color key="backgroundColor" red="1" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="SD0-Hx-CfF" firstAttribute="top" secondItem="pdV-gr-E2x" secondAttribute="top" id="1na-fA-8hw"/>
+                            <constraint firstItem="SD0-Hx-CfF" firstAttribute="trailing" secondItem="bQN-bJ-eYB" secondAttribute="trailing" id="A1i-J3-2bH"/>
+                            <constraint firstItem="SD0-Hx-CfF" firstAttribute="leading" secondItem="bQN-bJ-eYB" secondAttribute="leading" id="J0O-os-IVw"/>
+                            <constraint firstAttribute="bottom" secondItem="SD0-Hx-CfF" secondAttribute="bottom" id="Tc6-ES-POn"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profil" image="person.circle" catalog="system" id="ken-Vu-ncy"/>
                     <navigationItem key="navigationItem" title="Kan Application" id="Ilm-97-9QN"/>
+                    <connections>
+                        <outlet property="boyIconIv" destination="TXz-wk-z3M" id="pdq-UC-r0h"/>
+                        <outlet property="kanIconIV" destination="w38-JR-hAD" id="7kp-De-Ymp"/>
+                        <outlet property="kiloIconIV" destination="fAF-GY-ij6" id="Ig0-ox-fWa"/>
+                        <outlet property="yasIconIV" destination="Bvt-2A-2Rs" id="YWz-Uu-2Ue"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SJU-eT-dEJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6613" y="4"/>
+            <point key="canvasLocation" x="8858.778625954199" y="3.5211267605633805"/>
         </scene>
         <!--haritaAcilVC-->
         <scene sceneID="wkm-dK-B3Q">
@@ -961,7 +1054,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6o-xb-bQC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6613" y="877"/>
+            <point key="canvasLocation" x="6349" y="877"/>
         </scene>
         <!--haritaDetayVC-->
         <scene sceneID="jhx-2o-BQU">
@@ -977,7 +1070,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BR4-C4-yKm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7703" y="877"/>
+            <point key="canvasLocation" x="7500" y="877"/>
         </scene>
         <!--SSS VC-->
         <scene sceneID="tnY-V6-pZN">
@@ -1141,19 +1234,27 @@
     <resources>
         <image name="aferez_bagis" width="170.66667175292969" height="170.66667175292969"/>
         <image name="background_1" width="246" height="533.33331298828125"/>
+        <image name="boy_icon" width="170.66667175292969" height="170.66667175292969"/>
         <image name="button_rect_1" width="100" height="12.666666984558105"/>
         <image name="button_rect_3" width="322" height="68"/>
         <image name="checkmark.circle" catalog="system" width="128" height="123"/>
         <image name="drop.circle" catalog="system" width="128" height="123"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
+        <image name="icon_arkaplan" width="810" height="1440"/>
         <image name="immun_bagis" width="170.66667175292969" height="170.66667175292969"/>
         <image name="kan_bagis" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="kan_icon" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="kilo_icon" width="170.66667175292969" height="170.66667175292969"/>
         <image name="kok_bagis" width="170.66667175292969" height="170.66667175292969"/>
         <image name="lock.circle" catalog="system" width="128" height="123"/>
         <image name="map" catalog="system" width="128" height="112"/>
+        <image name="menu_icon" width="170" height="170"/>
         <image name="person.circle" catalog="system" width="128" height="123"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="profil_arkaplan" width="810" height="1440"/>
         <image name="questionmark" catalog="system" width="94" height="128"/>
         <image name="textfield_bg" width="298" height="93"/>
+        <image name="yas_icon" width="170.66667175292969" height="170.66667175292969"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
