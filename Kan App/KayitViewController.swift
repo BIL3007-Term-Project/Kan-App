@@ -34,6 +34,13 @@ class KayitViewController: UIViewController {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    
+    @IBOutlet weak var sifreyiGButton: UIButton!
+    
+    @IBOutlet weak var sifreyiGImageView: UIImageView!
+    
+    var sifreGorunuyorMu:Bool?
+    
     var mailKayitCheck:Bool = false
     var sifreKayitCheck:Bool = false
     var sifreTekKayitCheck:Bool = false
@@ -48,6 +55,8 @@ class KayitViewController: UIViewController {
 
         kayitOlButton.layer.cornerRadius = kayitOlButton.frame.height/2.6
 
+        
+        sifreyiGImageView.image = UIImage(systemName: "eye.slash")
         activityIndicator.alpha = 0
         kayitOlButton.alpha = 0 // başlangıçta buton gözükmüyor
 
@@ -64,9 +73,9 @@ class KayitViewController: UIViewController {
         sifreTekTextField.autocapitalizationType = .none
         sifreTekTextField.keyboardType = .default
         sifreTekTextField.returnKeyType = .done
-        
-//        sifreTextField.isSecureTextEntry = true
-//        sifreTekTextField.isSecureTextEntry = true
+        sifreGorunuyorMu = false
+        sifreTextField.isSecureTextEntry = true
+        sifreTekTextField.isSecureTextEntry = true
         //protocol bağlantısı
         emailTextField.delegate = self
         sifreTextField.delegate = self
@@ -93,8 +102,10 @@ class KayitViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
+        sifreGorunuyorMu = false
         activityIndicator.alpha = 0
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(hesapGuvAlert), userInfo: nil, repeats: false)
+        
         
     }
     
@@ -105,6 +116,30 @@ class KayitViewController: UIViewController {
         activityIndicator.alpha = 0
     }
 //MARK: - IBAction fonksiyonları
+    
+    
+    @IBAction func sifreyiGButtonPressed(_ sender: Any) {
+        
+        if sifreGorunuyorMu!{ //şifre açık
+            
+            sifreTextField.isSecureTextEntry = true
+            sifreTekTextField.isSecureTextEntry = true
+            sifreyiGImageView.image = UIImage(systemName: "eye.slash")
+            
+            sifreGorunuyorMu = false
+            
+        }else{
+            
+            sifreTextField.isSecureTextEntry = false
+            sifreTekTextField.isSecureTextEntry = false
+            sifreyiGImageView.image = UIImage(systemName: "eye")
+            
+            sifreGorunuyorMu = true
+        }
+        
+        
+    }
+    
     
 
     @IBAction func KKSwitchToggled(_ sender: UISwitch) {
