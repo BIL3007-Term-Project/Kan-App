@@ -22,6 +22,8 @@ class MainViewController: UIViewController {
     
     var fabDurum:Bool = false
     
+    var hesapSahibi:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

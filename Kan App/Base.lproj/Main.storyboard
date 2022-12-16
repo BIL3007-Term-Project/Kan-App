@@ -864,7 +864,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Id-bg-iN4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9481.6793893129761" y="-1347.1830985915494"/>
+            <point key="canvasLocation" x="7920" y="-482"/>
         </scene>
         <!--bagisVC-->
         <scene sceneID="tpw-hZ-5eD">
@@ -874,6 +874,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bagis_arkaplan" translatesAutoresizingMaskIntoConstraints="NO" id="6OG-uh-zEA">
+                                <rect key="frame" x="208" y="464" width="180" height="290"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bagis_arkaplan" translatesAutoresizingMaskIntoConstraints="NO" id="4oA-1b-prW">
+                                <rect key="frame" x="5" y="464" width="180" height="290"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bagis_arkaplan" translatesAutoresizingMaskIntoConstraints="NO" id="mV4-vi-QV8">
+                                <rect key="frame" x="202" y="134" width="180" height="290"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bagis_arkaplan" translatesAutoresizingMaskIntoConstraints="NO" id="I0d-sm-Thh">
+                                <rect key="frame" x="5" y="134" width="180" height="290"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kan_bagis" translatesAutoresizingMaskIntoConstraints="NO" id="tcu-eO-aUF">
                                 <rect key="frame" x="5" y="103" width="180" height="290"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -891,21 +907,21 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="İmmun " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBh-h8-wAF">
-                                <rect key="frame" x="63" y="731" width="65" height="24"/>
+                                <rect key="frame" x="63" y="720" width="65" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aferez(Trombosit)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xq8-yc-vrh">
-                                <rect key="frame" x="219" y="400" width="158" height="24"/>
+                                <rect key="frame" x="219" y="390" width="158" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hh-eE-TtD">
-                                <rect key="frame" x="78" y="401" width="34" height="24"/>
+                                <rect key="frame" x="78" y="390" width="34" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -948,7 +964,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kök Hücre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtf-UT-UWP">
-                                <rect key="frame" x="253" y="730" width="91" height="24"/>
+                                <rect key="frame" x="253" y="720" width="91" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -960,12 +976,16 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Bağış" image="drop.circle" catalog="system" id="QNV-AJ-2Mq"/>
                     <connections>
+                        <outlet property="aferezBagisBackground" destination="mV4-vi-QV8" id="GvK-8G-lZS"/>
                         <outlet property="aferezButton" destination="xAQ-nK-e4s" id="OiD-Ys-9u4"/>
                         <outlet property="aferezImageView" destination="9ol-41-Rq4" id="x6E-dF-jQm"/>
+                        <outlet property="immunBagisBackground" destination="4oA-1b-prW" id="PfW-zA-0YM"/>
                         <outlet property="immunImageView" destination="fge-qt-2Zo" id="Ry7-AF-13K"/>
                         <outlet property="immuneButton" destination="mGJ-a2-Qc8" id="65d-iY-77w"/>
+                        <outlet property="kanBagisBackground" destination="I0d-sm-Thh" id="iKn-5K-enh"/>
                         <outlet property="kanButton" destination="OzL-lI-eaP" id="irU-tp-d3O"/>
                         <outlet property="kanImageView" destination="tcu-eO-aUF" id="Vra-tY-Rv0"/>
+                        <outlet property="kokBagisBackground" destination="6OG-uh-zEA" id="MMx-8R-oJs"/>
                         <outlet property="kokButton" destination="NgW-4k-ldU" id="ALC-Gc-TN9"/>
                         <outlet property="kokİmageView" destination="FO9-RA-qO4" id="uWS-yL-kqG"/>
                         <segue destination="VA6-yn-b0d" kind="show" identifier="bagisToKok" id="d0x-cn-ijT"/>
@@ -1336,6 +1356,7 @@
     <resources>
         <image name="aferez_bagis" width="170.66667175292969" height="170.66667175292969"/>
         <image name="background_3" width="836" height="661"/>
+        <image name="bagis_arkaplan" width="810" height="1440"/>
         <image name="boy_icon" width="170.66667175292969" height="170.66667175292969"/>
         <image name="button_rect_1" width="100" height="12.666666984558105"/>
         <image name="button_rect_3" width="322" height="68"/>

@@ -26,11 +26,30 @@ class BagisViewController: UIViewController {
     
     @IBOutlet weak var kokButton: UIButton!
     
+    
+    @IBOutlet weak var kanBagisBackground: UIImageView!
+    
+    @IBOutlet weak var aferezBagisBackground: UIImageView!
+    
+    
+    @IBOutlet weak var immunBagisBackground: UIImageView!
+    
+    @IBOutlet weak var kokBagisBackground: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.hidesBackButton = true
+        
+        kanBagisBackground.layer.cornerRadius = kanBagisBackground.frame.height/10
+        aferezBagisBackground.layer.cornerRadius = aferezBagisBackground.frame.height/10
+        immunBagisBackground.layer.cornerRadius = immunBagisBackground.frame.height/10
+        kokBagisBackground.layer.cornerRadius = kokBagisBackground.frame.height/10
     }
+    
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         
