@@ -218,7 +218,7 @@ class ViewController: UIViewController { //giriş ekranı VC
     
     @IBAction func sifreUnButtonPressed(_ sender: UIBarButtonItem) {
         
-        self.performSegue(withIdentifier: K.gToSifre, sender: nil)
+        self.performSegue(withIdentifier: K.gToSifreUnut, sender: nil)
     }
     
   

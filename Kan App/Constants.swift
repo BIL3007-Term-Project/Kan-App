@@ -11,7 +11,7 @@ import Foundation
 struct K{
     
     //segue identifier
-    static let gToSifre:String = "girisToSifreYen"
+    static let gToSifreUnut:String = "girisToSifreUnut"
     static let gToYasal:String = "girisToYasal"
     static let yToKisi:String = "yasalToKisisel"
     static let kToKayit:String = "kisiseltoKayit"
@@ -23,6 +23,9 @@ struct K{
     static let bToAferez:String = "bagisToAferez"
     static let bToDetay:String = "kanBagisToDetay"
     static let hToHDetay:String = "haritaToHaritaDetay"
+    static let mToAyar:String = "mainToAyarlar"
+    static let aToSifYen:String = "ayarlarToSifYen"
+    
     
     //kayitVC güvenlik check
     static let hesapGuv:String = "Mail adresiniz \"@gmail.com\" uzantılı olmalıdır.\nŞifreniz 8-15 karakter aralığında olmalıdır.Ayrıca sifreniz en az bir büyük harf, küçük harf, sayı ve .,$@$#!%*?& içermelidir"

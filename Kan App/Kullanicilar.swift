@@ -100,7 +100,6 @@ class ortakKullanıcılar{
         
         
     }
-    
     init(donor_name:String,donor_surname:String,id_number:String,date_of_birth:String,weight:Int,height:Int,gender:String,blood_type:String,phone:String,mail:String){
         
         self.donor_name = donor_name

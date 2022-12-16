@@ -99,15 +99,7 @@ class KayitViewController: UIViewController {
     
         
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if let mail = sender as? String{
-            
-            let gidilecekMainVC = segue.destination as! MainViewController
-            
-        }
-    }
+ 
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -326,7 +318,7 @@ extension KayitViewController{
     @objc func mainVCGecisYap(){
         
         
-        self.performSegue(withIdentifier: K.kToMain, sender:KisiselVCdenGelenMobilTempNesnesi?.getK_Mail() )
+        self.performSegue(withIdentifier: K.kToMain, sender:nil)
        
         print("geçiş yapğıldı")
         

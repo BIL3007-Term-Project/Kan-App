@@ -9,8 +9,10 @@ import UIKit
 
 class ViewControllerKanBagis: UIViewController {
 
+    @IBOutlet weak var kanBagisTableView: UITableView!
     
-    
+
+    var gelenBagisMerkezleri:[String]?
     //Trabzon Ortahisar konumları @40.9930417,39.6488585,12z
     
     
@@ -18,10 +20,38 @@ class ViewControllerKanBagis: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        kanBagisTableView.delegate = self
+        kanBagisTableView.dataSource = self
         
     }
     
 
 
+}
+
+
+extension ViewControllerKanBagis:UITableViewDelegate,UITableViewDataSource{
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        return gelenBagisMerkezleri!.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: "lfa",for:indexPath)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+    }
 }

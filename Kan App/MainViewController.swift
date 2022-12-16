@@ -113,6 +113,7 @@ class MainViewController: UIViewController {
         
         print("ayarlar basıldı")
         
+        self.performSegue(withIdentifier:K.mToAyar, sender: nil)
     }
     
     @IBAction func cikisButtonPressed(_ sender: Any) {

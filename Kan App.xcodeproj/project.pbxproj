@@ -10,6 +10,10 @@
 		05262ABD2940F531000B3D19 /* ViewControllerKanBagis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262ABC2940F531000B3D19 /* ViewControllerKanBagis.swift */; };
 		05262AC32940F557000B3D19 /* ViewControllerKokHucreBagis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262AC22940F557000B3D19 /* ViewControllerKokHucreBagis.swift */; };
 		05262AC92940F75A000B3D19 /* ViewControllerAferezBagis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262AC82940F75A000B3D19 /* ViewControllerAferezBagis.swift */; };
+		0531D22F294CB85400DE9760 /* AyarlarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531D22E294CB85400DE9760 /* AyarlarViewController.swift */; };
+		0531D231294CB86300DE9760 /* SifreYenileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531D230294CB86300DE9760 /* SifreYenileViewController.swift */; };
+		0531D233294CBA2500DE9760 /* SifreUnuttumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531D232294CBA2500DE9760 /* SifreUnuttumViewController.swift */; };
+		0531D235294CBBDC00DE9760 /* TableViewCellAyarlar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531D234294CBBDC00DE9760 /* TableViewCellAyarlar.swift */; };
 		0541DC782949EA3300D238F4 /* bagiscilar.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0541DC772949EA3300D238F4 /* bagiscilar.sqlite */; };
 		0541DC7F2949EFE900D238F4 /* Kullanicilar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0541DC7E2949EFE900D238F4 /* Kullanicilar.swift */; };
 		0541DC812949EFF300D238F4 /* KullanicilarDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0541DC802949EFF300D238F4 /* KullanicilarDAO.swift */; };
@@ -35,7 +39,6 @@
 		059C8FFD2935599A00AE456D /* Kan_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059C8FFC2935599A00AE456D /* Kan_AppUITests.swift */; };
 		059C8FFF2935599A00AE456D /* Kan_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059C8FFE2935599A00AE456D /* Kan_AppUITestsLaunchTests.swift */; };
 		05B457862935603A007E89D0 /* SSSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B457852935603A007E89D0 /* SSSViewController.swift */; };
-		05B4578829356044007E89D0 /* SifreYenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B4578729356044007E89D0 /* SifreYenViewController.swift */; };
 		05B4578A2935604C007E89D0 /* YasalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B457892935604C007E89D0 /* YasalViewController.swift */; };
 		05B4578C29356052007E89D0 /* KisiselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B4578B29356052007E89D0 /* KisiselViewController.swift */; };
 		05B457902935605E007E89D0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B4578F2935605E007E89D0 /* MainViewController.swift */; };
@@ -65,6 +68,10 @@
 		05262ABC2940F531000B3D19 /* ViewControllerKanBagis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerKanBagis.swift; sourceTree = "<group>"; };
 		05262AC22940F557000B3D19 /* ViewControllerKokHucreBagis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerKokHucreBagis.swift; sourceTree = "<group>"; };
 		05262AC82940F75A000B3D19 /* ViewControllerAferezBagis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAferezBagis.swift; sourceTree = "<group>"; };
+		0531D22E294CB85400DE9760 /* AyarlarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AyarlarViewController.swift; sourceTree = "<group>"; };
+		0531D230294CB86300DE9760 /* SifreYenileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SifreYenileViewController.swift; sourceTree = "<group>"; };
+		0531D232294CBA2500DE9760 /* SifreUnuttumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SifreUnuttumViewController.swift; sourceTree = "<group>"; };
+		0531D234294CBBDC00DE9760 /* TableViewCellAyarlar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellAyarlar.swift; sourceTree = "<group>"; };
 		0541DC772949EA3300D238F4 /* bagiscilar.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = bagiscilar.sqlite; sourceTree = "<group>"; };
 		0541DC7E2949EFE900D238F4 /* Kullanicilar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kullanicilar.swift; sourceTree = "<group>"; };
 		0541DC802949EFF300D238F4 /* KullanicilarDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KullanicilarDAO.swift; sourceTree = "<group>"; };
@@ -101,7 +108,6 @@
 		059C8FFC2935599A00AE456D /* Kan_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kan_AppUITests.swift; sourceTree = "<group>"; };
 		059C8FFE2935599A00AE456D /* Kan_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kan_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		05B457852935603A007E89D0 /* SSSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSViewController.swift; sourceTree = "<group>"; };
-		05B4578729356044007E89D0 /* SifreYenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SifreYenViewController.swift; sourceTree = "<group>"; };
 		05B457892935604C007E89D0 /* YasalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YasalViewController.swift; sourceTree = "<group>"; };
 		05B4578B29356052007E89D0 /* KisiselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisiselViewController.swift; sourceTree = "<group>"; };
 		05B4578F2935605E007E89D0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -176,7 +182,7 @@
 				059C8FE92935599A00AE456D /* Info.plist */,
 				0541DC772949EA3300D238F4 /* bagiscilar.sqlite */,
 				05B457852935603A007E89D0 /* SSSViewController.swift */,
-				05B4578729356044007E89D0 /* SifreYenViewController.swift */,
+				0531D232294CBA2500DE9760 /* SifreUnuttumViewController.swift */,
 				05B457892935604C007E89D0 /* YasalViewController.swift */,
 				05B4578B29356052007E89D0 /* KisiselViewController.swift */,
 				05B457912935609C007E89D0 /* KayitViewController.swift */,
@@ -186,6 +192,9 @@
 				0570FA642935758600A36270 /* UIColorExt.swift */,
 				05CBC2182935868500184140 /* UILabelExt.swift */,
 				05B4578F2935605E007E89D0 /* MainViewController.swift */,
+				0531D22E294CB85400DE9760 /* AyarlarViewController.swift */,
+				0531D234294CBBDC00DE9760 /* TableViewCellAyarlar.swift */,
+				0531D230294CB86300DE9760 /* SifreYenileViewController.swift */,
 				057AA88A293E7C2D00C11524 /* HaritaAcilViewController.swift */,
 				057AA88C293E7FAF00C11524 /* BagisViewController.swift */,
 				05262AC22940F557000B3D19 /* ViewControllerKokHucreBagis.swift */,
@@ -362,6 +371,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				057AA88D293E7FAF00C11524 /* BagisViewController.swift in Sources */,
+				0531D231294CB86300DE9760 /* SifreYenileViewController.swift in Sources */,
+				0531D22F294CB85400DE9760 /* AyarlarViewController.swift in Sources */,
 				057AA88B293E7C2D00C11524 /* HaritaAcilViewController.swift in Sources */,
 				05262AC32940F557000B3D19 /* ViewControllerKokHucreBagis.swift in Sources */,
 				059C8FE02935599A00AE456D /* ViewController.swift in Sources */,
@@ -379,12 +390,13 @@
 				0541DC912949F33800D238F4 /* FMResultSet.m in Sources */,
 				0541DC902949F33800D238F4 /* FMDatabasePool.m in Sources */,
 				0541DC922949F33800D238F4 /* FMDatabaseQueue.m in Sources */,
+				0531D233294CBA2500DE9760 /* SifreUnuttumViewController.swift in Sources */,
 				05B457922935609C007E89D0 /* KayitViewController.swift in Sources */,
+				0531D235294CBBDC00DE9760 /* TableViewCellAyarlar.swift in Sources */,
 				05781C5C29433C8E00C45DAE /* ViewControllerKanDetay.swift in Sources */,
 				05B457902935605E007E89D0 /* MainViewController.swift in Sources */,
 				0541DC812949EFF300D238F4 /* KullanicilarDAO.swift in Sources */,
 				0570FA652935758600A36270 /* UIColorExt.swift in Sources */,
-				05B4578829356044007E89D0 /* SifreYenViewController.swift in Sources */,
 				05CBC2192935868500184140 /* UILabelExt.swift in Sources */,
 				059C8FDE2935599900AE456D /* SceneDelegate.swift in Sources */,
 				0541DC8E2949F33800D238F4 /* FMDatabaseAdditions.m in Sources */,
