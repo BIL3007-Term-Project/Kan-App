@@ -22,7 +22,7 @@ class MainViewController: UIViewController {
     
     var fabDurum:Bool = false
     
-    var hesapSahibi:String?
+    var hesapSahibi:String = "default"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +42,8 @@ class MainViewController: UIViewController {
         
         self.ayarlarButton.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         self.ayarlarButton.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        
+        print("mainVC hesabın sahibi :\(hesapSahibi)")
     }
     
 

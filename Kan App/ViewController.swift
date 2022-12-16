@@ -37,6 +37,9 @@ class ViewController: UIViewController { //giriş ekranı VC
     
     @IBOutlet weak var sifreGButton: UIButton!
     @IBOutlet weak var sifreGImageView: UIImageView!
+    
+    var hesapSahibiMail:String?
+    
     var sifreGorunuyorMu:Bool?
     
     
@@ -83,6 +86,20 @@ class ViewController: UIViewController { //giriş ekranı VC
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == K.gToMain{
+            
+            if let sahipMail = sender as? String{
+                
+                print("mail gitti! mail:\(sahipMail)")
+                let gidilecekVC = segue.destination as? MainViewController
+                gidilecekVC?.hesapSahibi = sahipMail
+                
+                
+            }
+        }
+    }
     override func viewWillAppear(_ animated: Bool) {
         
 //        bilgiLabel.alpha = 0
@@ -187,7 +204,10 @@ class ViewController: UIViewController { //giriş ekranı VC
                         self.VCActivityIndicator.startAnimating()
                     }
                     
+                    hesapSahibiMail = mail
+                    
                     Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(mainGecisYap), userInfo: nil, repeats: false)
+                   
                     
                     
                 }else{
@@ -219,16 +239,18 @@ class ViewController: UIViewController { //giriş ekranı VC
     @IBAction func sifreUnButtonPressed(_ sender: UIBarButtonItem) {
         
         self.performSegue(withIdentifier: K.gToSifreUnut, sender: nil)
+        
     }
     
   
     
     
     @objc func mainGecisYap(){
-        
-        self.performSegue(withIdentifier: K.gToMain, sender: nil)
+
+        self.performSegue(withIdentifier: K.gToMain, sender: hesapSahibiMail)
+
     }
-    
+
  
 
 }

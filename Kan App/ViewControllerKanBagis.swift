@@ -15,6 +15,16 @@ class ViewControllerKanBagis: UIViewController {
     var gelenBagisMerkezleri:[String]?
     //Trabzon Ortahisar konumları @40.9930417,39.6488585,12z
     
+    //Ad : Türk Kızılay - Trabzon Şubesi - tel:+90 (462) 202 00 11 n enlem : 41.00510601 boylam : 39.71432916
+//hareketli notkalar :
+    // 41.005539,39.7300817,16.38z meydan parkı
+    // 40.993358, 39.775804  ktü bilg müh fak önü
+    // 40.999101, 39.768048  ktü ydyo önü
+    //
+    //
+    //
+    //
+    //
     
     
     override func viewDidLoad() {
