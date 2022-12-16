@@ -110,10 +110,13 @@ class MainViewController: UIViewController {
     @IBAction func ayarlarButtonPressed(_ sender: Any) {
         
         print("ayarlar basıldı")
+        
     }
     
     @IBAction func cikisButtonPressed(_ sender: Any) {
         print("cikis basıldı")
+        
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
 

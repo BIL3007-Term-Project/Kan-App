@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_1" translatesAutoresizingMaskIntoConstraints="NO" id="lfW-zn-RSZ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_3" translatesAutoresizingMaskIntoConstraints="NO" id="lfW-zn-RSZ">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pw3-Ak-fjS" userLabel="TopView">
@@ -142,6 +142,24 @@
                                             <constraint firstAttribute="height" constant="35.329999999999998" id="Zqm-fh-gJz"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xiH-53-il2">
+                                        <rect key="frame" x="225" y="131" width="121" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Şifreyi Göster">
+                                            <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                            <color key="baseForegroundColor" systemColor="tintColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="sifreGosterPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RYu-3B-oRh"/>
+                                            <action selector="sifreyiGButtonPressed:" destination="Brl-h9-K0E" eventType="touchUpInside" id="9Qe-tB-BDR"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eye" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3vk-Zq-H04">
+                                        <rect key="frame" x="354" y="135" width="25" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" systemColor="tintColor"/>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="M1K-Ta-WIo" firstAttribute="top" secondItem="9lx-i3-yml" secondAttribute="bottom" constant="50" id="1Sh-h3-PKZ"/>
@@ -201,6 +219,8 @@
                         <outlet property="emailTextField" destination="TAu-hv-RSY" id="nFL-Eq-3Pw"/>
                         <outlet property="girisButton" destination="M1K-Ta-WIo" id="Zgc-hK-hrJ"/>
                         <outlet property="kayıtButton" destination="nJk-Yo-43g" id="ddU-R5-axf"/>
+                        <outlet property="sifreGButton" destination="xiH-53-il2" id="1jD-Hx-4lR"/>
+                        <outlet property="sifreGImageView" destination="3vk-Zq-H04" id="qEU-4r-aI8"/>
                         <outlet property="sifreImageView" destination="2Ye-c1-bYn" id="bfz-6u-7tP"/>
                         <outlet property="sifreTextField" destination="9lx-i3-yml" id="s4M-X7-Fzg"/>
                         <outlet property="sifreUnButton" destination="D38-zc-Z8c" id="g4a-93-qsv"/>
@@ -739,6 +759,25 @@
                     <view key="view" contentMode="scaleToFill" id="AmU-qN-ZNI">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSS-Mj-QEQ">
+                                <rect key="frame" x="168" y="377" width="121" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Şifreyi Göster">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                    <color key="baseForegroundColor" systemColor="tintColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="sifreyiGButtonPressed:" destination="Brl-h9-K0E" eventType="touchUpInside" id="8Sp-de-ahO"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eye" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bjX-Fo-xiI">
+                                <rect key="frame" x="297" y="381" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="tintColor"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="5HR-jd-tfX"/>
                         <color key="backgroundColor" red="1" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -1296,7 +1335,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="aferez_bagis" width="170.66667175292969" height="170.66667175292969"/>
-        <image name="background_1" width="246" height="533.33331298828125"/>
+        <image name="background_3" width="836" height="661"/>
         <image name="boy_icon" width="170.66667175292969" height="170.66667175292969"/>
         <image name="button_rect_1" width="100" height="12.666666984558105"/>
         <image name="button_rect_3" width="322" height="68"/>

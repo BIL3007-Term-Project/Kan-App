@@ -319,6 +319,7 @@ extension KayitViewController{
         self.performSegue(withIdentifier: K.kToMain, sender: nil)
        
         print("geçiş yapğıldı")
+        
     }
     func alınanMailGuv(mail:String)->Bool{
         

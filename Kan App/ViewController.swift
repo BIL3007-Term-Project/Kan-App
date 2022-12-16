@@ -32,6 +32,14 @@ class ViewController: UIViewController { //giriş ekranı VC
     @IBOutlet weak var emailImageView: UIImageView!
     
     @IBOutlet weak var sifreImageView: UIImageView!
+    
+    
+    
+    @IBOutlet weak var sifreGButton: UIButton!
+    @IBOutlet weak var sifreGImageView: UIImageView!
+    var sifreGorunuyorMu:Bool?
+    
+    
     var textLabel:String = "Kan Application"
     
     //t
@@ -44,6 +52,8 @@ class ViewController: UIViewController { //giriş ekranı VC
         super.viewDidLoad()
         
    
+        sifreGImageView.image = UIImage(systemName: "eye.slash")
+        
         VCActivityIndicator.color = .white
         emailTextField.delegate = self
         sifreTextField.delegate = self
@@ -62,6 +72,10 @@ class ViewController: UIViewController { //giriş ekranı VC
         emailTextField.autocapitalizationType = .none
         emailTextField.returnKeyType = .done
         sifreTextField.returnKeyType = .done
+        
+        sifreGorunuyorMu = false
+        sifreTextField.isSecureTextEntry = true
+        
         girisButton.tintColor = UIColor(rgb: 0x393E46)
         kayıtButton.tintColor = UIColor(rgb: 0x393E46)
         
@@ -78,6 +92,7 @@ class ViewController: UIViewController { //giriş ekranı VC
 //        sifreTextField.alpha = 1
 //        girisButton.alpha = 1
 //
+        sifreGorunuyorMu = false
         girisButton.layer.cornerRadius = girisButton.frame.height/3
         kayıtButton.layer.cornerRadius = kayıtButton.frame.height/3
         runNameAnimation()
@@ -95,6 +110,30 @@ class ViewController: UIViewController { //giriş ekranı VC
     
     //MARK: - Button actionları
     
+    
+    @IBAction func sifreGosterPressed(_ sender: Any) {
+        
+        if sifreGorunuyorMu!{ //şifre açık
+            
+            sifreTextField.isSecureTextEntry = true
+            sifreGImageView.image = UIImage(systemName: "eye.slash")
+            
+            sifreGorunuyorMu = false
+            
+        }else{
+            
+            sifreTextField.isSecureTextEntry = false
+            sifreGImageView.image = UIImage(systemName: "eye")
+            
+            sifreGorunuyorMu = true
+        }
+        
+
+    }
+    
+    
+    
+    
     @IBAction func twoSVPressed(_ sender: UISegmentedControl) {
         
         if sender.selectedSegmentIndex == 0{//giris yap secili
@@ -106,6 +145,8 @@ class ViewController: UIViewController { //giriş ekranı VC
             sifreTextField.alpha = 1
             emailImageView.alpha = 1
             sifreImageView.alpha = 1
+            sifreGButton.alpha = 1
+            sifreGImageView.alpha = 1
             girisButton.alpha = 1
         }
         
@@ -118,6 +159,8 @@ class ViewController: UIViewController { //giriş ekranı VC
             sifreTextField.alpha = 0
             emailImageView.alpha = 0
             sifreImageView.alpha = 0
+            sifreGButton.alpha = 0
+            sifreGImageView.alpha = 0
             girisButton.alpha = 0
             
         }
