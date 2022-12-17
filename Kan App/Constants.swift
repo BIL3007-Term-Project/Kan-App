@@ -41,6 +41,7 @@ struct K{
     static let mevcutSifreYanlis:String = "Mevcut şifreniz yanlış"
     static let sifreEslesmiyor:String = "Girilen şifreler eşleşmiyor"
     static let sifreDeBasarili:String = "Şifreniz başarıyla değiştirildi."
+    static let sifreGuv:String = "Şifreniz 8-15 karakter aralığında olmalıdır.Ayrıca sifreniz en az bir büyük harf, küçük harf, sayı ve .,$@$#!%*?& içermelidir"
     //yasalVC için Yasal Uyarı,KKVC için kullanım kosulları,gizlilikVC için gizlilik koşulları.
     
     static let yasalUyari:String = ""

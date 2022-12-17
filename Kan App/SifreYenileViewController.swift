@@ -24,24 +24,51 @@ class SifreYenileViewController: UIViewController {
     var sifreTekKayitCheck:Bool?
     
     var hesapSahibiMailSifreYenVC:String?
+    var sifreGorunuyorMu:Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         print(hesapSahibiMailSifreYenVC!)
+        sifreGorunuyorMu = false
         
         eskiSifreTextField.delegate = self
         yeniSifreTextField.delegate = self
         sifreTekTextField.delegate = self
         
+        eskiSifreTextField.isSecureTextEntry = true
+        yeniSifreTextField.isSecureTextEntry = true
+        sifreTekTextField.isSecureTextEntry = true
+        
         
     }
     
 
+    override func viewWillAppear(_ animated: Bool) {
+        
+        sifreGorunuyorMu = false
+    }
     
     @IBAction func sifreGosterPressed(_ sender: Any) {
         
-        
+        if sifreGorunuyorMu!{ //şifre açık
+            
+            eskiSifreTextField.isSecureTextEntry = true
+            yeniSifreTextField.isSecureTextEntry = true
+            sifreTekTextField.isSecureTextEntry = true
+            sifreGImageView.image = UIImage(systemName: "eye.slash")
+            
+            sifreGorunuyorMu = false
+            
+        }else{
+            
+            eskiSifreTextField.isSecureTextEntry = false
+            yeniSifreTextField.isSecureTextEntry = false
+            sifreTekTextField.isSecureTextEntry = false
+            sifreGImageView.image = UIImage(systemName: "eye")
+            
+            sifreGorunuyorMu = true
+        }
         
     }
     
@@ -59,21 +86,30 @@ class SifreYenileViewController: UIViewController {
                 
                 if eSifre == kullanicilarDAO().MobilKullaniciGetir(k_mail:mail).getK_Sifre(){
                     
-                    if ysifre == sifreTkr{
+                    if alınanSifreGuv(sifre: ysifre) == true{
                         
-                        let tempdegis:Bool = kullanicilarDAO().MobilKullanıcıSifreGunc(yeni_sifre: ysifre, k_mail: mail)
-                        
-                        if tempdegis == true{
+                        if ysifre == sifreTkr{
                             
-                            SifreDegBasarili()
-                            eskiSifreTextField.text = ""
-                            yeniSifreTextField.text = ""
-                            sifreTekTextField.text = ""
+                            let tempdegis = kullanicilarDAO().MobilKullanıcıSifreGunc(yeni_sifre: ysifre, k_mail: mail)
+                            
+                            if tempdegis == true{
+                                
+                                SifreDegBasarili()
+                                
+                                
+                                eskiSifreTextField.text = ""
+                                yeniSifreTextField.text = ""
+                                sifreTekTextField.text = ""
+                            }
                         }
-                    }
-                    else{
+                        else{
+                            
+                            SifreEslesmiyor()
+                        }
+                    }else{
                         
-                        SifreEslesmiyor()
+                        sifreGuvensiz()
+                        
                     }
                 }else{
                     
@@ -99,6 +135,15 @@ class SifreYenileViewController: UIViewController {
 }
 
 extension SifreYenileViewController{
+    
+    func alınanSifreGuv(sifre:String)->Bool{
+        
+        //regular expression temelli sifre kontrolü( özel karakter,8 karakter,bir büyük harf ve bir sayı)
+        let password = NSPredicate(format: "SELF MATCHES %@ ", "^(?=.*[a-z])(?=.*[.,$@$#!%*?&])(?=.*[0-9])(?=.*[A-Z]).{8,}$")
+        
+        return password.evaluate(with: sifre)
+        
+    }
     
     func bosAlanHatası(){
         
@@ -127,6 +172,18 @@ extension SifreYenileViewController{
     func SifreEslesmiyor(){
         
         let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.sifreEslesmiyor, preferredStyle: .alert)
+        
+        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
+        
+        alertController.addAction(tamamButton)
+        
+        self.present(alertController, animated: true)
+        
+    }
+    
+    func sifreGuvensiz(){
+        
+        let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.sifreGuv, preferredStyle: .alert)
         
         let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
         
