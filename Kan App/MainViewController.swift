@@ -73,6 +73,19 @@ class MainViewController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == K.mToAyar{
+            
+            if let mail = sender as? String{
+                
+                print("mainVC :\(mail)")
+                let ayarVC = segue.destination as! AyarlarViewController
+                
+                ayarVC.hesapSahibiMailAyarVC = mail
+            }
+        }
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         self.ayarlarButton.alpha = 0
@@ -142,7 +155,7 @@ class MainViewController: UIViewController {
         
         print("ayarlar basıldı")
         
-        self.performSegue(withIdentifier:K.mToAyar, sender: nil)
+        self.performSegue(withIdentifier:K.mToAyar, sender: hesapSahibiMailMainVC)
     }
     
     @IBAction func cikisButtonPressed(_ sender: Any) {

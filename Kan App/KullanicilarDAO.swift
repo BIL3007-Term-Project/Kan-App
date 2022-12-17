@@ -87,6 +87,29 @@ class kullanicilarDAO{
         return gelenMobilKullanici
     }
 
+    func MobilKullanıcıSifreGunc(yeni_sifre:String,k_mail:String)->Bool{
+        
+        db?.open()
+        
+        
+        do{
+            
+            try db!.executeUpdate("UPDATE Kullanicilar SET k_sifre = ? WHERE k_mail = ?", values: [yeni_sifre,k_mail])
+            
+            print("Kullanıcılar DAO sifre Güncelleme başarılı!")
+
+            db?.close()
+            return true
+        }catch{
+            
+            print("Kullanıcılar DAO sifre Güncelleme başarısız!")
+            
+            db?.close()
+            return false
+        }
+        
+    }
+    
     
     func ortakKullaniciEkle(donor_name:String,donor_surname:String,id_number:String,date_of_birth:String,weight:Int,height:Int,gender:String,blood_type:String,phone:String,mail:String){
         

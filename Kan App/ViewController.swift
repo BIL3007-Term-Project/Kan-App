@@ -105,13 +105,7 @@ class ViewController: UIViewController { //giriş ekranı VC
     
     override func viewWillAppear(_ animated: Bool) {
         
-//        bilgiLabel.alpha = 0
-//        kayıtButton.alpha = 0
-//
-//        emailTextField.alpha = 1
-//        sifreTextField.alpha = 1
-//        girisButton.alpha = 1
-//
+
         sifreGorunuyorMu = false
         girisButton.layer.cornerRadius = girisButton.frame.height/3
         kayıtButton.layer.cornerRadius = kayıtButton.frame.height/3

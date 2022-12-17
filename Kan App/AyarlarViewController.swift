@@ -12,6 +12,9 @@ class AyarlarViewController: UIViewController {
     @IBOutlet weak var ayarlarTableView: UITableView!
     
     let ayarlarList:[String] = ["Arkadaşlarını Davet Et","Bildirimler","Gizlilik","Şifre Yenile","Yardım"]
+    
+    var hesapSahibiMailAyarVC:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +25,21 @@ class AyarlarViewController: UIViewController {
         ayarlarTableView.backgroundColor = UIColor(rgb: 0xFFE1E1)
     
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == K.aToSifYen{
+            
+            if let mail = hesapSahibiMailAyarVC{
+                
+                print("ayarlarVC: \(mail)")
+                let sifreYenVC = segue.destination as! SifreYenileViewController
+                
+                sifreYenVC.hesapSahibiMailSifreYenVC = mail
+                
+            }
+        }
     }
     
 
@@ -58,7 +76,8 @@ extension AyarlarViewController:UITableViewDelegate,UITableViewDataSource{
         if Int(indexPath.row) == 3{
          
             print("geçilecek to \(ayarlarList[indexPath.row])")
-            performSegue(withIdentifier: K.aToSifYen, sender: nil)
+            performSegue(withIdentifier: K.aToSifYen, sender: hesapSahibiMailAyarVC)
+            
         }
         
         print("tıklanan index no \(indexPath.row)")

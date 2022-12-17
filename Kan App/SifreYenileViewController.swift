@@ -22,9 +22,18 @@ class SifreYenileViewController: UIViewController {
     var eskiSifreKayitCheck:Bool?
     var yeniSifreKayitCheck:Bool?
     var sifreTekKayitCheck:Bool?
+    
+    var hesapSahibiMailSifreYenVC:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print(hesapSahibiMailSifreYenVC!)
+        
+        eskiSifreTextField.delegate = self
+        yeniSifreTextField.delegate = self
+        sifreTekTextField.delegate = self
+        
         
     }
     
@@ -36,68 +45,256 @@ class SifreYenileViewController: UIViewController {
         
     }
     
-//    @IBAction func DegisiklikOnaylaPressed(_ sender: Any) {
-//        
-//        
-//        if let eSifre = eskiSifreTextField.text, let ysifre = yeniSifreTextField.text, let sifreTkr = sifreTekTextField.text{
-//
-//            print("bilgiler alındı")
-//            
-//            if eskiSifreKayitCheck == true && yeniSifreKayitCheck == true && sifreTekKayitCheck == true{
-//                
-//                print("1.aşama güvenlik")
-//                
-//              
-//                
-//                
-//                if check1 == true && check2 == true && sifre == sifreTkr{
-//                    //2.asama güvenlik
-//                    //mail ve sifre istenen özelliklere sahip ayrıca sifre ile sifre tekrarı bir eşit.
-//                    
-//                    print("2.aşama güvenlik")
-//                   
-//                    
-//                    
-//                     mobilKullaniciKayitCheck = kullanicilarDAO().mobilKullaniciEkle(k_mail: mail, k_sifre: sifre, k_ad: gelenNesne.getK_Ad(), k_soyad: gelenNesne.getK_Soyad(), k_tc: gelenNesne.getK_TC(), k_tel: gelenNesne.getK_Tel(), k_dogumgunu: gelenNesne.getK_dogumgunu(), k_kilo: gelenNesne.getK_Kilo(), k_boy: gelenNesne.getK_Boy(), k_cinsiyet: gelenNesne.getK_Cinsiyet(), k_kangrup: gelenNesne.getK_Kangrup())
-//                    
-//                    if mobilKullaniciKayitCheck == true{
-//                        
-//                        print("kullanıcı başarıyla veritabanına eklendi geçiş yapılacak")
-//                        DispatchQueue.main.async {
-//                            self.activityIndicator.alpha = 1
-//                            self.activityIndicator.startAnimating()
-//                        }
-//                        
-//                        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(mainVCGecisYap), userInfo: nil, repeats: false)
-//                        
-//                        
-//                        
-//                    }else{
-//                        
-//                        hesapOlusturmaAlert()
-//                        
-//                    }
-//                    
-//                    
-//                }else{
-//                    
-//                    bilgilerYanlisAlert()
-//                    
-//                }
-//            }else{
-//                
-//                bosAlanHatası()
-//                
-//            }
-//        }else{
-//            
-//            bosAlanHatası()
-////
-//            
-//        }
-//        
-//        
-//    }
+    @IBAction func DegisiklikOnaylaPressed(_ sender: Any) {
     
+        
+        if let eSifre = eskiSifreTextField.text, let ysifre = yeniSifreTextField.text, let sifreTkr = sifreTekTextField.text, let mail = hesapSahibiMailSifreYenVC{
+
+            print("bilgiler alındı")
+            
+            if eskiSifreKayitCheck == true && yeniSifreKayitCheck == true && sifreTekKayitCheck == true{
+                
+                print("1.aşama güvenlik sifre yenileme tamam")
+                
+                
+                if eSifre == kullanicilarDAO().MobilKullaniciGetir(k_mail:mail).getK_Sifre(){
+                    
+                    if ysifre == sifreTkr{
+                        
+                        let tempdegis:Bool = kullanicilarDAO().MobilKullanıcıSifreGunc(yeni_sifre: ysifre, k_mail: mail)
+                        
+                        if tempdegis == true{
+                            
+                            SifreDegBasarili()
+                            eskiSifreTextField.text = ""
+                            yeniSifreTextField.text = ""
+                            sifreTekTextField.text = ""
+                        }
+                    }
+                    else{
+                        
+                        SifreEslesmiyor()
+                    }
+                }else{
+                    
+                    MevcutSifreYanlıs()
+                    
+                }
+            }else{
+                
+                bosAlanHatası()
+                
+            }
+        }else{
+            
+            bosAlanHatası()
+//
+            
+        }
+        
+        
+    }
+    
+    
+}
+
+extension SifreYenileViewController{
+    
+    func bosAlanHatası(){
+        
+        let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.bosAlanHata, preferredStyle: .alert)
+        
+        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
+        
+        alertController.addAction(tamamButton)
+        
+        self.present(alertController, animated: true)
+        
+    }
+    
+    func MevcutSifreYanlıs(){
+        
+        let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.mevcutSifreYanlis, preferredStyle: .alert)
+        
+        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
+        
+        alertController.addAction(tamamButton)
+        
+        self.present(alertController, animated: true)
+        
+    }
+    
+    func SifreEslesmiyor(){
+        
+        let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.sifreEslesmiyor, preferredStyle: .alert)
+        
+        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
+        
+        alertController.addAction(tamamButton)
+        
+        self.present(alertController, animated: true)
+        
+    }
+    
+    func SifreDegBasarili(){
+        
+        let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.sifreDeBasarili, preferredStyle: .alert)
+        
+        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
+        
+        alertController.addAction(tamamButton)
+        
+        self.present(alertController, animated: true)
+        
+    }
+}
+
+extension SifreYenileViewController:UITextFieldDelegate{
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        
+        if textField == eskiSifreTextField{
+            
+            textField.placeholder = "Eski Sifre"
+        }
+        else if textField == yeniSifreTextField{
+            
+            textField.placeholder = " Yeni Sifre"
+        }
+        else if textField == sifreTekTextField{
+            
+            textField.placeholder = "Sifreyi Tekrarla"
+        }
+        
+        return true
+    }//TFShouldBeginEditing sonu
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        
+        if textField == eskiSifreTextField{
+            
+            if textField.text == ""{
+                
+                eskiSifreTextField.placeholder = "Eski Sifre"
+            }
+
+        }
+        else if textField == yeniSifreTextField{
+            
+            if textField.text == ""{
+                
+                yeniSifreTextField.placeholder = "Yeni Sifre"
+            }
+        }
+        else if textField == sifreTekTextField{
+            
+            if textField.text == ""{
+                
+                sifreTekTextField.placeholder = "Sifreyi Tekrarla"
+            }
+        }
+        
+        return true
+        
+    }//TFShouldEndEditing sonu
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        
+        if textField == eskiSifreTextField{
+            
+            if let mailSayi = textField.text?.count{
+                
+                if mailSayi > 0 && mailSayi < 15{
+                    eskiSifreKayitCheck = true
+                    print("Eski Sifre.asama :\(String(describing: eskiSifreKayitCheck))")
+                    print("Sifre 0 haneden büyük 15 den küçük istenen aralıkta")
+                    
+                }
+                else if mailSayi == 0{
+                    eskiSifreKayitCheck = false
+                    print("Eski Sifre 1.asama :\(String(describing: eskiSifreKayitCheck))")
+                    eskiSifreTextField.text = ""
+                    eskiSifreTextField.placeholder = "Eski Sifre"
+                    
+                    print("Eski Sifre boş bırakıldı")
+                }
+                else{
+                    eskiSifreKayitCheck = false
+                    print("Eski Sifre 1.asama :\(String(describing: eskiSifreKayitCheck))")
+                    eskiSifreTextField.text = ""
+                    eskiSifreTextField.placeholder = "Eski Sifre"
+                    
+                    print("eski sifre istenen aralıkta değil")
+                }
+                
+            }
+        }//EskiSifreTF check sonu
+        else if textField == yeniSifreTextField{
+            
+            if let sifreSayi = textField.text?.count{
+                
+                if sifreSayi > 0 && sifreSayi < 15{
+                    
+                    yeniSifreKayitCheck = true
+                    print("yeni sifre1.asama :\(String(describing: yeniSifreKayitCheck))")
+                    print("yeni sifre 0-15 aralıgında")
+                }
+                else if sifreSayi == 0{
+                    yeniSifreKayitCheck = false
+                    print("yeni sifre1.asama :\(String(describing: yeniSifreKayitCheck))")
+                    yeniSifreTextField.text = ""
+                    yeniSifreTextField.placeholder = "Yeni Sifre"
+                    print("yeni sifre bos")
+                }
+                else{
+                    
+                    yeniSifreKayitCheck = false
+                    print("sifre1.asama :\(String(describing: yeniSifreKayitCheck))")
+                    yeniSifreTextField.text = ""
+                    yeniSifreTextField.placeholder = "Yeni Sifre"
+                    print("yeni sifre istenen aralıkta değil")
+                }
+            }
+            
+        }//sifreTF check sonu
+        else if textField == sifreTekTextField{
+            
+            if let sifreTekSayi = textField.text?.count{
+                
+                if sifreTekSayi > 0 && sifreTekSayi < 15{
+                    
+                    sifreTekKayitCheck = true
+                    print("sifretek1.asama :\(String(describing: sifreTekKayitCheck))")
+                    print("sifre  tekrar 0-15 aralıgında")
+                }
+                else if sifreTekSayi == 0{
+                    sifreTekKayitCheck = false
+                    print("sifretek1.asama :\(String(describing: sifreTekKayitCheck))")
+                    sifreTekTextField.text = ""
+                    sifreTekTextField.placeholder = "Sifre"
+                    print("sifre terar bos")
+                }
+                else{
+                    
+                    sifreTekKayitCheck = false
+                    print("sifretek1.asama :\(String(describing: sifreTekKayitCheck))")
+                    sifreTekTextField.text = ""
+                    sifreTekTextField.placeholder = "Sifre"
+                    print("sifre tekrar istenen aralıkta değil")
+                }
+                
+            }
+        }//sifreTF checksonu
+        
+        
+        
+        
+    }//TFDidEndEditing sonu
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        view.endEditing(true)
+    }//TFShouldReturn Sonu
     
 }

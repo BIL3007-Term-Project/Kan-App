@@ -38,6 +38,9 @@ struct K{
     
     static let bilgYanlis:String = "Girdiğiniz bilgiler yanlış lütfen tekrar deneyiniz."
     
+    static let mevcutSifreYanlis:String = "Mevcut şifreniz yanlış"
+    static let sifreEslesmiyor:String = "Girilen şifreler eşleşmiyor"
+    static let sifreDeBasarili:String = "Şifreniz başarıyla değiştirildi."
     //yasalVC için Yasal Uyarı,KKVC için kullanım kosulları,gizlilikVC için gizlilik koşulları.
     
     static let yasalUyari:String = ""
