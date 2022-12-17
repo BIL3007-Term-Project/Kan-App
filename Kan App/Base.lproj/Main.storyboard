@@ -1057,7 +1057,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50M-fl-6kQ">
-                                <rect key="frame" x="303" y="120" width="80" height="35"/>
+                                <rect key="frame" x="303" y="115" width="80" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
@@ -1069,7 +1069,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5iV-TW-yyn">
-                                <rect key="frame" x="303" y="163" width="80" height="35"/>
+                                <rect key="frame" x="303" y="155" width="80" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
@@ -1081,11 +1081,11 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="menu_icon" translatesAutoresizingMaskIntoConstraints="NO" id="75A-Ih-OKj">
-                                <rect key="frame" x="343" y="73" width="35" height="35"/>
+                                <rect key="frame" x="343" y="73" width="32" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWf-89-P5m">
-                                <rect key="frame" x="349" y="79" width="30" height="30"/>
+                                <rect key="frame" x="342" y="77" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
@@ -1286,6 +1286,7 @@
                     <navigationItem key="navigationItem" title="Şifre Yenile" id="Lkp-RV-GFT"/>
                     <connections>
                         <outlet property="eskiSifreTextField" destination="sCf-CR-1Mg" id="Qzd-B3-Doc"/>
+                        <outlet property="onaylaButton" destination="u4e-rT-dEO" id="JGG-zU-tij"/>
                         <outlet property="sifreGImageView" destination="f6J-U7-dhK" id="NO8-zX-09v"/>
                         <outlet property="sifreGosterButton" destination="1DF-of-XRp" id="AUB-qY-Ucd"/>
                         <outlet property="sifreTekTextField" destination="wtV-s1-tyW" id="MCO-67-mQY"/>

@@ -17,6 +17,8 @@ class SifreYenileViewController: UIViewController {
     
     @IBOutlet weak var sifreGosterButton: UIButton!
     
+    @IBOutlet weak var onaylaButton: UIButton!
+    
     @IBOutlet weak var sifreGImageView: UIImageView!
     
     var eskiSifreKayitCheck:Bool?
@@ -24,11 +26,13 @@ class SifreYenileViewController: UIViewController {
     var sifreTekKayitCheck:Bool?
     
     var hesapSahibiMailSifreYenVC:String?
+    
     var sifreGorunuyorMu:Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        onaylaButton.layer.cornerRadius = onaylaButton.frame.height/2.5
         print(hesapSahibiMailSifreYenVC!)
         sifreGorunuyorMu = false
         
