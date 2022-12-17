@@ -983,7 +983,7 @@
         <!--Main VC-->
         <scene sceneID="tXj-zS-nOr">
             <objects>
-                <viewController title="Main VC" id="wre-CV-hxQ" customClass="MainViewController" customModule="Kan_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainVC" title="Main VC" id="wre-CV-hxQ" customClass="MainViewController" customModule="Kan_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pdV-gr-E2x">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1016,13 +1016,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hüdahan Altun" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRJ-nP-SPz">
-                                <rect key="frame" x="109" y="256" width="175" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yas_icon" translatesAutoresizingMaskIntoConstraints="NO" id="XGn-xE-VMX">
                                 <rect key="frame" x="25" y="328" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1035,29 +1028,29 @@
                                 <rect key="frame" x="315" y="328" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vyo-Uc-H8p">
-                                <rect key="frame" x="40" y="378" width="21" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vyo-Uc-H8p">
+                                <rect key="frame" x="18" y="378" width="65" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="170 cm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buw-89-w0r">
-                                <rect key="frame" x="121" y="380" width="55" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="170 cm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buw-89-w0r">
+                                <rect key="frame" x="116" y="378" width="65" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="70 kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="486-Ui-DwE">
-                                <rect key="frame" x="223" y="380" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="70 kg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="486-Ui-DwE">
+                                <rect key="frame" x="212" y="378" width="65" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A +" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5L-27-oDH">
-                                <rect key="frame" x="327" y="378" width="26" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A +" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5L-27-oDH">
+                                <rect key="frame" x="308" y="378" width="65" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1112,6 +1105,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hüdahan Altun" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRJ-nP-SPz">
+                                <rect key="frame" x="71" y="256" width="250" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bQN-bJ-eYB"/>
                         <color key="backgroundColor" red="1" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
@@ -1127,12 +1127,17 @@
                     <connections>
                         <outlet property="ayarlarButton" destination="50M-fl-6kQ" id="bgI-U9-PTE"/>
                         <outlet property="boyIconIv" destination="TXz-wk-z3M" id="pdq-UC-r0h"/>
+                        <outlet property="boyLabel" destination="buw-89-w0r" id="ZDF-ju-l6e"/>
                         <outlet property="cikisButton" destination="5iV-TW-yyn" id="vzq-R2-34X"/>
                         <outlet property="kanIconIV" destination="w38-JR-hAD" id="7kp-De-Ymp"/>
+                        <outlet property="kanLabel" destination="m5L-27-oDH" id="nxY-fh-l2a"/>
                         <outlet property="kiloIconIV" destination="fAF-GY-ij6" id="Ig0-ox-fWa"/>
+                        <outlet property="kiloLabel" destination="486-Ui-DwE" id="sLt-RA-7aX"/>
+                        <outlet property="kisiLabel" destination="bRJ-nP-SPz" id="vsc-gU-jeD"/>
                         <outlet property="menuButton" destination="YWf-89-P5m" id="ikM-hf-VD6"/>
                         <outlet property="menuIconIV" destination="75A-Ih-OKj" id="Dut-Rg-0hn"/>
                         <outlet property="yasIconIV" destination="Bvt-2A-2Rs" id="YWz-Uu-2Ue"/>
+                        <outlet property="yasLabel" destination="Vyo-Uc-H8p" id="eBU-BZ-lPm"/>
                         <segue destination="dYB-yc-Ebt" kind="show" identifier="mainToAyarlar" id="V0o-CC-Sub"/>
                     </connections>
                 </viewController>
@@ -1479,9 +1484,9 @@
                         <color key="selectedImageTintColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="wre-CV-hxQ" kind="relationship" relationship="viewControllers" id="G7I-gc-bG7"/>
-                        <segue destination="bdv-3C-Kb6" kind="relationship" relationship="viewControllers" id="TPO-tw-0Hx"/>
-                        <segue destination="cu9-Gj-hvQ" kind="relationship" relationship="viewControllers" id="OwB-iv-CoK"/>
+                        <segue destination="wre-CV-hxQ" kind="relationship" relationship="viewControllers" destinationCreationSelector="0" id="G7I-gc-bG7"/>
+                        <segue destination="bdv-3C-Kb6" kind="relationship" relationship="viewControllers" destinationCreationSelector="1" id="TPO-tw-0Hx"/>
+                        <segue destination="cu9-Gj-hvQ" kind="relationship" relationship="viewControllers" destinationCreationSelector="2" id="OwB-iv-CoK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mP8-Y9-eVf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1490,7 +1495,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nZs-md-AUb"/>
+        <segue reference="J1r-Th-nyp"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="aferez_bagis" width="170.66667175292969" height="170.66667175292969"/>

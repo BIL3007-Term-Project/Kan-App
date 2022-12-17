@@ -13,16 +13,26 @@ class MainViewController: UIViewController {
     @IBOutlet weak var boyIconIv: UIImageView!
     @IBOutlet weak var kiloIconIV: UIImageView!
     @IBOutlet weak var kanIconIV: UIImageView!
-    
     @IBOutlet weak var menuIconIV: UIImageView!
+    
+    
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var ayarlarButton: UIButton!
     @IBOutlet weak var cikisButton: UIButton!
     
+    @IBOutlet weak var kisiLabel: UILabel!
+    
+    @IBOutlet weak var yasLabel: UILabel!
+    
+    @IBOutlet weak var boyLabel: UILabel!
+    
+    @IBOutlet weak var kiloLabel: UILabel!
+    
+    @IBOutlet weak var kanLabel: UILabel!
     
     var fabDurum:Bool = false
     
-    var hesapSahibi:String = "default"
+    var hesapSahibiMailMainVC:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +53,24 @@ class MainViewController: UIViewController {
         self.ayarlarButton.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         self.ayarlarButton.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         
-        print("mainVC hesabın sahibi :\(hesapSahibi)")
+        
+        if let  mail = hesapSahibiMailMainVC {
+            
+            let gelendg = kullanicilarDAO().MobilKullaniciGetir(k_mail: mail).getK_dogumgunu()
+            
+            let sonhal  = 2022 - Int(gelendg[6...])!
+            
+            yasLabel.text = "\(sonhal)"
+            
+            kisiLabel.text = "\(kullanicilarDAO().MobilKullaniciGetir(k_mail: mail).getK_Ad()) \(kullanicilarDAO().MobilKullaniciGetir(k_mail: mail).getK_Soyad())"
+           
+            kanLabel.text = "\(kullanicilarDAO().MobilKullaniciGetir(k_mail: mail).getK_Kangrup())"
+            kiloLabel.text = "\(kullanicilarDAO().MobilKullaniciGetir(k_mail: mail).getK_Kilo()) kg"
+            boyLabel.text = "\(kullanicilarDAO().MobilKullaniciGetir(k_mail: mail).getK_Boy()) cm"
+            
+            
+        }
+        
     }
     
 

@@ -48,7 +48,7 @@ class KayitViewController: UIViewController {
     
     
     var KisiselVCdenGelenMobilTempNesnesi:mobilKullanicilar?
-    var hesapSahip:String = "kayıt default"
+    var hesapSahipKayitVC:String?
     
 //    MARK: - iOS Cycle fonskiyonları
     override func viewDidLoad() {
@@ -101,19 +101,20 @@ class KayitViewController: UIViewController {
         
     }
  
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+
         if segue.identifier == K.kToMain{
             
-            if let sahipMail = sender as? String{
+            if let mail = sender as? String{
+            
+                let mainTab = segue.destination as? UITabBarController
                 
-                print("mail gitti! mail:\(sahipMail)")
-                let gidilecekVC = segue.destination as? MainViewController
-                gidilecekVC?.hesapSahibi = sahipMail
+                let mainVC = mainTab?.viewControllers![0] as! MainViewController
                 
-                
+                mainVC.hesapSahibiMailMainVC = mail
             }
+          
         }
 
     }
@@ -234,7 +235,7 @@ class KayitViewController: UIViewController {
                             self.activityIndicator.startAnimating()
                         }
                         
-                        hesapSahip = mail
+                        hesapSahipKayitVC = mail
                         
                         Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(mainVCGecisYap), userInfo: nil, repeats: false)
                         
@@ -336,7 +337,7 @@ extension KayitViewController{
     @objc func mainVCGecisYap(){
         
         
-        self.performSegue(withIdentifier: K.kToMain, sender:hesapSahip)
+        self.performSegue(withIdentifier: K.kToMain, sender:hesapSahipKayitVC)
        
         print("geçiş yapğıldı")
         
