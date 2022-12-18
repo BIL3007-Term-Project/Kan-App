@@ -239,6 +239,7 @@ class KayitViewController: UIViewController {
                         
                         Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(mainVCGecisYap), userInfo: nil, repeats: false)
                         
+                        UserDefaults.standard.set(true, forKey: "IsUserLoggedIn")
                         
                         
                     }else{

@@ -161,7 +161,9 @@ class MainViewController: UIViewController {
     @IBAction func cikisButtonPressed(_ sender: Any) {
         print("cikis basıldı")
         
+        UserDefaults.standard.set(false, forKey: "IsUserLoggedIn")
         self.navigationController?.popToRootViewController(animated: true)
+        
     }
     
 

@@ -83,6 +83,7 @@ class ViewController: UIViewController { //giriş ekranı VC
         kayıtButton.tintColor = UIColor(rgb: 0x393E46)
         
         ozelVeritabaniKopyala()
+        bagisNoktaVeritabaniKopyala()
         
     }
     
@@ -205,6 +206,7 @@ class ViewController: UIViewController { //giriş ekranı VC
                     
                     Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(mainGecisYap), userInfo: nil, repeats: false)
                    
+                    UserDefaults.standard.set(true, forKey: "IsUserLoggedIn")
                     
                     
                 }else{
@@ -253,6 +255,34 @@ class ViewController: UIViewController { //giriş ekranı VC
 }
 extension ViewController{
     
+    func bagisNoktaVeritabaniKopyala(){
+       
+        let bundleYolu = Bundle.main.path(forResource: "bagisNoktalari", ofType: ".sqlite")
+        
+        let hedefYol = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        
+        let fileManager = FileManager.default
+        
+        let kopyala = URL(fileURLWithPath: hedefYol).appendingPathComponent("bagisNoktalari.sqlite")
+        
+        if fileManager.fileExists(atPath: kopyala.path){
+            
+            print("veritabanı yolu\(kopyala.path)")
+            print("bagisnoktalari veritabanı zaten kopyalandı")
+        }else{
+            
+            do{
+                
+                try fileManager.copyItem(atPath: bundleYolu!, toPath: kopyala.path)
+                print("bagisNoktalari veritabanı kopyalama başarılı!")
+                
+            }catch{
+                
+                print("bagisNoktalari veritabanı kopyalamada hata!")
+            }
+        }
+        
+    }
     
     func ozelVeritabaniKopyala(){
        
