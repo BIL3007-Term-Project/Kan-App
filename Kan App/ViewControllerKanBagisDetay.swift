@@ -7,9 +7,12 @@
 
 import UIKit
 import MapKit
+import CoreLocation
+
 
 class ViewControllerKanBagisDetay: UIViewController {
-
+    
+    var locationManager = CLLocationManager()//lokasyon verileri almak için kullanacağımız nesne
     
     @IBOutlet weak var bagisNoktaImageView: UIImageView!
     
@@ -20,27 +23,175 @@ class ViewControllerKanBagisDetay: UIViewController {
     
     var noktaID:Int?
     
-    var bagisNokta:BagisNokta = BagisNokta ()
+    var bagisNoktaNesnesi:BagisNokta = BagisNokta ()
+    
+    var annotationTitle:String?//pin başlık
+    var annotationSubTitle:String?//pin alt başlık
+    var annotationLat:Double?//pin lati
+    var annotationLong:Double?//pin longi
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        bagisNoktaMapView.delegate = self
+        locationManager.delegate = self
         
-        bagisNokta = BagisNoktaDAO().bagisNoktaGetir(id: noktaID!)
         
-        bagisNoktaImageView.image = UIImage(named: bagisNokta.getBagisImage())
-        bagisNoktaAdLabel.text = bagisNokta.getBagisAd()
+       
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest //en iyi konumu al
+        locationManager.requestWhenInUseAuthorization() // konumu alırken kullanıcıdan izin iste
+        locationManager.startUpdatingLocation() // vc yüklenince konum almayı başlat
+    
+        
+        bagisNoktaNesnesi = BagisNoktaDAO().bagisNoktaGetir(id: noktaID!)
+        
+        bagisNoktaImageView.image = UIImage(named: bagisNoktaNesnesi.getBagisImage())
+        bagisNoktaAdLabel.text = bagisNoktaNesnesi.getBagisAd()
+        
+        pinYarat(bagisNokta: bagisNoktaNesnesi)
         
     }
     
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension ViewControllerKanBagisDetay{
+    
+    func pinYarat(bagisNokta:BagisNokta){
+        
+        annotationTitle = bagisNokta.getBagisAd()
+        annotationSubTitle = bagisNokta.getBagisIl()
+        annotationLat = bagisNokta.getBagisLati()
+        annotationLong = bagisNokta.getBagisLongi()
+        
+        
+        let annotation = MKPointAnnotation() //pin yaratıldı
+        
+        
+        annotation.title = annotationTitle//pin in titlenına kullan seçtiği yer ismi atandı
+        
+        annotation.subtitle = annotationSubTitle//not atandı
+        
+        //create coordianae a pass param from coredata to class
+        
+        //coredatadan gelen yer koordinatları ile coordinate değişkeni oluşturuldu
+        
+        let coordinate = CLLocationCoordinate2D(latitude: annotationLat!, longitude: annotationLong!)
+        
+        
+        annotation.coordinate = coordinate // pinin koordinatına coredatadan gelen coordinat verileri atandı
+        
+        bagisNoktaMapView.addAnnotation(annotation)// pin map e eklendi
+        
+        
+        locationManager.stopUpdatingLocation()
+        
+        
+        // kullanıcının ekledği yeri görmesi için span ve region oluşturduk
+        let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02) // create span
+        
+        let region = MKCoordinateRegion(center: coordinate, span: span) // create region
+        
+        bagisNoktaMapView.setRegion(region, animated: true) //region u map e atadık
     }
-    */
+}
+
+extension ViewControllerKanBagisDetay:MKMapViewDelegate{
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? { //map view üzerinde özel pin oluşturmaya yarayan fonksiyon.
+        
+        if annotation is MKUserLocation{ // eğer gösterilen pin kullanıcının o anki konumu ise
+            
+            return nil//hiçbirşley yapma
+        }
+        //eğer değilse o zaman kullanıcı beğendiği yeri görüntülüyor demektir
+        
+        
+        let reuseAnnID = "myAnnotation"//özel pin id ismi
+        
+        //pinimizi mapview e tanıtıyoruz
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseAnnID)
+        
+        if pinView == nil{ //eklenen pin dolu ise
+            
+            
+            //pini map e ekliyoruz
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseAnnID)
+            
+            pinView?.canShowCallout = true //pin e özel butonlar eklemek istioyrsak true yapılır
+            
+            pinView?.tintColor = .red // pin buton rengi
+            
+            let button = UIButton(type: .detailDisclosure) //pine özel buton oluşturduk
+            
+            pinView?.rightCalloutAccessoryView = button //pine butonu aktardık
+            
+        }else{
+            
+            pinView?.annotation = annotation //pin normal
+        }
+        
+        return pinView //pin return edilir
+    }
+    
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {// kullanıcı özle pindeki information butonua tıklarsa yol tarifi alacak
+        
+        //pinin konum verilerini alyıpruz
+        let requestLoc = CLLocation(latitude: annotationLat!, longitude: annotationLong!)
+        
+        CLGeocoder().reverseGeocodeLocation(requestLoc) {
+            
+          
+            
+            (placemarkArray, error) in//dizi ve hata değişkenleri
+           
+            if let placemarkA = placemarkArray{
+                
+                //placemark dizisi mevcutsa yeni içinde nesneler varsa
+                if placemarkA.count > 0{
+                    
+                    //bu nesne dizisinden bir tanesini alacağız
+                    let onePlacemark = MKPlacemark(placemark: placemarkA[0])//placemark dizisinden ilk elemanı aldık
+                   
+                    let item = MKMapItem(placemark: onePlacemark)
+                    
+                    //item ın ismine kullanıcının eklediği yer ismini ekledik
+                    item.name = self.annotationTitle
+                
+                    //haritayı araba ile gidilecek şekilde nav özelliği ile başlatma ayarlanır.
+                    let launchOptions = [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving]
+                    
+                    item.openInMaps(launchOptions: launchOptions)//haritalarda aç yaparız.
+                    
+                }
+            }
+        }
+    
+        
+    }
+    
+}
+
+extension ViewControllerKanBagisDetay:CLLocationManagerDelegate{
+    
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//
+//
+//
+//        let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude) // get locaiton
+//
+//        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05) // create span
+//
+//        let region = MKCoordinateRegion(center: myLocation, span: span) // create region
+//
+//        bagisNoktaMapView.setRegion(region, animated: true) // set region
+//
+//
+//        print("latitude: \(locations[0].coordinate.latitude)")
+//        print("longitutde: \(locations[0].coordinate.longitude)")
+//
+//
+//    }
 
 }
