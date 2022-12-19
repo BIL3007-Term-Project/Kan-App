@@ -112,6 +112,7 @@ class ViewController: UIViewController { //giriş ekranı VC
         kayıtButton.layer.cornerRadius = kayıtButton.frame.height/3
         runNameAnimation()
 
+//        runAnimation()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -374,6 +375,25 @@ extension ViewController{
             self.appName.alpha = 0.1
             
         })
+    }
+    
+    func runAnimation(){
+        
+        
+        UIView.animate(withDuration: 1,animations: {
+            self.girisButton.alpha = 0
+            
+            let hareket = CGAffineTransform(translationX: 0, y: -10)
+            let kucul = CGAffineTransform (scaleX: 1.0, y: 1.0)
+            
+            
+            let x = hareket.concatenating(kucul)
+            
+            self.girisButton.transform = x
+            
+            self.girisButton.alpha = 1
+            
+        }, completion: nil)
     }
     
 }

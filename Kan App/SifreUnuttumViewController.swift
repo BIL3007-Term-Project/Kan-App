@@ -38,9 +38,14 @@ class SifreUnuttumViewController: UIViewController {
                 
                 if let gMail = kullanicilarDAO().MobilKullaniciGetir(k_mail: mail).getK_Mail(){
                     
-                    
-                    
-                    
+                    if mail == gMail{
+                        
+//                        if gelenTC = kullanicilarDAO().MobilKullaniciGetir(k_mail: gMail).getK_TC(){
+//                            
+//                            
+//                        }
+                        
+                    }
                 }else{
                     
                     //hesap yok

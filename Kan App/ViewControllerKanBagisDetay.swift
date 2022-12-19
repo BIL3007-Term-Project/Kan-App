@@ -143,7 +143,7 @@ extension ViewControllerKanBagisDetay:MKMapViewDelegate{
             
             
             //pini map e ekliyoruz
-            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseAnnID)
+            pinView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: reuseAnnID)
             
             pinView?.canShowCallout = true //pin e özel butonlar eklemek istioyrsak true yapılır
             
