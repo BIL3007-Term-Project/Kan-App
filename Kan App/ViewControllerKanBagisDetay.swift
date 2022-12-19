@@ -55,8 +55,15 @@ class ViewControllerKanBagisDetay: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        yolTarifiAl()
+    }
     
     @IBAction func questionMarkButtonPressed(_ sender: Any) {
+        
+       yolTarifiAl()
+        
     }
     
 
@@ -100,6 +107,19 @@ extension ViewControllerKanBagisDetay{
         let region = MKCoordinateRegion(center: coordinate, span: span) // create region
         
         bagisNoktaMapView.setRegion(region, animated: true) //region u map e atadık
+    }
+    
+    
+    func yolTarifiAl(){
+        
+        let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.yolTarifi, preferredStyle: .alert)
+        
+        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
+        
+        alertController.addAction(tamamButton)
+        
+        self.present(alertController, animated: true)
+        
     }
 }
 

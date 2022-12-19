@@ -8,7 +8,7 @@
 import Foundation
 
 
-extension String {
+extension String { //dizi işlemleri için extension
     subscript(_ range: CountableRange<Int>) -> String {
         let start = index(startIndex, offsetBy: max(0, range.lowerBound))
         let end = index(start, offsetBy: min(self.count - range.lowerBound,

@@ -31,6 +31,7 @@
 		057AA88D293E7FAF00C11524 /* BagisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057AA88C293E7FAF00C11524 /* BagisViewController.swift */; };
 		058660CC2938BB3800EA4313 /* GizlilikViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058660CB2938BB3800EA4313 /* GizlilikViewController.swift */; };
 		058660CE2938BB4F00EA4313 /* KullanimKosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058660CD2938BB4F00EA4313 /* KullanimKosViewController.swift */; };
+		059B071E295059EC001F43F3 /* SifreUnuttumViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B071D295059EC001F43F3 /* SifreUnuttumViewController2.swift */; };
 		059C8FDC2935599900AE456D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059C8FDB2935599900AE456D /* AppDelegate.swift */; };
 		059C8FDE2935599900AE456D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059C8FDD2935599900AE456D /* SceneDelegate.swift */; };
 		059C8FE02935599A00AE456D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059C8FDF2935599A00AE456D /* ViewController.swift */; };
@@ -101,6 +102,7 @@
 		057AA88C293E7FAF00C11524 /* BagisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagisViewController.swift; sourceTree = "<group>"; };
 		058660CB2938BB3800EA4313 /* GizlilikViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GizlilikViewController.swift; sourceTree = "<group>"; };
 		058660CD2938BB4F00EA4313 /* KullanimKosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KullanimKosViewController.swift; sourceTree = "<group>"; };
+		059B071D295059EC001F43F3 /* SifreUnuttumViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SifreUnuttumViewController2.swift; sourceTree = "<group>"; };
 		059C8FD82935599900AE456D /* Kan App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kan App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		059C8FDB2935599900AE456D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		059C8FDD2935599900AE456D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				05A59CBB294F354400BFFF8F /* bagisNoktalari.sqlite */,
 				05B457852935603A007E89D0 /* SSSViewController.swift */,
 				0531D232294CBA2500DE9760 /* SifreUnuttumViewController.swift */,
+				059B071D295059EC001F43F3 /* SifreUnuttumViewController2.swift */,
 				05B457892935604C007E89D0 /* YasalViewController.swift */,
 				05B4578B29356052007E89D0 /* KisiselViewController.swift */,
 				05B457912935609C007E89D0 /* KayitViewController.swift */,
@@ -393,6 +396,7 @@
 				057AA88B293E7C2D00C11524 /* HaritaAcilViewController.swift in Sources */,
 				05068322294DEC7400435825 /* UIStringExt.swift in Sources */,
 				05262AC32940F557000B3D19 /* ViewControllerKokHucreBagis.swift in Sources */,
+				059B071E295059EC001F43F3 /* SifreUnuttumViewController2.swift in Sources */,
 				059C8FE02935599A00AE456D /* ViewController.swift in Sources */,
 				05262AC92940F75A000B3D19 /* ViewControllerAferezBagis.swift in Sources */,
 				059C8FDC2935599900AE456D /* AppDelegate.swift in Sources */,

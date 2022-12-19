@@ -36,12 +36,19 @@ struct K{
     static let bosAlanHata:String = "Boş alan bırakılamaz!"
     static let gmailCheck:[Substring.Element] = ["@", "g", "m", "a", "i", "l", ".", "c", "o", "m"]
     
+    
+    
+    //girisvc
     static let bilgYanlis:String = "Hesabınıza ait  bilgiler yanlış lütfen tekrar deneyiniz."
     static let hesapBulunamadı:String = "Sistemimizde böyle bir hesap kayıtlı olarak bulunmamaktadır"
     static let mevcutSifreYanlis:String = "Mevcut şifreniz yanlış"
     static let sifreEslesmiyor:String = "Girilen şifreler eşleşmiyor"
     static let sifreDeBasarili:String = "Şifreniz başarıyla değiştirildi."
     static let sifreGuv:String = "Şifreniz 8-15 karakter aralığında olmalıdır.Ayrıca sifreniz en az bir büyük harf, küçük harf, sayı ve .,$@$#!%*?& içermelidir"
+    
+//    kan bagis detay VC
+    
+    static let yolTarifi:String = "Bağış Noktası harita üzerinde gösterilmektedir.İlgili pin'e tıklayınca bağış noktasına yol tarifi alacaksınız"
     //yasalVC için Yasal Uyarı,KKVC için kullanım kosulları,gizlilikVC için gizlilik koşulları.
     
     static let yasalUyari:String = ""
