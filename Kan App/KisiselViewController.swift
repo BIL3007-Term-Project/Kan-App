@@ -508,6 +508,35 @@ extension KisiselViewController{
     
     func dgPickerYukle(){
         
+        
+        let date = Date()
+        let calendar = Calendar.current
+      
+        let currentDay = calendar.component(.day, from: date)
+        let currentMonth = calendar.component(.month, from: date)
+        let currentYear = calendar.component(.year, from: date)
+        
+        var minDateComponent = calendar.dateComponents([.day,.month,.year], from: Date())
+        minDateComponent.day = 0 + currentDay //01
+        minDateComponent.month = currentMonth - 00 //01
+        minDateComponent.year = currentYear - 65
+        let minDate = calendar.date(from: minDateComponent)
+        
+        print(" min date : \(String(describing: minDate))")
+
+        var maxDateComponent = calendar.dateComponents([.day,.month,.year], from: Date())
+        maxDateComponent.day = 0 + currentDay
+        maxDateComponent.month =  currentMonth - 00
+        maxDateComponent.year = currentYear - 18
+
+        let maxDate = calendar.date(from: maxDateComponent)
+        print("max date : \(String(describing: maxDate))")
+
+        dgDatePicker.minimumDate = minDate! as Date
+        dgDatePicker.maximumDate =  maxDate! as Date
+        
+        dgDatePicker.minimumDate = minDate
+        dgDatePicker.maximumDate = maxDate
         if #available(iOS 13.4,*){
             
             dgDatePicker.preferredDatePickerStyle = .wheels

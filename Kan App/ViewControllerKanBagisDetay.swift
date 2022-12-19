@@ -112,7 +112,7 @@ extension ViewControllerKanBagisDetay{
     
     func yolTarifiAl(){
         
-        let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.yolTarifi, preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Yol Tarifi", message: K.yolTarifi, preferredStyle: .alert)
         
         let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
         
