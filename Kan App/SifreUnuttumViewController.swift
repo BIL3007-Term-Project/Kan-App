@@ -26,12 +26,17 @@ class SifreUnuttumViewController: UIViewController {
     
 
     @IBAction func onaylaButtonPressed(_ sender: Any) {
+        
+        
     }
     
 }
 
 
 extension SifreUnuttumViewController{
+    
+    
+    
     
     
     

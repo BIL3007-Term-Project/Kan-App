@@ -195,25 +195,32 @@ class ViewController: UIViewController { //giriş ekranı VC
                 
                 dbGelenMobilKul = kullanicilarDAO().MobilKullaniciGetir(k_mail: mail)
                 
-                if mail == dbGelenMobilKul?.getK_Mail() && sifre == dbGelenMobilKul?.getK_Sifre(){
+                if let gMail = dbGelenMobilKul?.getK_Mail(),let gSifre = dbGelenMobilKul?.getK_Sifre(){
                     
-                    DispatchQueue.main.async {
-                        self.VCActivityIndicator.alpha = 1
-                        self.VCActivityIndicator.startAnimating()
+                  
+                    if mail == gMail && sifre == gSifre{
+                        
+                        DispatchQueue.main.async {
+                            self.VCActivityIndicator.alpha = 1
+                            self.VCActivityIndicator.startAnimating()
+                        }
+                        
+                        hesapSahibiMailVC = mail
+                        
+                        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(mainGecisYap), userInfo: nil, repeats: false)
+                       
+                        UserDefaults.standard.set(true, forKey: "IsUserLoggedIn")
+                        
+                        
+                    }else{
+                        
+                        bilgilerYanlisAlert()
                     }
-                    
-                    hesapSahibiMailVC = mail
-                    
-                    Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(mainGecisYap), userInfo: nil, repeats: false)
-                   
-                    UserDefaults.standard.set(true, forKey: "IsUserLoggedIn")
-                    
-                    
+            
                 }else{
                     
-                    bilgilerYanlisAlert()
+                    hesapBulunamadı()
                 }
-                //2 sn içinde geçiş yapılır.burası 2.sql güvenlik katmanının için e koyulacak
                 
             }else{
                 
@@ -376,6 +383,18 @@ extension ViewController{
     func bilgilerYanlisAlert(){
         
         let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.bilgYanlis, preferredStyle: .alert)
+        
+        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
+        
+        alertController.addAction(tamamButton)
+        
+        self.present(alertController, animated: true)
+        
+    }
+    
+    func hesapBulunamadı(){
+        
+        let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.hesapBulunamadı, preferredStyle: .alert)
         
         let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
         

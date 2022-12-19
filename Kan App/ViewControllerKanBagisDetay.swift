@@ -21,6 +21,9 @@ class ViewControllerKanBagisDetay: UIViewController {
     
     @IBOutlet weak var bagisNoktaMapView:MKMapView!
     
+    
+    @IBOutlet weak var questionMarkButton: UIBarButtonItem!
+    
     var noktaID:Int?
     
     var bagisNoktaNesnesi:BagisNokta = BagisNokta ()
@@ -50,6 +53,10 @@ class ViewControllerKanBagisDetay: UIViewController {
         
         pinYarat(bagisNokta: bagisNoktaNesnesi)
         
+    }
+    
+    
+    @IBAction func questionMarkButtonPressed(_ sender: Any) {
     }
     
 

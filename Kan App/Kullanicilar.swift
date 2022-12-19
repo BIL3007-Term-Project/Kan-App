@@ -46,8 +46,8 @@ class mobilKullanicilar{
     
     
 
-    func getK_Mail()->String{
-        return k_mail!
+    func getK_Mail()->String?{
+        return k_mail
     }
     func getK_Sifre()->String{
         return k_sifre!
@@ -116,3 +116,4 @@ class ortakKullanıcılar{
     }
     
 }
+

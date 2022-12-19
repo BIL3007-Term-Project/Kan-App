@@ -36,8 +36,8 @@ struct K{
     static let bosAlanHata:String = "Boş alan bırakılamaz!"
     static let gmailCheck:[Substring.Element] = ["@", "g", "m", "a", "i", "l", ".", "c", "o", "m"]
     
-    static let bilgYanlis:String = "Girdiğiniz bilgiler yanlış lütfen tekrar deneyiniz."
-    
+    static let bilgYanlis:String = "Hesabınıza ait  bilgiler yanlış lütfen tekrar deneyiniz."
+    static let hesapBulunamadı:String = "Sistemimizde böyle bir hesap kayıtlı olarak bulunmamaktadır"
     static let mevcutSifreYanlis:String = "Mevcut şifreniz yanlış"
     static let sifreEslesmiyor:String = "Girilen şifreler eşleşmiyor"
     static let sifreDeBasarili:String = "Şifreniz başarıyla değiştirildi."
