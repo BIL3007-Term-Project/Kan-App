@@ -55,6 +55,8 @@ class ViewController: UIViewController { //giriş ekranı VC
         super.viewDidLoad()
         
    
+        appİmage.layer.cornerRadius = appİmage.frame.height/4
+        
         sifreGImageView.image = UIImage(systemName: "eye.slash")
         
         VCActivityIndicator.color = .white

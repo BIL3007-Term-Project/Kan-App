@@ -158,11 +158,32 @@ class MainViewController: UIViewController {
         self.performSegue(withIdentifier:K.mToAyar, sender: hesapSahibiMailMainVC)
     }
     
-    @IBAction func cikisButtonPressed(_ sender: Any) {
+    @IBAction func cikisButtonPressed(_ sender: Any) { //kullanıcı dışaır dokununca da çıkış yapıyor
         print("cikis basıldı")
         
         UserDefaults.standard.set(false, forKey: "IsUserLoggedIn")
-        self.navigationController?.popToRootViewController(animated: true)
+        
+        let alertController = UIAlertController(title: "Çıkış Yap ", message: "Çıkış yapmak istediğinizden emin misiniz?", preferredStyle: .actionSheet)
+        
+        let evetButton = UIAlertAction(title: "Evet", style: .cancel){
+            
+            action in
+            
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+        
+        let hayırButton = UIAlertAction(title: "Hayır", style: .destructive){
+            
+            action in
+            
+            self.view.endEditing(true)
+        }
+        
+        
+        alertController.addAction(evetButton)
+        alertController.addAction(hayırButton)
+        
+        self.present(alertController, animated: true)
         
     }
     

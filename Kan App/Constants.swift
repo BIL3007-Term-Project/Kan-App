@@ -25,7 +25,7 @@ struct K{
     static let hToHDetay:String = "haritaToHaritaDetay"
     static let mToAyar:String = "mainToAyarlar"
     static let aToSifYen:String = "ayarlarToSifYen"
-    
+    static let ha1Toha2:String = "haritaAcilToharitaAcil2"
     
     //kayitVC güvenlik check
     static let hesapGuv:String = "Mail adresiniz \"@gmail.com\" uzantılı olmalıdır.\nŞifreniz 8-15 karakter aralığında olmalıdır.Ayrıca sifreniz en az bir büyük harf, küçük harf, sayı ve .,$@$#!%*?& içermelidir"

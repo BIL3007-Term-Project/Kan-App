@@ -26,7 +26,7 @@ class ViewControllerKanBagisDetay: UIViewController {
     
     var noktaID:Int?
     
-    var bagisNoktaNesnesi:BagisNokta = BagisNokta ()
+    var bagisNoktaNesnesi:BagisNokta = BagisNokta () //veritabanından gelecek verilerin tutulduğu nesne
     
     var annotationTitle:String?//pin başlık
     var annotationSubTitle:String?//pin alt başlık
@@ -121,6 +121,7 @@ extension ViewControllerKanBagisDetay{
         self.present(alertController, animated: true)
         
     }
+    
 }
 
 extension ViewControllerKanBagisDetay:MKMapViewDelegate{
