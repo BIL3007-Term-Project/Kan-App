@@ -11,7 +11,6 @@ import Foundation
 class kullanicilarDAO{
     
     var db:FMDatabase? //veritabanı değişkeni
-    
     init(){
         
         
@@ -21,6 +20,8 @@ class kullanicilarDAO{
         
         
         db = FMDatabase(path: veritabanıURL.path)
+        
+        
     }
     
     
@@ -111,7 +112,27 @@ class kullanicilarDAO{
     }
     
     
-    func ortakKullaniciEkle(donor_name:String,donor_surname:String,id_number:String,date_of_birth:String,weight:Int,height:Int,gender:String,blood_type:String,phone:String,mail:String){
+    
+}
+
+
+class ortakKullanıcılarDAO{
+    
+    var db:FMDatabase? //veritabanı değişkeni
+    init(){
+        
+        
+        let hedefYol = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        
+        let veritabanıURL = URL(filePath: hedefYol).appending(path: "db.sqlite3")
+        
+        
+        db = FMDatabase(path: veritabanıURL.path)
+        
+        
+    }
+    
+    func ortakKullaniciEkle(donor_name:String,donor_surname:String,id_number:String,date_of_birth:String,weight:Int,height:Int,gender:String,blood_type:String,phone:String,email:String){
         
         
         
@@ -120,7 +141,7 @@ class kullanicilarDAO{
         
         do{
            
-            try db!.executeUpdate("INSERT INTO  app_donor(donor_name,donor_surname,id_number,date_of_birth,weight,height,gender,blood_type,phone,mail) VALUES(?,?,?,?,?,?,?,?,?,?)", values: [donor_name,donor_name,id_number,date_of_birth,weight,height,gender,blood_type,phone,mail])
+            try db!.executeUpdate("INSERT INTO  app_donor(donor_name,donor_surname,id_number,date_of_birth,weight,height,gender,blood_type,phone,email) VALUES(?,?,?,?,?,?,?,?,?,?)", values: [donor_name,donor_surname,id_number,date_of_birth,weight,height,gender,blood_type,phone,email])
             
             
             print("KullanicilarDAO ortak kullanici eklemek başarılı!")

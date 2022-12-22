@@ -23,10 +23,23 @@ class SifreUnuttumViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        emailTextField.delegate = self
+        tcTextField.delegate = self
         
     }
     
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if  segue.identifier == K.sifreUnuttum1To2{
+            
+            if let mail = sender as? String{
+                
+                let gidilecekVC = segue.destination as? SifreUnuttumViewController2
+                gidilecekVC?.gelenMail = mail
+            }
+        }
+    }
     @IBAction func ileriButtonPressed(_ sender: Any) {
         
         
@@ -40,26 +53,33 @@ class SifreUnuttumViewController: UIViewController {
                     
                     if mail == gMail{
                         
-//                        if gelenTC = kullanicilarDAO().MobilKullaniciGetir(k_mail: gMail).getK_TC(){
-//                            
-//                            
-//                        }
+                        let gelenTC = kullanicilarDAO().MobilKullaniciGetir(k_mail: gMail).getK_TC()
+                        
+                        if tc == gelenTC{
+                            
+                            
+                            self.performSegue(withIdentifier: K.sifreUnuttum1To2, sender: mail)
+                            
+                            emailTextField.text = ""
+                            tcTextField.text = ""
+                        }else{
+                            
+                            TCEslesmiyor()
+                        }
                         
                     }
                 }else{
                     
-                    //hesap yok
+                    mailYanlis()
                 }
-                
-                
             }else{
-                
+                 
+                bosAlanHatası()
                 
             }
-            
         }else{
             
-            //bosAlan
+            bosAlanHatası()
         }
                 
                
@@ -70,7 +90,47 @@ class SifreUnuttumViewController: UIViewController {
     
 }
 
-
+extension SifreUnuttumViewController{
+    
+    
+    func bosAlanHatası(){
+        
+        let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.bosAlanHata, preferredStyle: .alert)
+        
+        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
+        
+        alertController.addAction(tamamButton)
+        
+        self.present(alertController, animated: true)
+        
+    }
+    
+    
+    func mailYanlis(){
+        
+        let alertController = UIAlertController(title: "Sifre Unuttum", message: K.mailYanlis, preferredStyle: .alert)
+        
+        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
+        
+        alertController.addAction(tamamButton)
+        
+        self.present(alertController, animated: true)
+        
+    }
+    
+    func TCEslesmiyor(){
+        
+        let alertController = UIAlertController(title: "Sifre Unuttum", message: K.tcEslesmiyor, preferredStyle: .alert)
+        
+        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
+        
+        alertController.addAction(tamamButton)
+        
+        self.present(alertController, animated: true)
+        
+    }
+    
+}
 extension SifreUnuttumViewController:UITextFieldDelegate{
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
@@ -144,15 +204,15 @@ extension SifreUnuttumViewController:UITextFieldDelegate{
         }//EskiSifreTF check sonu
         else if textField == tcTextField{
             
-            if let sifreSayi = textField.text?.count{
+            if let tcSayi = textField.text?.count{
                 
-                if sifreSayi > 0 && sifreSayi < 11{
+                if tcSayi > 0 && tcSayi < 12{
                     
                     tcKayitCheck = true
                     print("TC 1.asama :\(String(describing: tcKayitCheck))")
                     print("TC 0-15 aralıgında")
                 }
-                else if sifreSayi == 0{
+                else if tcSayi == 0{
                     tcKayitCheck = false
                     print("TC 1.asama :\(String(describing: tcTextField))")
                     tcTextField.text = ""
@@ -164,7 +224,7 @@ extension SifreUnuttumViewController:UITextFieldDelegate{
                     tcKayitCheck = false
                     print("sifre1.asama :\(String(describing: tcKayitCheck))")
                     tcTextField.text = ""
-                    tcTextField.placeholder = "TCNO"
+                    tcTextField.placeholder = "TC no"
                     print("TC istenen aralıkta değil")
                 }
             }

@@ -26,13 +26,14 @@ struct K{
     static let mToAyar:String = "mainToAyarlar"
     static let aToSifYen:String = "ayarlarToSifYen"
     static let ha1Toha2:String = "haritaAcilToharitaAcil2"
-    
+    static let sifreUnuttum1To2:String = "sifreU1To2"
     //kayitVC güvenlik check
     static let hesapGuv:String = "Mail adresiniz \"@gmail.com\" uzantılı olmalıdır.\nŞifreniz 8-15 karakter aralığında olmalıdır.Ayrıca sifreniz en az bir büyük harf, küçük harf, sayı ve .,$@$#!%*?& içermelidir"
     
     static let guvHata:String = "Lütfen hesap bilgilerinizi kontrol ediniz.Gereksinimler için soru işaretine tıklayabilirsiniz."
     
     static let hesapOlusturma:String = "Girilen mail adresiyle kayıtlı başka bir kullanıcı mevcut.Lütfen farklı mail adresi deneyiniz."
+    
     static let bosAlanHata:String = "Boş alan bırakılamaz!"
     static let gmailCheck:[Substring.Element] = ["@", "g", "m", "a", "i", "l", ".", "c", "o", "m"]
     
@@ -55,4 +56,8 @@ struct K{
     static let kullanimKosullari:String = ""
     static let gizlilikKosullari:String = ""
    
+    //sifre unuttum VC1 ve VC2
+    
+    static let mailYanlis:String = "Böyle bir mail adresi sistemimizde bulunmamaktadır."
+    static let tcEslesmiyor:String = "İlgili mail adresi ile TC eşleşmemektedir."
 }

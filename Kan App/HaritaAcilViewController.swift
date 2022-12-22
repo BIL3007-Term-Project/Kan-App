@@ -102,14 +102,14 @@ class HaritaAcilViewController: UIViewController {
             bildirimIcerik.sound = .default
             
             let kabul = UNNotificationAction(identifier: "kabul", title: "Kabul Et",options:.foreground)
-            let red = UNNotificationAction(identifier: "Reddet", title: "red",options:.destructive)
+            let red = UNNotificationAction(identifier: "Reddet", title: "Reddet",options:.destructive)
             
             let kategori = UNNotificationCategory(identifier: "kategori", actions: [kabul,red], intentIdentifiers: [],options:[])
             
             UNUserNotificationCenter.current().setNotificationCategories([kategori])
             bildirimIcerik.categoryIdentifier = "kategori"
             
-            let bildirimTetikle = UNTimeIntervalNotificationTrigger(timeInterval: 0.5, repeats: false)
+            let bildirimTetikle = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
             let bildirimIste =  UNNotificationRequest(identifier: "acil istek", content: bildirimIcerik, trigger: bildirimTetikle)
             
             UNUserNotificationCenter.current().add(bildirimIste)
@@ -235,7 +235,7 @@ extension HaritaAcilViewController:UITableViewDelegate,UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "acilCell",for:indexPath) as! TableViewCellAcil
         
-        cell.acilLabel.text = "\(String(describing: acilKanListesi[indexPath.row].getHastaneAd()!)) - \(String(describing: acilKanListesi[indexPath.row].getKanGrup()!))"
+        cell.acilLabel.text = "\(indexPath.row + 1)- \(String(describing: acilKanListesi[indexPath.row].getHastaneAd()!)): \(String(describing: acilKanListesi[indexPath.row].getKanGrup()!))"
         
         cell.backgroundColor = UIColor(rgb: 0xFFE1E1)
         return cell
@@ -265,7 +265,23 @@ extension HaritaAcilViewController:UNUserNotificationCenterDelegate{
         
         if response.actionIdentifier == "kabul"{
             
-            print("evet tıklaınd")
+            let alertController = UIAlertController(title: "UYARI", message: "Acil Kan İhtiyacı için bağış yapma seçeneğine tıkladınız.Kan bağışı, kana ihtiyaç duyan hasta açısından can güvenliği arz etmektedir.Bağış Yap butonuna tıklarsanız ilgili hastaneye gitmeniz önemle rica olunur.", preferredStyle: .alert)
+            
+            let yönlendir = UIAlertAction(title: "Yönlendir", style: .cancel){
+                action in
+            }
+            
+            let iptalEt = UIAlertAction(title: "İptal Et", style: .destructive){
+                
+                action in
+                
+                self.view.endEditing(true)
+            }
+            
+            alertController.addAction(yönlendir)
+            alertController.addAction(iptalEt)
+            
+            self.present(alertController, animated: true)
         }
         
         if response.actionIdentifier == "red"{

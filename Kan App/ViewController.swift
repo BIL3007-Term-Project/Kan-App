@@ -86,6 +86,8 @@ class ViewController: UIViewController { //giriş ekranı VC
         
         ozelVeritabaniKopyala()
         bagisNoktaVeritabaniKopyala()
+        ortakVeriTabanikopyala()
+        
         
     }
     

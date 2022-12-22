@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		05068322294DEC7400435825 /* UIStringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05068321294DEC7400435825 /* UIStringExt.swift */; };
+		05166B91295465C6004962A7 /* db.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 05166B90295465C6004962A7 /* db.sqlite3 */; };
 		05262ABD2940F531000B3D19 /* ViewControllerKanBagis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262ABC2940F531000B3D19 /* ViewControllerKanBagis.swift */; };
 		05262AC32940F557000B3D19 /* ViewControllerKokHucreBagis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262AC22940F557000B3D19 /* ViewControllerKokHucreBagis.swift */; };
 		05262AC92940F75A000B3D19 /* ViewControllerAferezBagis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262AC82940F75A000B3D19 /* ViewControllerAferezBagis.swift */; };
@@ -80,6 +81,7 @@
 
 /* Begin PBXFileReference section */
 		05068321294DEC7400435825 /* UIStringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStringExt.swift; sourceTree = "<group>"; };
+		05166B90295465C6004962A7 /* db.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite3; sourceTree = "<group>"; };
 		05262ABC2940F531000B3D19 /* ViewControllerKanBagis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerKanBagis.swift; sourceTree = "<group>"; };
 		05262AC22940F557000B3D19 /* ViewControllerKokHucreBagis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerKokHucreBagis.swift; sourceTree = "<group>"; };
 		05262AC82940F75A000B3D19 /* ViewControllerAferezBagis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAferezBagis.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				059C8FE62935599A00AE456D /* LaunchScreen.storyboard */,
 				059C8FE92935599A00AE456D /* Info.plist */,
 				053C65C92952271E00ECB6CA /* GoogleService-Info.plist */,
+				05166B90295465C6004962A7 /* db.sqlite3 */,
 				0541DC772949EA3300D238F4 /* bagiscilar.sqlite */,
 				05A59CBB294F354400BFFF8F /* bagisNoktalari.sqlite */,
 				05B457852935603A007E89D0 /* SSSViewController.swift */,
@@ -391,6 +394,7 @@
 				0541DC952949F35A00D238F4 /* libsqlite3.tbd in Resources */,
 				059C8FE82935599A00AE456D /* LaunchScreen.storyboard in Resources */,
 				05A59CBC294F354400BFFF8F /* bagisNoktalari.sqlite in Resources */,
+				05166B91295465C6004962A7 /* db.sqlite3 in Resources */,
 				059C8FE52935599A00AE456D /* Assets.xcassets in Resources */,
 				0541DC782949EA3300D238F4 /* bagiscilar.sqlite in Resources */,
 				059C8FE32935599A00AE456D /* Main.storyboard in Resources */,
