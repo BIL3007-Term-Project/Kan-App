@@ -23,6 +23,7 @@ class SifreUnuttumViewController2: UIViewController {
     
     @IBOutlet weak var onaylaButton: UIButton!
     
+    @IBOutlet weak var questionMarkButton: UIBarButtonItem!
     var gelenMail:String?
     var yeniSifreKayitCheck:Bool?
     var sifreTekKayitCheck:Bool?
@@ -34,6 +35,7 @@ class SifreUnuttumViewController2: UIViewController {
 
         
         onaylaButton.layer.cornerRadius = onaylaButton.frame.height/2.5
+        sifreGImageView.image = UIImage(systemName: "eye.slash")
         print(gelenMail!)
         sifreGorunuyorMu = false
         
@@ -44,6 +46,13 @@ class SifreUnuttumViewController2: UIViewController {
         yeniSifreTextField.isSecureTextEntry = true
         sifreTekTextField.isSecureTextEntry = true
         
+        yeniSifreTextField.autocorrectionType = .no
+        yeniSifreTextField.autocapitalizationType = .none
+        yeniSifreTextField.keyboardType = .default
+        sifreTekTextField.autocorrectionType = .no
+        sifreTekTextField.autocapitalizationType = .none
+        sifreTekTextField.keyboardType = .default
+        
         
     }
     
@@ -52,6 +61,12 @@ class SifreUnuttumViewController2: UIViewController {
         sifreGorunuyorMu = false
     }
 
+    
+    @IBAction func questionMarkButtonPressed(_ sender: Any) {
+        
+        bilgilendirme()
+    }
+    
     @IBAction func sifreGButtonPressed(_ sender: Any) {
         
         if sifreGorunuyorMu!{ //şifre açık
@@ -136,7 +151,7 @@ class SifreUnuttumViewController2: UIViewController {
   
 }
 
-
+//MARK: - alert ve hesap güvenliği fonksiyonları
 extension SifreUnuttumViewController2{
     
     func alınanSifreGuv(sifre:String)->Bool{
@@ -207,7 +222,21 @@ extension SifreUnuttumViewController2{
         self.present(alertController, animated: true)
         
     }
+    func bilgilendirme(){
+        
+        let alertController = UIAlertController(title: "Sifre Unuttum", message: K.bilgilendirme2, preferredStyle: .alert)
+        
+        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
+        
+        alertController.addAction(tamamButton)
+        
+        self.present(alertController, animated: true)
+        
+        
+    }
 }
+
+//MARK: - textfield protocol fonksiyonları
 extension SifreUnuttumViewController2:UITextFieldDelegate{
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {

@@ -60,4 +60,6 @@ struct K{
     
     static let mailYanlis:String = "Böyle bir mail adresi sistemimizde bulunmamaktadır."
     static let tcEslesmiyor:String = "İlgili mail adresi ile TC eşleşmemektedir."
+    static let bilgilendirme1:String = "Şifrenizi değiştirmek için hesabınız ile TC kimlik numaranız doğrulanmalıdır."
+    static let bilgilendirme2:String = "Şifreniz 8-15 karakter aralığında olmalıdır.Ayrıca sifreniz en az bir büyük harf, küçük harf, sayı ve .,$@$#!%*?& içermelidir"
 }

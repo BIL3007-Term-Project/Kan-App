@@ -28,6 +28,8 @@ class HaritaAcil2ViewController: UIViewController {
         haritaAcilMapView.delegate = self
         locationManagerAcil.delegate = self
         
+        haritaAcilMapView.isZoomEnabled = false
+        haritaAcilMapView.isScrollEnabled = false
         locationManagerAcil.desiredAccuracy = kCLLocationAccuracyBest //en iyi konumu al
         locationManagerAcil.requestWhenInUseAuthorization() // konumu alırken kullanıcıdan izin iste
         

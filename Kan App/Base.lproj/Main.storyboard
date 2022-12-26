@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_1" translatesAutoresizingMaskIntoConstraints="NO" id="lfW-zn-RSZ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_3" translatesAutoresizingMaskIntoConstraints="NO" id="lfW-zn-RSZ">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pw3-Ak-fjS" userLabel="TopView">
@@ -31,18 +31,14 @@
                                             <constraint firstAttribute="width" constant="200" id="vDb-C7-N5d"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kan Application" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nu-rN-yJ2">
-                                        <rect key="frame" x="96" y="237" width="200" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="7oT-kR-287"/>
-                                            <constraint firstAttribute="height" constant="25" id="hcb-GL-5W9"/>
-                                        </constraints>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bağış Yönetim Sistemi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nu-rN-yJ2">
+                                        <rect key="frame" x="70" y="237" width="253" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="x4a-BM-c5V">
-                                        <rect key="frame" x="31" y="307" width="330" height="32"/>
+                                        <rect key="frame" x="31" y="312" width="330" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="330" id="AhO-hn-PVE"/>
                                         </constraints>
@@ -57,7 +53,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="hQQ-cV-Y9K" firstAttribute="top" secondItem="Pw3-Ak-fjS" secondAttribute="top" constant="4" id="4TS-JA-3DL"/>
-                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="6nu-rN-yJ2" secondAttribute="trailing" constant="97" id="8oy-4j-exT"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="6nu-rN-yJ2" secondAttribute="trailing" constant="70" id="8oy-4j-exT"/>
                                     <constraint firstItem="x4a-BM-c5V" firstAttribute="top" secondItem="6nu-rN-yJ2" secondAttribute="bottom" constant="45" id="FCw-J2-Dlg"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="x4a-BM-c5V" secondAttribute="trailing" constant="32" id="IAR-q6-phU"/>
                                     <constraint firstAttribute="height" constant="365" id="KBd-ET-hph"/>
@@ -65,7 +61,7 @@
                                     <constraint firstItem="hQQ-cV-Y9K" firstAttribute="leading" secondItem="Pw3-Ak-fjS" secondAttribute="leading" constant="96" id="itr-Uw-WYZ"/>
                                     <constraint firstItem="6nu-rN-yJ2" firstAttribute="top" secondItem="hQQ-cV-Y9K" secondAttribute="bottom" constant="30" id="jNj-vJ-r6i"/>
                                     <constraint firstAttribute="width" constant="393" id="no7-iv-F38"/>
-                                    <constraint firstItem="6nu-rN-yJ2" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Pw3-Ak-fjS" secondAttribute="leading" constant="96" id="wzQ-D4-Z5J"/>
+                                    <constraint firstItem="6nu-rN-yJ2" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Pw3-Ak-fjS" secondAttribute="leading" constant="70" id="wzQ-D4-Z5J"/>
                                     <constraint firstItem="x4a-BM-c5V" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Pw3-Ak-fjS" secondAttribute="leading" constant="31" id="yaz-vI-C81"/>
                                 </constraints>
                             </view>
@@ -81,7 +77,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1K-Ta-WIo">
-                                        <rect key="frame" x="8" y="173" width="377" height="50"/>
+                                        <rect key="frame" x="8" y="203" width="377" height="50"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="377" id="Bxf-N1-Bqw"/>
@@ -118,7 +114,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJk-Yo-43g">
-                                        <rect key="frame" x="8" y="223" width="377" height="50"/>
+                                        <rect key="frame" x="8" y="253" width="377" height="50"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="377" id="e45-7f-IXe"/>
@@ -162,7 +158,7 @@
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="M1K-Ta-WIo" firstAttribute="top" secondItem="9lx-i3-yml" secondAttribute="bottom" constant="50" id="1Sh-h3-PKZ"/>
+                                    <constraint firstItem="M1K-Ta-WIo" firstAttribute="top" secondItem="9lx-i3-yml" secondAttribute="bottom" constant="80" id="1Sh-h3-PKZ"/>
                                     <constraint firstItem="nJk-Yo-43g" firstAttribute="leading" secondItem="xWj-KL-wu0" secondAttribute="leading" constant="8" id="673-Ea-CGT"/>
                                     <constraint firstItem="2Ye-c1-bYn" firstAttribute="top" secondItem="VdX-kL-699" secondAttribute="bottom" constant="30.670000000000002" id="8Nx-nF-NH5"/>
                                     <constraint firstAttribute="width" constant="393" id="BUQ-Br-mAz"/>
@@ -1314,7 +1310,13 @@
                         <viewLayoutGuide key="safeArea" id="7Ri-wa-6mo"/>
                         <color key="backgroundColor" red="1" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Şifre Yenile" id="Lkp-RV-GFT"/>
+                    <navigationItem key="navigationItem" title="Şifre Yenile" id="Lkp-RV-GFT">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="questionmark" catalog="system" id="xvC-XW-v2z">
+                            <connections>
+                                <action selector="questionMarkButtonPressed:" destination="vlC-AG-HX3" id="G7e-13-Cl4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="eskiSifreTextField" destination="sCf-CR-1Mg" id="Qzd-B3-Doc"/>
                         <outlet property="onaylaButton" destination="u4e-rT-dEO" id="JGG-zU-tij"/>
@@ -1402,7 +1404,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F0a-5m-vjO">
-                                <rect key="frame" x="0.0" y="103" width="393" height="657"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
@@ -1485,7 +1487,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Pxs-dL-rlz">
-                                <rect key="frame" x="0.0" y="93" width="393" height="570"/>
+                                <rect key="frame" x="0.0" y="93" width="393" height="690"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -1512,7 +1514,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4hv-A6-9aI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="985" y="-764"/>
+            <point key="canvasLocation" x="983.96946564885491" y="-764.08450704225356"/>
         </scene>
         <!--Şifremi Unuttum-->
         <scene sceneID="wh3-j0-l9y">
@@ -1559,10 +1561,17 @@
                         <viewLayoutGuide key="safeArea" id="NWP-El-oeb"/>
                         <color key="backgroundColor" red="1" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Şifremi Unuttum" id="gCV-CL-hRh"/>
+                    <navigationItem key="navigationItem" title="Şifremi Unuttum" id="gCV-CL-hRh">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="questionmark" catalog="system" id="knZ-OU-fLk">
+                            <connections>
+                                <action selector="questionmarkButtonPressed:" destination="UK8-Sj-7qS" id="nmU-Tq-z8a"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="emailTextField" destination="Gpr-jg-wdt" id="9Kz-y9-JK7"/>
                         <outlet property="ileriButton" destination="xKr-sG-8Ar" id="s14-zo-cIO"/>
+                        <outlet property="questionMarkButton" destination="knZ-OU-fLk" id="ZTi-9o-Ele"/>
                         <outlet property="tcTextField" destination="X4Z-Vc-aCi" id="mff-r0-YSy"/>
                         <segue destination="ZqV-Tk-r3C" kind="show" identifier="sifreU1To2" id="6dd-Gd-vQg"/>
                     </connections>
@@ -1636,9 +1645,16 @@
                         <viewLayoutGuide key="safeArea" id="R04-pJ-TKT"/>
                         <color key="backgroundColor" red="1" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="tg5-Uc-j8f"/>
+                    <navigationItem key="navigationItem" id="tg5-Uc-j8f">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="questionmark" catalog="system" id="NLT-SE-jdH">
+                            <connections>
+                                <action selector="questionMarkButtonPressed:" destination="ZqV-Tk-r3C" id="QbR-Up-Bs3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="onaylaButton" destination="FDh-by-ZQB" id="Gum-DA-RGu"/>
+                        <outlet property="questionMarkButton" destination="NLT-SE-jdH" id="ixw-31-Xxz"/>
                         <outlet property="sifreGButton" destination="dvC-5s-CkE" id="DZG-rn-4CF"/>
                         <outlet property="sifreGImageView" destination="Jit-wS-0Zn" id="i26-Cg-7fh"/>
                         <outlet property="sifreTekTextField" destination="Vsv-jE-6u5" id="ysm-Ja-eFI"/>
@@ -1697,7 +1713,7 @@
     <resources>
         <image name="TK_KTUbilmüh" width="262.33334350585938" height="107"/>
         <image name="aferez_bagis" width="170.66667175292969" height="170.66667175292969"/>
-        <image name="background_1" width="246" height="533.33331298828125"/>
+        <image name="background_3" width="836" height="661"/>
         <image name="bagis_arkaplan" width="810" height="1440"/>
         <image name="boy_icon" width="170.66667175292969" height="170.66667175292969"/>
         <image name="button_rect_1" width="100" height="12.666666984558105"/>

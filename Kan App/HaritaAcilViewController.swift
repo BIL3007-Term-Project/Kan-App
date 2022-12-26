@@ -120,7 +120,7 @@ class HaritaAcilViewController: UIViewController {
     func acilKanRealtime(){//realtime olarak db her değişince bu fonk çalışır.
 
         print("acil realtime calısıyor")
-        firestoreDB.collection("Acil").addSnapshotListener() {
+        firestoreDB.collection("Acil").order(by: "timestamp").addSnapshotListener() {
 
             (QuerySnapshot,error) in
             

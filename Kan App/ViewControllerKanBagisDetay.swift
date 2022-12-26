@@ -39,7 +39,8 @@ class ViewControllerKanBagisDetay: UIViewController {
         bagisNoktaMapView.delegate = self
         locationManager.delegate = self
         
-        
+        bagisNoktaMapView.isScrollEnabled = false
+        bagisNoktaMapView.isZoomEnabled = false
        
         locationManager.desiredAccuracy = kCLLocationAccuracyBest //en iyi konumu al
         locationManager.requestWhenInUseAuthorization() // konumu alırken kullanıcıdan izin iste

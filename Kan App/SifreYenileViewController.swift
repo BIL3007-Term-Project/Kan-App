@@ -53,6 +53,12 @@ class SifreYenileViewController: UIViewController {
         sifreGorunuyorMu = false
     }
     
+    
+    @IBAction func questionMarkButtonPressed(_ sender: Any) {
+        
+        bilgilendirme()
+        
+    }
     @IBAction func sifreGosterPressed(_ sender: Any) {
         
         if sifreGorunuyorMu!{ //şifre açık
@@ -138,6 +144,8 @@ class SifreYenileViewController: UIViewController {
     
 }
 
+
+//MARK: -  alert fonksiyonları
 extension SifreYenileViewController{
     
     func alınanSifreGuv(sifre:String)->Bool{
@@ -200,6 +208,18 @@ extension SifreYenileViewController{
     func SifreDegBasarili(){
         
         let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.sifreDeBasarili, preferredStyle: .alert)
+        
+        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
+        
+        alertController.addAction(tamamButton)
+        
+        self.present(alertController, animated: true)
+        
+    }
+    
+    func bilgilendirme(){
+        
+        let alertController = UIAlertController(title: "Şifre Yenileme", message: K.sifreGuv, preferredStyle: .alert)
         
         let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
         

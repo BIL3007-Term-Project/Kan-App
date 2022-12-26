@@ -43,7 +43,7 @@ class ViewController: UIViewController { //giriş ekranı VC
     var sifreGorunuyorMu:Bool?
     
     
-    var textLabel:String = "Kan Application"
+    var textLabel:String = "Bağış Yönetim Sistemi"
     
    
     var mailGirisCheck:Bool = false
@@ -66,11 +66,14 @@ class ViewController: UIViewController { //giriş ekranı VC
         kayıtButton.alpha = 0
         VCActivityIndicator.alpha = 0
         
-        emailTextField.alpha = 1
-        sifreTextField.alpha = 1
-        emailImageView.alpha = 1
-        sifreImageView.alpha = 1
-        girisButton.alpha = 1
+        emailTextField.alpha = 0
+        sifreTextField.alpha = 0
+        emailImageView.alpha = 0
+        sifreImageView.alpha = 0
+        girisButton.alpha = 0
+        
+        sifreGButton.alpha = 0
+        sifreGImageView.alpha = 0
         
         emailTextField.keyboardType = .default
         emailTextField.autocorrectionType = .no
@@ -88,7 +91,7 @@ class ViewController: UIViewController { //giriş ekranı VC
         bagisNoktaVeritabaniKopyala()
         ortakVeriTabanikopyala()
         
-        
+        runAnimation()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -385,19 +388,42 @@ extension ViewController{
         
         
         UIView.animate(withDuration: 1,animations: {
-            self.girisButton.alpha = 0
             
-            let hareket = CGAffineTransform(translationX: 0, y: -10)
-            let kucul = CGAffineTransform (scaleX: 1.0, y: 1.0)
+            self.emailImageView.alpha = 1
+            self.sifreImageView.alpha = 1
+            self.emailTextField.alpha = 1
+            self.sifreTextField.alpha = 1
             
+        }, completion:{
+            action in
             
-            let x = hareket.concatenating(kucul)
-            
-            self.girisButton.transform = x
-            
-            self.girisButton.alpha = 1
-            
-        }, completion: nil)
+            UIView.animate(withDuration: 1, animations: {
+                
+                self.sifreGButton.alpha = 1
+                self.sifreGImageView.alpha = 1
+               
+                
+            },completion: {
+                action in
+                
+                UIView.animate(withDuration: 1, animations: {
+                    
+                    self.girisButton.alpha = 0
+                    
+                    let hareket = CGAffineTransform(translationX: 0, y: -20)
+                    let kucul = CGAffineTransform (scaleX: 1.0, y: 1.0)
+                    
+                    
+                    let x = hareket.concatenating(kucul)
+                    
+                    self.girisButton.transform = x
+                    
+                    self.girisButton.alpha = 1
+                })
+                
+            })
+        })
+        
     }
     
 }

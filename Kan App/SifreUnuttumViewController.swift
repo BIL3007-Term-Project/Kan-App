@@ -13,9 +13,10 @@ class SifreUnuttumViewController: UIViewController {
     
     @IBOutlet weak var tcTextField: UITextField!
     
-  
-    
+
     @IBOutlet weak var ileriButton: UIButton!
+    
+    @IBOutlet weak var questionMarkButton: UIBarButtonItem!
     
     var emailKayitCheck:Bool?
     var tcKayitCheck:Bool?
@@ -23,8 +24,16 @@ class SifreUnuttumViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        ileriButton.layer.cornerRadius = ileriButton.frame.height/2.5
         emailTextField.delegate = self
         tcTextField.delegate = self
+        emailTextField.autocorrectionType = .no
+        emailTextField.autocapitalizationType = .none
+        emailTextField.keyboardType = .default
+        tcTextField.autocorrectionType = .no
+        tcTextField.autocapitalizationType = .none
+        tcTextField.keyboardType = .numberPad
+        
         
     }
     
@@ -40,6 +49,13 @@ class SifreUnuttumViewController: UIViewController {
             }
         }
     }
+    
+    
+    @IBAction func questionmarkButtonPressed(_ sender: Any) {
+        
+        bilgilendirme()
+    }
+    
     @IBAction func ileriButtonPressed(_ sender: Any) {
         
         
@@ -90,6 +106,7 @@ class SifreUnuttumViewController: UIViewController {
     
 }
 
+//MARK: - alert fonksiyonları
 extension SifreUnuttumViewController{
     
     
@@ -130,7 +147,23 @@ extension SifreUnuttumViewController{
         
     }
     
+    func bilgilendirme(){
+        
+        let alertController = UIAlertController(title: "Sifre Unuttum", message: K.bilgilendirme1, preferredStyle: .alert)
+        
+        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
+        
+        alertController.addAction(tamamButton)
+        
+        self.present(alertController, animated: true)
+        
+        
+    }
+    
 }
+
+//MARK: - textfield protocol fonksiyonları
+
 extension SifreUnuttumViewController:UITextFieldDelegate{
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
@@ -161,7 +194,7 @@ extension SifreUnuttumViewController:UITextFieldDelegate{
             
             if textField.text == ""{
                 
-                tcTextField.placeholder = "TC no"
+                tcTextField.placeholder = "11 haneli TC kimlik numarası"
             }
         }
         
@@ -210,7 +243,7 @@ extension SifreUnuttumViewController:UITextFieldDelegate{
                     
                     tcKayitCheck = true
                     print("TC 1.asama :\(String(describing: tcKayitCheck))")
-                    print("TC 0-15 aralıgında")
+                    print("TC 0-12 aralıgında")
                 }
                 else if tcSayi == 0{
                     tcKayitCheck = false
