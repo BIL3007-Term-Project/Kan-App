@@ -109,7 +109,7 @@ class HaritaAcilViewController: UIViewController {
             UNUserNotificationCenter.current().setNotificationCategories([kategori])
             bildirimIcerik.categoryIdentifier = "kategori"
             
-            let bildirimTetikle = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+            let bildirimTetikle = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
             let bildirimIste =  UNNotificationRequest(identifier: "acil istek", content: bildirimIcerik, trigger: bildirimTetikle)
             
             UNUserNotificationCenter.current().add(bildirimIste)

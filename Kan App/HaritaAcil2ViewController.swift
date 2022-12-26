@@ -24,7 +24,7 @@ class HaritaAcil2ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        navigationItem.title = gelenAcilNokta.getHastaneAd()
         haritaAcilMapView.delegate = self
         locationManagerAcil.delegate = self
         
@@ -92,7 +92,7 @@ extension HaritaAcil2ViewController{
 
 extension HaritaAcil2ViewController{
     
-    func yolTarifiAlert(){
+    func yolTarifiBilgilendirme(){
         
         let alertController = UIAlertController(title: "Yol Tarifi", message: K.yolTarifi, preferredStyle: .alert)
         
@@ -137,33 +137,7 @@ extension HaritaAcil2ViewController{
         }
         
     }
-    
-    func YasalSorumlulukAlert(){
-        
-        let alertController = UIAlertController(title: "Yasal Sorumluluk", message: "Tamam butunan basarsanız gitmek zorundasınız", preferredStyle: .alert)
-        
-        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel){
-            
-            action in
-            
-            self.yolTarifiAl()
-        }
-        
-        let iptalButton = UIAlertAction(title: "İptal", style: .destructive){
-            
-            action in
-            
-            self.view.endEditing(true)
-        }
-        
-        
-        alertController.addAction(iptalButton)
-        alertController.addAction(tamamButton)
-        
-        
-        self.present(alertController, animated: true)
-        
-    }
+
 }
 
 
@@ -210,7 +184,29 @@ extension HaritaAcil2ViewController:MKMapViewDelegate{
         //pinin konum verilerini alyıpruz
         
         
-        YasalSorumlulukAlert()
+        
+        let alertController = UIAlertController(title: "UYARI", message: "Acil Kan İhtiyacı için harita üzerindeki butona tıkladınız.Kan bağışı, kana ihtiyaç duyan hasta açısından can güvenliği arz etmektedir.Bağış Yap butonuna tıklarsanız ilgili hastaneye gitmeniz önemle rica olunur.", preferredStyle: .alert)
+        
+        let yönlendirButton = UIAlertAction(title: "Yönlendir", style: .cancel){
+            
+            action in
+            
+            self.yolTarifiAl()
+        }
+        
+        let iptalButton = UIAlertAction(title: "İptal Et", style: .destructive){
+            
+            action in
+            
+            self.view.endEditing(true)
+        }
+        
+        
+        alertController.addAction(iptalButton)
+        alertController.addAction(yönlendirButton)
+        
+        
+        self.present(alertController, animated: true)
         
 //        let requestLoc = CLLocation(latitude: annotationLat!, longitude: annotationLong!)
 //
