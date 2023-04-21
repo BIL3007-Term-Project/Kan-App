@@ -38,7 +38,7 @@ class BagisNoktaDAO{
             while(rs.next()){
                 
 
-                let gelenNokta = BagisNokta(id: Int(rs.string(forColumn: "id"))!, b_name: rs.string(forColumn: "b_name")!, b_lati: Double(rs.string(forColumn: "b_lati"))!, b_longi: Double(rs.string(forColumn: "b_longi"))!, b_image: rs.string(forColumn: "b_image")!, b_il: rs.string(forColumn: "b_il")!, b_ilce: rs.string(forColumn: "b_ilce")!)
+                let gelenNokta = BagisNokta(id: Int(rs.string(forColumn: "id"))!, b_name: rs.string(forColumn: "b_name")!, b_lati: Double(rs.string(forColumn: "b_lati"))!, b_longi: Double(rs.string(forColumn: "b_longi"))!, b_image: rs.string(forColumn: "b_image")!, b_il: rs.string(forColumn: "b_il")!, b_ilce: rs.string(forColumn: "b_ilce")!,b_yer: rs.string(forColumn: "b_yer")!)
                
                 gelenBagisNoktalarListesi.append(gelenNokta)
             }
@@ -70,7 +70,7 @@ class BagisNoktaDAO{
             while(rs.next()){
                 
 
-                let gelenNokta = BagisNokta(id: Int(rs.string(forColumn: "id"))!, b_name: rs.string(forColumn: "b_name")!, b_lati: Double(rs.string(forColumn: "b_lati"))!, b_longi: Double(rs.string(forColumn: "b_longi"))!, b_image: rs.string(forColumn: "b_image")!, b_il: rs.string(forColumn: "b_il")!, b_ilce: rs.string(forColumn: "b_ilce")!)
+                let gelenNokta = BagisNokta(id: Int(rs.string(forColumn: "id"))!, b_name: rs.string(forColumn: "b_name")!, b_lati: Double(rs.string(forColumn: "b_lati"))!, b_longi: Double(rs.string(forColumn: "b_longi"))!, b_image: rs.string(forColumn: "b_image")!, b_il: rs.string(forColumn: "b_il")!, b_ilce: rs.string(forColumn: "b_ilce")!,b_yer: rs.string(forColumn: "b_yer")!)
                
                 gelenBagisNoktasi = gelenNokta
             }

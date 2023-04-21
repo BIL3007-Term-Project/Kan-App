@@ -109,55 +109,32 @@ class SifreUnuttumViewController: UIViewController {
 //MARK: - alert fonksiyonları
 extension SifreUnuttumViewController{
     
+    func alertYarat(title:String,message:String){
+        
+        let alertContoller = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let tamambutton = UIAlertAction(title: "Tamam", style: .cancel)
+        
+        alertContoller.addAction(tamambutton)
+        
+        self.present(alertContoller,animated:true)
+    }
     
     func bosAlanHatası(){
-        
-        let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.bosAlanHata, preferredStyle: .alert)
-        
-        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
-        
-        alertController.addAction(tamamButton)
-        
-        self.present(alertController, animated: true)
-        
+        alertYarat(title: "Hesap Güvenliği", message: K.bosAlanHata)
     }
     
     
     func mailYanlis(){
-        
-        let alertController = UIAlertController(title: "Sifre Unuttum", message: K.mailYanlis, preferredStyle: .alert)
-        
-        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
-        
-        alertController.addAction(tamamButton)
-        
-        self.present(alertController, animated: true)
-        
+        alertYarat(title: "Sifre Unuttum", message: K.mailYanlis)
     }
     
     func TCEslesmiyor(){
-        
-        let alertController = UIAlertController(title: "Sifre Unuttum", message: K.tcEslesmiyor, preferredStyle: .alert)
-        
-        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
-        
-        alertController.addAction(tamamButton)
-        
-        self.present(alertController, animated: true)
-        
+        alertYarat(title: "Sifre Unuttum", message: K.tcEslesmiyor)
     }
     
     func bilgilendirme(){
-        
-        let alertController = UIAlertController(title: "Sifre Unuttum", message: K.bilgilendirme1, preferredStyle: .alert)
-        
-        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
-        
-        alertController.addAction(tamamButton)
-        
-        self.present(alertController, animated: true)
-        
-        
+        alertYarat(title: "Sifre Unuttum", message: K.bilgilendirme1)
     }
     
 }
@@ -170,11 +147,11 @@ extension SifreUnuttumViewController:UITextFieldDelegate{
         
         if textField == emailTextField{
             
-            textField.placeholder = "Email"
+            textField.placeholder = "E-mail"
         }
         else if textField == tcTextField{
             
-            textField.placeholder = " TC no"
+            textField.placeholder = "TC no"
         }
      
         return true
@@ -186,7 +163,7 @@ extension SifreUnuttumViewController:UITextFieldDelegate{
             
             if textField.text == ""{
                 
-                emailTextField.placeholder = "Email"
+                emailTextField.placeholder = "E-mail"
             }
 
         }
@@ -220,7 +197,7 @@ extension SifreUnuttumViewController:UITextFieldDelegate{
                     emailKayitCheck = false
                     print("mail 1.asama :\(String(describing: emailKayitCheck))")
                     emailTextField.text = ""
-                    emailTextField.placeholder = "Email"
+                    emailTextField.placeholder = "E-mail"
                     
                     print("Eski Sifre boş bırakıldı")
                 }
@@ -228,7 +205,7 @@ extension SifreUnuttumViewController:UITextFieldDelegate{
                     emailKayitCheck = false
                     print("Mail 1.asama :\(String(describing: emailKayitCheck))")
                     emailTextField.text = ""
-                    emailTextField.placeholder = "Email"
+                    emailTextField.placeholder = "E-mail"
                     
                     print("mail istenen aralıkta değil")
                 }

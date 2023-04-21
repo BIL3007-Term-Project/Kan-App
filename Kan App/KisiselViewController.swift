@@ -216,7 +216,7 @@ class KisiselViewController: UIViewController {
 
 }
 
-// MARK: - textfield protocolleri
+// MARK: - TEXTFIELD PROTOCOLLERI
 
 extension KisiselViewController:UITextFieldDelegate{
     
@@ -501,7 +501,7 @@ extension KisiselViewController:UITextFieldDelegate{
     
 }
 
-//MARK: - Picker Fonksiyonları ve Ojective-C temelli fonksiyonlar
+//MARK: - PICKER FONKS VE OBJC FONKS
 
 
 extension KisiselViewController{

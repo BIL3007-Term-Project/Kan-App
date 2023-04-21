@@ -12,7 +12,8 @@ class ViewControllerKanBagis: UIViewController {
     @IBOutlet weak var kanBagisTableView: UITableView!
     
 
-    
+    let screenWidthG = UIScreen.main.bounds.width
+    let screenHeightG = UIScreen.main.bounds.height
     var gelenBagisMerkezleri:[BagisNokta] = [BagisNokta] ()
     
     var secilenNoktaID:Int?
@@ -27,14 +28,15 @@ class ViewControllerKanBagis: UIViewController {
     //
     //
     //
-    //
+    //hudahanaltun@gmail.com
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         kanBagisTableView.delegate = self
         kanBagisTableView.dataSource = self
-        
+        kanBagisTableView.separatorStyle = .singleLine
+        kanBagisTableView.separatorColor = .red
         gelenBagisMerkezleri = BagisNoktaDAO().tümNoktalariAl()
         
         kanBagisTableView.backgroundColor = UIColor(rgb: 0xFFE1E1)
@@ -73,8 +75,19 @@ extension ViewControllerKanBagis:UITableViewDelegate,UITableViewDataSource{
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "bagisCell", for:indexPath) as! TableViewCellBagis
         
+        cell.layer.transform = CATransform3DMakeScale(0.1,0.1,1)
+        UIView.animate(withDuration: 0.5, animations: {
+            cell.layer.transform = CATransform3DMakeScale(1.05,1.05,1)
+            },completion: { finished in
+                UIView.animate(withDuration: 0.3, animations: {
+                    cell.layer.transform = CATransform3DMakeScale(1,1,1)
+                })
+        })
+                
         cell.bagisYerLabel.text = gelenBagisMerkezleri[indexPath.row].getBagisAd()
-        
+        cell.bagisYerImageView.image = UIImage(named: gelenBagisMerkezleri[indexPath.row].getBagisTip())
+        cell.frame.size = CGSize(width: screenHeightG/8, height: screenHeightG/8)
+        cell.selectionStyle = .none
         cell.backgroundColor = UIColor(rgb: 0xFFE1E1)
         return cell
     }
@@ -87,4 +100,26 @@ extension ViewControllerKanBagis:UITableViewDelegate,UITableViewDataSource{
         
         performSegue(withIdentifier: K.bToDetay, sender: secilenNoktaID)
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        //TV cell boyutunu cihazın yatay ve dikey konumuna göre ayarladık.
+        let screenWidth = UIScreen.main.bounds.width
+        let screenHeight = UIScreen.main.bounds.height
+        
+        var rowHeight:CGFloat = screenHeight/5
+        let currentDevice = UIDevice.current
+
+        if currentDevice.orientation.isPortrait {
+            // Dikey modda
+            rowHeight = screenHeight/8
+        } else if currentDevice.orientation.isLandscape {
+            // Yatay modda
+            rowHeight = screenWidth/8
+        }
+        
+        return rowHeight
+    }
+   
+   
 }

@@ -9,7 +9,13 @@ import UIKit
 
 class TableViewCellBagis: UITableViewCell {
 
+    
+    @IBOutlet weak var bagisYerImageView: UIImageView!
+    
     @IBOutlet weak var bagisYerLabel: UILabel!
+    
+    
+    @IBOutlet weak var bagisCalismaSaatleriLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

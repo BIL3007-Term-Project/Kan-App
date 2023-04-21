@@ -17,8 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_3" translatesAutoresizingMaskIntoConstraints="NO" id="lfW-zn-RSZ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_4" translatesAutoresizingMaskIntoConstraints="NO" id="lfW-zn-RSZ">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="tintColor" systemColor="tintColor"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pw3-Ak-fjS" userLabel="TopView">
                                 <rect key="frame" x="0.0" y="103" width="393" height="365"/>
@@ -68,7 +69,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xWj-KL-wu0" userLabel="BottomView">
                                 <rect key="frame" x="0.0" y="476" width="393" height="342"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TAu-hv-RSY">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TAu-hv-RSY">
                                         <rect key="frame" x="64" y="25" width="309" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="309" id="97X-AA-uKD"/>
@@ -84,7 +85,7 @@
                                             <constraint firstAttribute="height" constant="50" id="xfS-Ri-Xxs"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Giriş Yap" backgroundImage="button_rect_3"/>
+                                        <state key="normal" title="Giriş Yap" backgroundImage="button_rect_4"/>
                                         <connections>
                                             <action selector="girisButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D8c-fx-y7M"/>
                                         </connections>
@@ -121,7 +122,7 @@
                                             <constraint firstAttribute="height" constant="50" id="xM3-q6-ZHC"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Kayıt Ol" backgroundImage="button_rect_3"/>
+                                        <state key="normal" title="Kayıt Ol" backgroundImage="button_rect_4"/>
                                         <connections>
                                             <action selector="kayıtButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zpS-Eb-fKE"/>
                                         </connections>
@@ -194,13 +195,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="6ze-h8-5sr">
                         <barButtonItem key="leftBarButtonItem" title="SSS" id="HKV-Fc-lHO">
-                            <color key="tintColor" systemColor="systemBackgroundColor"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="R1Y-qo-BBe" kind="presentation" id="YUv-g2-Tik"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Sifremi Unuttum" id="D38-zc-Z8c">
-                            <color key="tintColor" systemColor="systemBackgroundColor"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="sifreUnButtonPressed:" destination="BYZ-38-t0r" id="MRz-LH-MwZ"/>
                             </connections>
@@ -244,7 +245,7 @@
                                 <color key="backgroundColor" red="1" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Okudum ve Onaylıyorum" backgroundImage="button_rect_1">
+                                <state key="normal" title="Okudum ve Onaylıyorum" backgroundImage="button_rect_5">
                                     <color key="titleColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -296,7 +297,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="İleri" backgroundImage="button_rect_1">
+                                <state key="normal" title="İleri" backgroundImage="button_rect_5">
                                     <color key="titleColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -565,7 +566,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Kayıt Ol" backgroundImage="button_rect_1">
+                                <state key="normal" title="Kayıt Ol" backgroundImage="button_rect_5">
                                     <color key="titleColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -641,7 +642,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Okudum ve Kabul Ediyorum" backgroundImage="button_rect_1">
+                                <state key="normal" title="Okudum ve Kabul Ediyorum" backgroundImage="button_rect_4">
                                     <color key="titleColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -693,7 +694,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Okudum ve Kabul Ediyorum" backgroundImage="button_rect_1">
+                                <state key="normal" title="Okudum ve Kabul Ediyorum" backgroundImage="button_rect_4">
                                     <color key="titleColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -793,23 +794,47 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="bagisCell" id="hJU-TD-5zO" customClass="TableViewCellBagis" customModule="Kan_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="bagisCell" rowHeight="150" id="hJU-TD-5zO" customClass="TableViewCellBagis" customModule="Kan_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hJU-TD-5zO" id="Y2R-NS-HST">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6eD-8V-Xqu">
-                                                    <rect key="frame" x="20" y="11" width="353" height="21"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bus_icon" translatesAutoresizingMaskIntoConstraints="NO" id="3rm-Jg-GMV">
+                                                    <rect key="frame" x="298" y="38" width="75" height="75"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Çalışma Saatleri:                            Hafta içi: 08:00 - 17:00             Hafta sonu : 10:00-16:00" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duy-Cr-gmf">
+                                                    <rect key="frame" x="10" y="45.333333333333343" width="270" height="90"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="90" id="ahz-b2-H8j"/>
+                                                        <constraint firstAttribute="width" constant="270" id="uNV-5A-Gmo"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KTÜ Bil.Müh Önü (Otobüs)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6eD-8V-Xqu">
+                                                    <rect key="frame" x="10" y="9.9999999999999982" width="270" height="20.333333333333329"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="270" id="G8q-lV-84A"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="duy-Cr-gmf" firstAttribute="top" secondItem="6eD-8V-Xqu" secondAttribute="bottom" constant="15" id="Qmk-Td-Ubd"/>
+                                                <constraint firstItem="6eD-8V-Xqu" firstAttribute="leading" secondItem="Y2R-NS-HST" secondAttribute="leading" constant="10" id="ZO1-OT-qy6"/>
+                                                <constraint firstItem="6eD-8V-Xqu" firstAttribute="top" secondItem="Y2R-NS-HST" secondAttribute="top" constant="10" id="g9w-Cc-h2A"/>
+                                                <constraint firstItem="duy-Cr-gmf" firstAttribute="leading" secondItem="Y2R-NS-HST" secondAttribute="leading" constant="10" id="yTW-ID-psv"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="bagisCalismaSaatleriLabel" destination="duy-Cr-gmf" id="m65-m9-xqQ"/>
+                                            <outlet property="bagisYerImageView" destination="3rm-Jg-GMV" id="0vU-Yv-BdL"/>
                                             <outlet property="bagisYerLabel" destination="6eD-8V-Xqu" id="cES-eF-8B4"/>
                                         </connections>
                                     </tableViewCell>
@@ -838,7 +863,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zHc-PJ-OZh">
-                                <rect key="frame" x="0.0" y="386" width="393" height="466"/>
+                                <rect key="frame" x="0.0" y="420" width="393" height="432"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
@@ -847,12 +872,23 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="KTU Bilgisayar Mühendisliği Fakültesi Önü" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tg0-l0-3l4">
-                                <rect key="frame" x="16" y="312" width="361" height="21"/>
+                                <rect key="frame" x="16" y="314" width="361" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prP-9E-yBD">
+                                <rect key="frame" x="8" y="362" width="377" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Randevu Oluştur" backgroundImage="button_rect_4">
+                                    <color key="titleColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="randevuOlusturPressed:" destination="EiR-vQ-5Yn" eventType="touchUpInside" id="s1t-Ts-F5q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zuA-55-jxL"/>
                         <color key="backgroundColor" red="1" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -869,11 +905,83 @@
                         <outlet property="bagisNoktaImageView" destination="gHO-EO-rhv" id="vfA-sV-nI7"/>
                         <outlet property="bagisNoktaMapView" destination="zHc-PJ-OZh" id="JD2-ZI-qc8"/>
                         <outlet property="questionMarkButton" destination="ZOc-UO-LT3" id="Hd1-Uv-IKQ"/>
+                        <segue destination="Gil-cX-FDd" kind="show" identifier="detayToRandevu" id="dWQ-wR-Vgb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Id-bg-iN4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="9643.5114503816785" y="-1347.1830985915494"/>
+        </scene>
+        <!--Randevu Oluştur-->
+        <scene sceneID="5Gp-wR-OpP">
+            <objects>
+                <viewController id="Gil-cX-FDd" customClass="ViewControllerKanBagisRandevu" customModule="Kan_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HZn-Uk-kv4">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="textfield_bg" translatesAutoresizingMaskIntoConstraints="NO" id="0C9-wZ-FIN">
+                                <rect key="frame" x="1" y="103" width="393" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="textfield_bg" translatesAutoresizingMaskIntoConstraints="NO" id="N2x-Q6-1SU">
+                                <rect key="frame" x="1" y="191" width="393" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Randevu saati seçiniz..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MUt-BD-wnd">
+                                <rect key="frame" x="45" y="238" width="302" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Belirli bir randevu tarihi seçiniz..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xp6-J8-m8h">
+                                <rect key="frame" x="45" y="149" width="302" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOR-4B-dn4">
+                                <rect key="frame" x="9" y="768" width="377" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Randevuyu Onayla" backgroundImage="button_rect_4">
+                                    <color key="titleColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="randevuOnaylaPressed:" destination="Gil-cX-FDd" eventType="touchUpInside" id="Ftt-8o-SHP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFJ-yS-NdD">
+                                <rect key="frame" x="203" y="339" width="178" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Temizle" backgroundImage="button_rect_4">
+                                    <color key="titleColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tarihleriTemizle:" destination="Gil-cX-FDd" eventType="touchUpInside" id="E4G-ZC-oyw"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="AHF-ve-DE9">
+                                <rect key="frame" x="71" y="436" width="250" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jyv-hf-UWC"/>
+                        <color key="backgroundColor" red="1" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Randevu Oluştur" id="uqz-EC-vjm"/>
+                    <connections>
+                        <outlet property="randevuGünTextField" destination="Xp6-J8-m8h" id="KgD-tS-1Ht"/>
+                        <outlet property="randevuImageView" destination="AHF-ve-DE9" id="2Br-7D-omw"/>
+                        <outlet property="randevuOnaylaButton" destination="VOR-4B-dn4" id="LWh-uQ-dcC"/>
+                        <outlet property="randevuSaatTextField" destination="MUt-BD-wnd" id="NoW-jL-pMh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="12R-AA-bkM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10612.977099236641" y="-1347.1830985915494"/>
         </scene>
         <!--bagisVC-->
         <scene sceneID="tpw-hZ-5eD">
@@ -979,6 +1087,13 @@
                                 <color key="textColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bağış Çeşitleri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eV-kW-RKc">
+                                <rect key="frame" x="137" y="70" width="118" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="28Z-T3-dAM"/>
                         <color key="backgroundColor" red="1" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -988,15 +1103,19 @@
                         <outlet property="aferezBagisBackground" destination="mV4-vi-QV8" id="GvK-8G-lZS"/>
                         <outlet property="aferezButton" destination="xAQ-nK-e4s" id="OiD-Ys-9u4"/>
                         <outlet property="aferezImageView" destination="9ol-41-Rq4" id="x6E-dF-jQm"/>
+                        <outlet property="aferezLabel" destination="xq8-yc-vrh" id="6dV-nc-38N"/>
                         <outlet property="immunBagisBackground" destination="4oA-1b-prW" id="PfW-zA-0YM"/>
                         <outlet property="immunImageView" destination="fge-qt-2Zo" id="Ry7-AF-13K"/>
+                        <outlet property="immunLabel" destination="cBh-h8-wAF" id="8Aj-mI-Owm"/>
                         <outlet property="immuneButton" destination="mGJ-a2-Qc8" id="65d-iY-77w"/>
                         <outlet property="kanBagisBackground" destination="I0d-sm-Thh" id="iKn-5K-enh"/>
                         <outlet property="kanButton" destination="OzL-lI-eaP" id="irU-tp-d3O"/>
                         <outlet property="kanImageView" destination="tcu-eO-aUF" id="Vra-tY-Rv0"/>
+                        <outlet property="kanLabel" destination="5hh-eE-TtD" id="2b2-2g-LVm"/>
                         <outlet property="kokBagisBackground" destination="6OG-uh-zEA" id="MMx-8R-oJs"/>
                         <outlet property="kokButton" destination="NgW-4k-ldU" id="ALC-Gc-TN9"/>
                         <outlet property="kokİmageView" destination="FO9-RA-qO4" id="uWS-yL-kqG"/>
+                        <outlet property="kokhucreLabel" destination="rtf-UT-UWP" id="Qe0-5l-6kj"/>
                         <segue destination="VA6-yn-b0d" kind="show" identifier="bagisToKok" id="d0x-cn-ijT"/>
                         <segue destination="bKn-vS-i7o" kind="show" identifier="bagisToKan" id="bC1-lP-v77"/>
                         <segue destination="Ga7-5k-kOt" kind="show" identifier="bagisToAferez" id="xTF-rC-TXf"/>
@@ -1124,6 +1243,34 @@
                                 <rect key="frame" x="0.0" y="457" width="393" height="312"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="bagiscellmain" id="mEE-Ft-m4M" customClass="TableViewCellGecmisBagis" customModule="Kan_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mEE-Ft-m4M" id="Cls-87-41J">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Farabi Hastanesi                              23/02/2023" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJc-gG-enb">
+                                                    <rect key="frame" x="9" y="11" width="347" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aeN-jH-fDL">
+                                                    <rect key="frame" x="362" y="7" width="31" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="detayImage" destination="aeN-jH-fDL" id="nvc-Mi-Nqu"/>
+                                            <outlet property="hastaneBilgisi" destination="WJc-gG-enb" id="xlx-aW-gQM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hüdahan Altun" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRJ-nP-SPz">
                                 <rect key="frame" x="71" y="256" width="250" height="21"/>
@@ -1132,7 +1279,7 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Acil Bağışlarım" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9d-zR-ldk">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bağışlarım" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9d-zR-ldk">
                                 <rect key="frame" x="16" y="428" width="172" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1153,6 +1300,7 @@
                     <navigationItem key="navigationItem" title="Kan Application" id="Ilm-97-9QN"/>
                     <connections>
                         <outlet property="ayarlarButton" destination="50M-fl-6kQ" id="bgI-U9-PTE"/>
+                        <outlet property="bagisTableView" destination="Bu6-is-rzT" id="Jko-H1-nuJ"/>
                         <outlet property="boyIconIv" destination="TXz-wk-z3M" id="pdq-UC-r0h"/>
                         <outlet property="boyLabel" destination="buw-89-w0r" id="ZDF-ju-l6e"/>
                         <outlet property="cikisButton" destination="5iV-TW-yyn" id="vzq-R2-34X"/>
@@ -1296,7 +1444,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Şifre Değişikliğini Onayla" backgroundImage="button_rect_1">
+                                <state key="normal" title="Şifre Değişikliğini Onayla" backgroundImage="button_rect_4">
                                     <color key="titleColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -1343,20 +1491,39 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="acilCell" id="49N-k7-AV5" customClass="TableViewCellAcil" customModule="Kan_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="acilCell" rowHeight="135" id="49N-k7-AV5" customClass="TableViewCellAcil" customModule="Kan_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="135"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="49N-k7-AV5" id="Qim-0i-gTr">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="135"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULj-qY-ZGT">
-                                                    <rect key="frame" x="20" y="11" width="353" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Farabi Hastanesi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULj-qY-ZGT">
+                                                    <rect key="frame" x="0.0" y="11" width="330" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mesafe: 5.5 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwB-MG-y7u">
+                                                    <rect key="frame" x="0.0" y="52" width="330" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Oluşturulma Tarihi : 21:00  27/04/2023" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCj-5L-8QC">
+                                                    <rect key="frame" x="0.0" y="91" width="330" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="exclamationmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="OmC-9y-Yyd">
+                                                    <rect key="frame" x="312" y="12.333333333333371" width="75" height="75"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1368,6 +1535,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97y-7L-ptg">
                                 <rect key="frame" x="210" y="733" width="56" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="1" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Ekle"/>
                                 <connections>
@@ -1462,6 +1630,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9ZE-z2-DwQ">
+                                <rect key="frame" x="94" y="103" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="trR-Sd-dvk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1524,19 +1697,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKr-sG-8Ar">
-                                <rect key="frame" x="8" y="552" width="377" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="İleri" backgroundImage="button_rect_1">
-                                    <color key="titleColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="girisButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vtS-tH-zR4"/>
-                                    <action selector="ileriButtonPressed:" destination="UK8-Sj-7qS" eventType="touchUpInside" id="VH2-ki-Nwa"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="textfield_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Qie-k0-bIk">
                                 <rect key="frame" x="0.0" y="103" width="393" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1551,15 +1711,28 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gpr-jg-wdt">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gpr-jg-wdt">
                                 <rect key="frame" x="44" y="149" width="302" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKr-sG-8Ar">
+                                <rect key="frame" x="8" y="768" width="377" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="İleri" backgroundImage="button_rect_4">
+                                    <color key="titleColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="girisButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vtS-tH-zR4"/>
+                                    <action selector="ileriButtonPressed:" destination="UK8-Sj-7qS" eventType="touchUpInside" id="VH2-ki-Nwa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NWP-El-oeb"/>
-                        <color key="backgroundColor" red="1" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Şifremi Unuttum" id="gCV-CL-hRh">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="questionmark" catalog="system" id="knZ-OU-fLk">
@@ -1608,20 +1781,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDh-by-ZQB">
-                                <rect key="frame" x="8" y="552" width="377" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Değişikliği Onayla" backgroundImage="button_rect_1">
-                                    <color key="titleColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="girisButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LnI-mA-hGT"/>
-                                    <action selector="ileriButtonPressed:" destination="UK8-Sj-7qS" eventType="touchUpInside" id="spK-LF-fbI"/>
-                                    <action selector="onaylaButtonPressed:" destination="ZqV-Tk-r3C" eventType="touchUpInside" id="ukm-3k-jLL"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvC-5s-CkE">
                                 <rect key="frame" x="223" y="319" width="121" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1641,9 +1800,23 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="tintColor"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDh-by-ZQB">
+                                <rect key="frame" x="8" y="768" width="377" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Değişikliği Onayla" backgroundImage="button_rect_4">
+                                    <color key="titleColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="girisButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LnI-mA-hGT"/>
+                                    <action selector="ileriButtonPressed:" destination="UK8-Sj-7qS" eventType="touchUpInside" id="spK-LF-fbI"/>
+                                    <action selector="onaylaButtonPressed:" destination="ZqV-Tk-r3C" eventType="touchUpInside" id="ukm-3k-jLL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="R04-pJ-TKT"/>
-                        <color key="backgroundColor" red="1" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="tg5-Uc-j8f">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="questionmark" catalog="system" id="NLT-SE-jdH">
@@ -1713,13 +1886,16 @@
     <resources>
         <image name="TK_KTUbilmüh" width="262.33334350585938" height="107"/>
         <image name="aferez_bagis" width="170.66667175292969" height="170.66667175292969"/>
-        <image name="background_3" width="836" height="661"/>
+        <image name="background_4" width="393" height="852"/>
         <image name="bagis_arkaplan" width="810" height="1440"/>
         <image name="boy_icon" width="170.66667175292969" height="170.66667175292969"/>
-        <image name="button_rect_1" width="100" height="12.666666984558105"/>
-        <image name="button_rect_3" width="322" height="68"/>
+        <image name="bus_icon" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="button_rect_4" width="127" height="18"/>
+        <image name="button_rect_5" width="84.666664123535156" height="12"/>
         <image name="checkmark.circle" catalog="system" width="128" height="123"/>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
         <image name="drop.circle" catalog="system" width="128" height="123"/>
+        <image name="exclamationmark" catalog="system" width="47" height="128"/>
         <image name="eye" catalog="system" width="128" height="79"/>
         <image name="icon_arkaplan" width="810" height="1440"/>
         <image name="immun_bagis" width="170.66667175292969" height="170.66667175292969"/>

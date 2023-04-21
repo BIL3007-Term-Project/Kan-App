@@ -3,7 +3,7 @@
 //  Kan App
 //
 //  Created by Hüdahan Altun on 29.11.2022.
-//
+
 
 import UIKit
 
@@ -33,33 +33,34 @@ class ViewController: UIViewController { //giriş ekranı VC
     
     @IBOutlet weak var sifreImageView: UIImageView!
     
-    
-    
     @IBOutlet weak var sifreGButton: UIButton!
+    
     @IBOutlet weak var sifreGImageView: UIImageView!
     
-    var hesapSahibiMailVC:String?
+    var hesapSahibiMailVC:String?// kullanıcı maili ni tutacak değişken
     
     var sifreGorunuyorMu:Bool?
     
     
-    var textLabel:String = "Bağış Yönetim Sistemi"
+    var textLabel:String = "Acil Kan Yönetim Sistemi"
     
    
     var mailGirisCheck:Bool = false
     var sifreGirisCheck:Bool = false
     
-    //MARK: - iOS döngü fonksiyonları
+//MARK: - IOS CYCLE FONKS
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
    
+        appName.textColor = .black
+        bilgiLabel.textColor = .black
         appİmage.layer.cornerRadius = appİmage.frame.height/4
         
         sifreGImageView.image = UIImage(systemName: "eye.slash")
         
-        VCActivityIndicator.color = .white
+        VCActivityIndicator.color = .red
         emailTextField.delegate = self
         sifreTextField.delegate = self
         bilgiLabel.alpha = 0
@@ -92,6 +93,7 @@ class ViewController: UIViewController { //giriş ekranı VC
         ortakVeriTabanikopyala()
         
         runAnimation()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -131,7 +133,7 @@ class ViewController: UIViewController { //giriş ekranı VC
     
 
     
-    //MARK: - Button actionları
+    //MARK: - BUTTON ACTIONLARI
     
     
     @IBAction func sifreGosterPressed(_ sender: Any) {
@@ -189,24 +191,23 @@ class ViewController: UIViewController { //giriş ekranı VC
         }
     }
     
-    //
+  
     @IBAction func girisButtonPressed(_ sender: UIButton) {
         
-        var dbGelenMobilKul:mobilKullanicilar?
+        var dbGelenMobilKul:mobilKullanicilar?//veritabanı
         
         if let mail = emailTextField.text , let sifre = sifreTextField.text{
             
-            if mailGirisCheck == true && sifreGirisCheck == true{
+            if mailGirisCheck == true && sifreGirisCheck == true{//mail ve sifre istenen yazım formatında ise 1. güvenlik.
                 
                 //animasyon çalışır
                
+                dbGelenMobilKul = kullanicilarDAO().MobilKullaniciGetir(k_mail: mail)//veritabanından doğrulama maili
                 
-                dbGelenMobilKul = kullanicilarDAO().MobilKullaniciGetir(k_mail: mail)
-                
-                if let gMail = dbGelenMobilKul?.getK_Mail(),let gSifre = dbGelenMobilKul?.getK_Sifre(){
+                if let gMail = dbGelenMobilKul?.getK_Mail(),let gSifre = dbGelenMobilKul?.getK_Sifre(){//db'den gelen veriler
                     
                   
-                    if mail == gMail && sifre == gSifre{
+                    if mail == gMail && sifre == gSifre{//eşleşme kontrolü
                         
                         DispatchQueue.main.async {
                             self.VCActivityIndicator.alpha = 1
@@ -219,7 +220,7 @@ class ViewController: UIViewController { //giriş ekranı VC
                        
                         UserDefaults.standard.set(true, forKey: "IsUserLoggedIn")
                         
-                        
+        
                     }else{
                         
                         bilgilerYanlisAlert()
@@ -256,9 +257,6 @@ class ViewController: UIViewController { //giriş ekranı VC
         
     }
     
-  
-    
-    
     @objc func mainGecisYap(){
 
         self.performSegue(withIdentifier: K.gToMain, sender: hesapSahibiMailVC)
@@ -268,6 +266,9 @@ class ViewController: UIViewController { //giriş ekranı VC
  
 
 }
+
+//MARK: - BAŞLANGIÇ VERİTABANI İŞLEMLERİ
+
 extension ViewController{
     
     func bagisNoktaVeritabaniKopyala(){
@@ -356,7 +357,8 @@ extension ViewController{
         }
     }
 }
-//MARK: - animasyon fonksiyonları
+
+//MARK: - ANİMASYON FONKSİYONLARI
 extension ViewController{
     
     func runNameAnimation(){//giriş yazı animasyon fonksiyonu
@@ -428,57 +430,44 @@ extension ViewController{
     
 }
 
+//MARK: - ALERT
 extension ViewController{
     
+    func alertYarat(title:String,message:String){
+        
+        let alertContoller = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let tamambutton = UIAlertAction(title: "Tamam", style: .cancel)
+        
+        alertContoller.addAction(tamambutton)
+        
+        self.present(alertContoller,animated:true)
+    }
+    
     func bilgilerYanlisAlert(){
-        
-        let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.bilgYanlis, preferredStyle: .alert)
-        
-        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
-        
-        alertController.addAction(tamamButton)
-        
-        self.present(alertController, animated: true)
-        
+        alertYarat(title: "Hesap Güvenliği", message: K.bilgYanlis)
     }
     
     func hesapBulunamadı(){
-        
-        let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.hesapBulunamadı, preferredStyle: .alert)
-        
-        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
-        
-        alertController.addAction(tamamButton)
-        
-        self.present(alertController, animated: true)
-        
+        alertYarat(title: "Hesap Güvenliği", message: K.hesapBulunamadı)
     }
     
     func bosAlanHatası(){
-        
-        let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.bosAlanHata, preferredStyle: .alert)
-        
-        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
-        
-        alertController.addAction(tamamButton)
-        
+        alertYarat(title: "Hesap Güvenliği", message: K.bosAlanHata)
         emailTextField.text = ""
         sifreTextField.text = ""
-        self.present(alertController, animated: true)
-        
     }
-    
 }
+
 //MARK: - textfieldDelegate protocolleri
 
 extension ViewController:UITextFieldDelegate{
-    
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         
         if textField == emailTextField{
             
-            textField.placeholder = "Email"
+            textField.placeholder = "E-mail"
         }
         else if textField == sifreTextField{
             
@@ -498,7 +487,7 @@ extension ViewController:UITextFieldDelegate{
             
             if textField.text == ""{
                 
-                emailTextField.placeholder = "Email"
+                emailTextField.placeholder = "E-mail"
             }
 
         }
@@ -531,7 +520,7 @@ extension ViewController:UITextFieldDelegate{
                     mailGirisCheck = false
                     print("mail1.asama :\(mailGirisCheck)")
                     emailTextField.text = ""
-                    emailTextField.placeholder = "Email"
+                    emailTextField.placeholder = "E-mail"
 
                     print("mail boş bırakıldı")
                 }
@@ -539,7 +528,7 @@ extension ViewController:UITextFieldDelegate{
                     mailGirisCheck = false
                     print("mail1.asama :\(mailGirisCheck)")
                     emailTextField.text = ""
-                    emailTextField.placeholder = "Email"
+                    emailTextField.placeholder = "E-mail"
 
                     print("mail istenen aralıkta değil")
                 }

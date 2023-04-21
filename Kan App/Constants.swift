@@ -27,6 +27,7 @@ struct K{
     static let aToSifYen:String = "ayarlarToSifYen"
     static let ha1Toha2:String = "haritaAcilToharitaAcil2"
     static let sifreUnuttum1To2:String = "sifreU1To2"
+    static let detayToRandevu:String = "detayToRandevu"
     //kayitVC güvenlik check
     static let hesapGuv:String = "Mail adresiniz \"@gmail.com\" uzantılı olmalıdır.\nŞifreniz 8-15 karakter aralığında olmalıdır.Ayrıca sifreniz en az bir büyük harf, küçük harf, sayı ve .,$@$#!%*?& içermelidir"
     
@@ -62,4 +63,9 @@ struct K{
     static let tcEslesmiyor:String = "İlgili mail adresi ile TC eşleşmemektedir."
     static let bilgilendirme1:String = "Şifrenizi değiştirmek için hesabınız ile TC kimlik numaranız doğrulanmalıdır."
     static let bilgilendirme2:String = "Şifreniz 8-15 karakter aralığında olmalıdır.Ayrıca sifreniz en az bir büyük harf, küçük harf, sayı ve .,$@$#!%*?& içermelidir"
+    
+    static let randevuBasarili:String = "Randevu kaydınız Belirlediğiniz tarih ve saat için başarıyla oluşturuldu.Bir önceki sayfaya dönüp ilgili konuma yol tarifi alabilirisiniz."
+    
+    static let onceGunGiriniz:String = "Önce bir gün seçiniz.Sonra gün içi saat seçiniz."
+    static let saatGiriniz:String = " Randevu oluşturmak için bir saat seçmelisiniz."
 }

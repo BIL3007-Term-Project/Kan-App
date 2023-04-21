@@ -151,7 +151,7 @@ class SifreUnuttumViewController2: UIViewController {
   
 }
 
-//MARK: - alert ve hesap güvenliği fonksiyonları
+//MARK: - ALERT VE HESAP GUV FONKSİYONLARI
 extension SifreUnuttumViewController2{
     
     func alınanSifreGuv(sifre:String)->Bool{
@@ -163,80 +163,44 @@ extension SifreUnuttumViewController2{
         
     }
     
+    
+    func alertYarat(title:String,message:String){
+        
+        let alertContoller = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let tamambutton = UIAlertAction(title: "Tamam", style: .cancel)
+        
+        alertContoller.addAction(tamambutton)
+        
+        self.present(alertContoller,animated:true)
+    }
+    
     func bosAlanHatası(){
-        
-        let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.bosAlanHata, preferredStyle: .alert)
-        
-        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
-        
-        alertController.addAction(tamamButton)
-        
-        self.present(alertController, animated: true)
-        
+        alertYarat(title: "Hesap Güvenliği", message: K.bosAlanHata)
     }
     
     func MevcutSifreYanlıs(){
-        
-        let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.mevcutSifreYanlis, preferredStyle: .alert)
-        
-        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
-        
-        alertController.addAction(tamamButton)
-        
-        self.present(alertController, animated: true)
-        
+        alertYarat(title: "Hesap Güvenliği", message: K.mevcutSifreYanlis)
     }
     
     func SifreEslesmiyor(){
-        
-        let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.sifreEslesmiyor, preferredStyle: .alert)
-        
-        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
-        
-        alertController.addAction(tamamButton)
-        
-        self.present(alertController, animated: true)
-        
+        alertYarat(title: "Hesap Güvenliği", message: K.sifreEslesmiyor)
     }
     
     func sifreGuvensiz(){
-        
-        let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.sifreGuv, preferredStyle: .alert)
-        
-        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
-        
-        alertController.addAction(tamamButton)
-        
-        self.present(alertController, animated: true)
-        
+        alertYarat(title: "Hesap Güvenliği", message: K.sifreGuv)
     }
     
     func SifreDegBasarili(){
-        
-        let alertController = UIAlertController(title: "Hesap Güvenliği", message: K.sifreDeBasarili, preferredStyle: .alert)
-        
-        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
-        
-        alertController.addAction(tamamButton)
-        
-        self.present(alertController, animated: true)
-        
+        alertYarat(title: "Hesap Güvenliği", message: K.sifreDeBasarili)
     }
     func bilgilendirme(){
-        
-        let alertController = UIAlertController(title: "Sifre Unuttum", message: K.bilgilendirme2, preferredStyle: .alert)
-        
-        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
-        
-        alertController.addAction(tamamButton)
-        
-        self.present(alertController, animated: true)
-        
-        
+        alertYarat(title: "Sifre Unuttum", message: K.bilgilendirme2)
     }
 }
 
-//MARK: - textfield protocol fonksiyonları
+
+//MARK: - TEXTFIELD PROTOCOL FONKSİYONLARI
 extension SifreUnuttumViewController2:UITextFieldDelegate{
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {

@@ -67,7 +67,12 @@ class ViewControllerKanBagisDetay: UIViewController {
         
     }
     
-
+    
+    @IBAction func randevuOlusturPressed(_ sender: Any) {
+        
+        performSegue(withIdentifier: K.detayToRandevu, sender: nil)
+    }
+    
 }
 
 extension ViewControllerKanBagisDetay{

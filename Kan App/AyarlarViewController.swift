@@ -71,8 +71,10 @@ extension AyarlarViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        
-       
+        if Int(indexPath.row) == 1{
+            
+            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+        }
         if Int(indexPath.row) == 3{
          
             print("geçilecek to \(ayarlarList[indexPath.row])")

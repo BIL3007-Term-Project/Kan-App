@@ -33,6 +33,7 @@
 		0541DC912949F33800D238F4 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 0541DC882949F33800D238F4 /* FMResultSet.m */; };
 		0541DC922949F33800D238F4 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0541DC8C2949F33800D238F4 /* FMDatabaseQueue.m */; };
 		0541DC952949F35A00D238F4 /* libsqlite3.tbd in Resources */ = {isa = PBXBuildFile; fileRef = 0541DC942949F35300D238F4 /* libsqlite3.tbd */; };
+		05425468298AE9A3008773A4 /* TableViewCellGecmisBagis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05425467298AE9A3008773A4 /* TableViewCellGecmisBagis.swift */; };
 		054F9E35294E748700086085 /* TableViewCellBagis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054F9E34294E748700086085 /* TableViewCellBagis.swift */; };
 		0570FA652935758600A36270 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570FA642935758600A36270 /* UIColorExt.swift */; };
 		05781C5C29433C8E00C45DAE /* ViewControllerKanBagisDetay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05781C5B29433C8E00C45DAE /* ViewControllerKanBagisDetay.swift */; };
@@ -60,6 +61,7 @@
 		05B457922935609C007E89D0 /* KayitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B457912935609C007E89D0 /* KayitViewController.swift */; };
 		05B457942935613D007E89D0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B457932935613D007E89D0 /* Constants.swift */; };
 		05CBC2192935868500184140 /* UILabelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CBC2182935868500184140 /* UILabelExt.swift */; };
+		05D3436229F20EEC005A7156 /* ViewControllerKanBagisRandevu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D3436129F20EEC005A7156 /* ViewControllerKanBagisRandevu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,7 @@
 		0541DC8C2949F33800D238F4 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
 		0541DC8D2949F33800D238F4 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
 		0541DC942949F35300D238F4 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		05425467298AE9A3008773A4 /* TableViewCellGecmisBagis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellGecmisBagis.swift; sourceTree = "<group>"; };
 		054F9E34294E748700086085 /* TableViewCellBagis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellBagis.swift; sourceTree = "<group>"; };
 		0570FA642935758600A36270 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		05781C5B29433C8E00C45DAE /* ViewControllerKanBagisDetay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerKanBagisDetay.swift; sourceTree = "<group>"; };
@@ -141,6 +144,7 @@
 		05B457912935609C007E89D0 /* KayitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KayitViewController.swift; sourceTree = "<group>"; };
 		05B457932935613D007E89D0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		05CBC2182935868500184140 /* UILabelExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExt.swift; sourceTree = "<group>"; };
+		05D3436129F20EEC005A7156 /* ViewControllerKanBagisRandevu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerKanBagisRandevu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +243,7 @@
 				05262ABC2940F531000B3D19 /* ViewControllerKanBagis.swift */,
 				054F9E34294E748700086085 /* TableViewCellBagis.swift */,
 				05781C5B29433C8E00C45DAE /* ViewControllerKanBagisDetay.swift */,
+				05D3436129F20EEC005A7156 /* ViewControllerKanBagisRandevu.swift */,
 				0541DC7E2949EFE900D238F4 /* Kullanicilar.swift */,
 				0541DC802949EFF300D238F4 /* KullanicilarDAO.swift */,
 				05A59CB7294F2D3D00BFFF8F /* BagisNokta.swift */,
@@ -257,6 +262,7 @@
 				0541DC822949F33700D238F4 /* Kan App-Bridging-Header.h */,
 				053C65C72952250300ECB6CA /* ViewControllerTest.swift */,
 				053C65D229522BD400ECB6CA /* AcilKan.swift */,
+				05425467298AE9A3008773A4 /* TableViewCellGecmisBagis.swift */,
 			);
 			path = "Kan App";
 			sourceTree = "<group>";
@@ -433,10 +439,12 @@
 				05262AC32940F557000B3D19 /* ViewControllerKokHucreBagis.swift in Sources */,
 				059B071E295059EC001F43F3 /* SifreUnuttumViewController2.swift in Sources */,
 				059C8FE02935599A00AE456D /* ViewController.swift in Sources */,
+				05425468298AE9A3008773A4 /* TableViewCellGecmisBagis.swift in Sources */,
 				05262AC92940F75A000B3D19 /* ViewControllerAferezBagis.swift in Sources */,
 				059C8FDC2935599900AE456D /* AppDelegate.swift in Sources */,
 				05262ABD2940F531000B3D19 /* ViewControllerKanBagis.swift in Sources */,
 				05B4578C29356052007E89D0 /* KisiselViewController.swift in Sources */,
+				05D3436229F20EEC005A7156 /* ViewControllerKanBagisRandevu.swift in Sources */,
 				0541DC7F2949EFE900D238F4 /* Kullanicilar.swift in Sources */,
 				058660CE2938BB4F00EA4313 /* KullanimKosViewController.swift in Sources */,
 				05B457862935603A007E89D0 /* SSSViewController.swift in Sources */,

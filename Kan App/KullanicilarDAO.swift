@@ -10,7 +10,7 @@ import Foundation
 
 class kullanicilarDAO{
     
-    var db:FMDatabase? //veritabanı değişkeni
+    var db:FMDatabase?
     init(){
         
         

@@ -227,7 +227,7 @@ class KayitViewController: UIViewController {
                     
                      mobilKullaniciKayitCheck = kullanicilarDAO().mobilKullaniciEkle(k_mail: mail, k_sifre: sifre, k_ad: gelenNesne.getK_Ad(), k_soyad: gelenNesne.getK_Soyad(), k_tc: gelenNesne.getK_TC(), k_tel: gelenNesne.getK_Tel(), k_dogumgunu: gelenNesne.getK_dogumgunu(), k_kilo: gelenNesne.getK_Kilo(), k_boy: gelenNesne.getK_Boy(), k_cinsiyet: gelenNesne.getK_Cinsiyet(), k_kangrup: gelenNesne.getK_Kangrup())
                     
-//                    ortakKullanıcılarDAO().ortakKullaniciEkle(donor_name: gelenNesne.getK_Ad(), donor_surname: gelenNesne.getK_Soyad(), id_number: gelenNesne.getK_TC(), date_of_birth: gelenNesne.getK_dogumgunu(), weight: gelenNesne.getK_Kilo(), height: gelenNesne.getK_Boy(), gender: gelenNesne.getK_Cinsiyet(), blood_type: gelenNesne.getK_Kangrup(), phone: gelenNesne.getK_Tel(), email: mail)
+                    ortakKullanıcılarDAO().ortakKullaniciEkle(donor_name: gelenNesne.getK_Ad(), donor_surname: gelenNesne.getK_Soyad(), id_number: gelenNesne.getK_TC(), date_of_birth: gelenNesne.getK_dogumgunu(), weight: gelenNesne.getK_Kilo(), height: gelenNesne.getK_Boy(), gender: gelenNesne.getK_Cinsiyet(), blood_type: gelenNesne.getK_Kangrup(), phone: gelenNesne.getK_Tel(), email: mail)
 //
 //
                     if mobilKullaniciKayitCheck == true{

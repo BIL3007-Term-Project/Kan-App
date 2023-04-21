@@ -30,6 +30,11 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var kanLabel: UILabel!
     
+  
+    @IBOutlet weak var bagisTableView: UITableView!//yapılan acil kan bağış ve normal bağış listesi
+    var bagisListe:[String] = ["Farabi Hastanesi                        23/01/2023","Kanuni Hastanesi                       21/12/2022"]
+    
+    
     var fabDurum:Bool = false
     
     var hesapSahibiMailMainVC:String?
@@ -53,7 +58,9 @@ class MainViewController: UIViewController {
         self.ayarlarButton.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         self.ayarlarButton.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         
-        
+        bagisTableView.delegate = self
+        bagisTableView.dataSource = self
+        bagisTableView.backgroundColor = UIColor(rgb:0xFFE5E5)
         if let  mail = hesapSahibiMailMainVC {
             
             let gelendg = kullanicilarDAO().MobilKullaniciGetir(k_mail: mail).getK_dogumgunu()
@@ -188,4 +195,28 @@ class MainViewController: UIViewController {
     }
     
 
+}
+
+extension MainViewController:UITableViewDelegate,UITableViewDataSource{
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        return bagisListe.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: "bagiscellmain") as? TableViewCellGecmisBagis
+        cell?.hastaneBilgisi.text = bagisListe[indexPath.row]
+
+        cell?.backgroundColor = UIColor(rgb: 0xFFE1E1)
+        return cell!
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }

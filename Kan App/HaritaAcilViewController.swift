@@ -14,8 +14,8 @@ class HaritaAcilViewController: UIViewController {
 
     
     var bildirimIzinKontrol:Bool = false
-    let firestoreDB = Firestore.firestore()
     
+    let firestoreDB = Firestore.firestore()
     
     @IBOutlet weak var acilKanTableView: UITableView!
     
@@ -24,6 +24,8 @@ class HaritaAcilViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        acilKanListesi.removeAll()
+        
         UNUserNotificationCenter.current().requestAuthorization(options : [.alert,.sound,.badge]) {
             (granted, error) in
             
@@ -48,11 +50,25 @@ class HaritaAcilViewController: UIViewController {
      
         acilKanTableView.backgroundColor = UIColor(rgb: 0xFFE1E1)
          
-//         acilKanRealtime()
+//        acilKanRealtime()
+//        acilKanYukle()
     }
     
     
 
+    func acilBildiriBilgilendirme(){
+        
+        let mesaj = "\(acilKanListesi[acilKanListesi.count-1].getHastaneAd()!)'inde acil \(acilKanListesi[acilKanListesi.count-1].getKanGrup()!) kan grubuna ihtiyaç vardır "
+        
+        let alertController = UIAlertController(title: "Acil Kan İhtiyacı", message: mesaj, preferredStyle: .alert)
+        
+        let tamamButton = UIAlertAction(title: "Tamam", style: .cancel)
+        
+        alertController.addAction(tamamButton)
+        
+        self.present(alertController, animated: true)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
 
 //        acilKanYukle()
@@ -101,8 +117,8 @@ class HaritaAcilViewController: UIViewController {
             bildirimIcerik.badge = 1
             bildirimIcerik.sound = .default
             
-            let kabul = UNNotificationAction(identifier: "kabul", title: "Kabul Et",options:.foreground)
-            let red = UNNotificationAction(identifier: "Reddet", title: "Reddet",options:.destructive)
+            let kabul = UNNotificationAction(identifier: "Görüntüle", title: "Görüntüle",options:.foreground)
+            let red = UNNotificationAction(identifier: "Sil", title: "Sil",options:.destructive)
             
             let kategori = UNNotificationCategory(identifier: "kategori", actions: [kabul,red], intentIdentifiers: [],options:[])
             
@@ -120,6 +136,7 @@ class HaritaAcilViewController: UIViewController {
     func acilKanRealtime(){//realtime olarak db her değişince bu fonk çalışır.
 
         print("acil realtime calısıyor")
+        
         firestoreDB.collection("Acil").order(by: "timestamp").addSnapshotListener() {
 
             (QuerySnapshot,error) in
@@ -167,52 +184,53 @@ class HaritaAcilViewController: UIViewController {
 
     }
 
-//    func acilKanYukle(){//birkez
-//
-//        print("acil kan yukle calısıyor")
-//        firestoreDB.collection("Acil").getDocuments() {
-//
-//            (QuerySnapshot,error) in
-//
-//            self.acilKanListesi.removeAll()
-//            if let e = error{
-//
-//                print("acil kan verisi getirme başarısız!.hata kodu :\(e)")
-//            }else{
-//
-//                print("veri getirme başarılı")
-//
-//                if let snapShotDoc = QuerySnapshot?.documents{
-//
-//                    for doc in snapShotDoc{
-//
-//                        let data = doc.data()
-//                        //firestoreDB.collection("Acil").addDocument(data: ["Hastane_ad":hAd,"latitude":lati,"longitude":longi,"kan":kan])
-//                        if let hastaneAd = data["Hastane_ad"] as? String, let hastaneLati = data["latitude"] as? String, let hastaneLongi = data["longitude"] as? String,let kanGrup = data["kan"] as? String{
-//
-//                            let acilKan = AcilKan(hastaneAd: hastaneAd, hastaneLati: Double(hastaneLati)!, hastaneLongi: Double(hastaneLongi)!, kanGruo: kanGrup)
-//
-//
-//                            self.acilKanListesi.append(acilKan)
-//
-//                            DispatchQueue.main.async {
-//
-//                                self.acilKanTableView.reloadData()
-//                                self.acilKanListesiYazdir()
-//                            }
-//                        }else{
-//
-//                            print("nesne eşleştirme başarısız")
-//                        }
-//                    }
-//                }else{
-//                    print("doc getirme başarısız")
-//                }
-//
-//            }
-//        }
-//
-//    }
+    func acilKanYukle(){//birkez
+
+        print("acil kan yukle calısıyor")
+        firestoreDB.collection("Acil").getDocuments() {
+
+            (QuerySnapshot,error) in
+
+            self.acilKanListesi.removeAll()
+            
+            if let e = error{
+
+                print("acil kan verisi getirme başarısız!.hata kodu :\(e)")
+            }else{
+
+                print("veri getirme başarılı")
+
+                if let snapShotDoc = QuerySnapshot?.documents{
+
+                    for doc in snapShotDoc{
+
+                        let data = doc.data()
+                        //firestoreDB.collection("Acil").addDocument(data: ["Hastane_ad":hAd,"latitude":lati,"longitude":longi,"kan":kan])
+                        if let hastaneAd = data["Hastane_ad"] as? String, let hastaneLati = data["latitude"] as? String, let hastaneLongi = data["longitude"] as? String,let kanGrup = data["kan"] as? String{
+
+                            let acilKan = AcilKan(hastaneAd: hastaneAd, hastaneLati: Double(hastaneLati)!, hastaneLongi: Double(hastaneLongi)!, kanGruo: kanGrup)
+
+
+                            self.acilKanListesi.append(acilKan)
+
+                            DispatchQueue.main.async {
+
+                                self.acilKanTableView.reloadData()
+                                self.acilKanListesiYazdir()
+                            }
+                        }else{
+
+                            print("nesne eşleştirme başarısız")
+                        }
+                    }
+                }else{
+                    print("doc getirme başarısız")
+                }
+
+            }
+        }
+
+    }
 
     
    
@@ -263,32 +281,18 @@ extension HaritaAcilViewController:UNUserNotificationCenterDelegate{
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         
         
-        if response.actionIdentifier == "kabul"{
+        if response.actionIdentifier == "Görüntüle"{
             
-            let alertController = UIAlertController(title: "UYARI", message: "Acil Kan İhtiyacı için bağış yapma seçeneğine tıkladınız.Kan bağışı, kana ihtiyaç duyan hasta açısından can güvenliği arz etmektedir.Bağış Yap butonuna tıklarsanız ilgili hastaneye gitmeniz önemle rica olunur.", preferredStyle: .alert)
-            
-            let yönlendir = UIAlertAction(title: "Yönlendir", style: .cancel){
-                action in
-            }
-            
-            let iptalEt = UIAlertAction(title: "İptal Et", style: .destructive){
-                
-                action in
-                
-                self.view.endEditing(true)
-            }
-            
-            alertController.addAction(yönlendir)
-            alertController.addAction(iptalEt)
-            
-            self.present(alertController, animated: true)
+          acilBildiriBilgilendirme()
         }
-        
-        if response.actionIdentifier == "red"{
+        else if response.actionIdentifier == "Sil"{
             
             print("hayır tıklanıd")
             
             view.endEditing(true)
+        }else{
+            
+            acilBildiriBilgilendirme()
         }
         
         completionHandler()
