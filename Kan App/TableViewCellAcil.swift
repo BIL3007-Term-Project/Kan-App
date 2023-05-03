@@ -11,6 +11,12 @@ class TableViewCellAcil: UITableViewCell {
 
     @IBOutlet weak var acilLabel: UILabel!
     
+    @IBOutlet weak var mesafeLabel: UILabel!
+    
+    @IBOutlet weak var tarihLabel: UILabel!
+    
+    
+    @IBOutlet weak var onemDereceImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -14,18 +14,19 @@ class AcilKan{
     private var hastaneLati:Double?
     private var hastaneLongi:Double?
     private var kanGrup:String?
-    
+    private var tarih:String?
     init(){
         
         
     }
     
-    init(hastaneAd:String,hastaneLati:Double,hastaneLongi:Double,kanGruo:String){
+    init(hastaneAd:String,hastaneLati:Double,hastaneLongi:Double,kanGruo:String,tarih:String){
         
         self.hastaneAd = hastaneAd
         self.hastaneLati = hastaneLati
         self.hastaneLongi = hastaneLongi
         self.kanGrup = kanGruo
+        self.tarih = tarih
         
     }
     
@@ -45,5 +46,8 @@ class AcilKan{
     func getKanGrup()->String?{
         
         return kanGrup!
+    }
+    func getTarih()->String?{
+        return tarih!
     }
 }

@@ -32,8 +32,9 @@ class MainViewController: UIViewController {
     
   
     @IBOutlet weak var bagisTableView: UITableView!//yapılan acil kan bağış ve normal bağış listesi
-    var bagisListe:[String] = ["Farabi Hastanesi                        23/01/2023","Kanuni Hastanesi                       21/12/2022"]
+//    var bagisListe:[String] = ["Farabi Hastanesi                        23/01/2023","Kanuni Hastanesi                       21/12/2022"]
     
+    var bagisListe:[String] = [""]
     
     var fabDurum:Bool = false
     
@@ -197,6 +198,7 @@ class MainViewController: UIViewController {
 
 }
 
+//MARK: - Tableview protocols
 extension MainViewController:UITableViewDelegate,UITableViewDataSource{
 
     func numberOfSections(in tableView: UITableView) -> Int {

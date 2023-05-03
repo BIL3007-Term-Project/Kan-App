@@ -12,7 +12,7 @@ import FirebaseFirestore
 
 class HaritaAcilViewController: UIViewController {
 
-    
+    var locationManagerAcil = CLLocationManager()//lokasyon verileri almak için kullanacağımız nesne
     var bildirimIzinKontrol:Bool = false
     
     let firestoreDB = Firestore.firestore()
@@ -155,9 +155,14 @@ class HaritaAcilViewController: UIViewController {
 
                         let data = doc.data()
                         //firestoreDB.collection("Acil").addDocument(data: ["Hastane_ad":hAd,"latitude":lati,"longitude":longi,"kan":kan])
-                        if let hastaneAd = data["Hastane_ad"] as? String, let hastaneLati = data["latitude"] as? String, let hastaneLongi = data["longitude"] as? String,let kanGrup = data["kan"] as? String{
+                        if let hastaneAd = data["Hastane_ad"] as? String, let hastaneLati = data["latitude"] as? String, let hastaneLongi = data["longitude"] as? String,let kanGrup = data["kan"] as? String,let tarih = data["timestamp"] as? Timestamp{
 
-                            let acilKan = AcilKan(hastaneAd: hastaneAd, hastaneLati: Double(hastaneLati)!, hastaneLongi: Double(hastaneLongi)!, kanGruo: kanGrup)
+                            let dateFormatter = DateFormatter()
+                            dateFormatter.dateFormat = "dd.MM.yyyy HH:mm:ss"
+                            let dateString = dateFormatter.string(from: tarih.dateValue())
+                            
+//
+                            let acilKan = AcilKan(hastaneAd: hastaneAd, hastaneLati: Double(hastaneLati)!, hastaneLongi: Double(hastaneLongi)!, kanGruo: kanGrup,tarih:dateString)
 
                             self.acilKanListesi.append(acilKan)
 
@@ -184,58 +189,59 @@ class HaritaAcilViewController: UIViewController {
 
     }
 
-    func acilKanYukle(){//birkez
-
-        print("acil kan yukle calısıyor")
-        firestoreDB.collection("Acil").getDocuments() {
-
-            (QuerySnapshot,error) in
-
-            self.acilKanListesi.removeAll()
-            
-            if let e = error{
-
-                print("acil kan verisi getirme başarısız!.hata kodu :\(e)")
-            }else{
-
-                print("veri getirme başarılı")
-
-                if let snapShotDoc = QuerySnapshot?.documents{
-
-                    for doc in snapShotDoc{
-
-                        let data = doc.data()
-                        //firestoreDB.collection("Acil").addDocument(data: ["Hastane_ad":hAd,"latitude":lati,"longitude":longi,"kan":kan])
-                        if let hastaneAd = data["Hastane_ad"] as? String, let hastaneLati = data["latitude"] as? String, let hastaneLongi = data["longitude"] as? String,let kanGrup = data["kan"] as? String{
-
-                            let acilKan = AcilKan(hastaneAd: hastaneAd, hastaneLati: Double(hastaneLati)!, hastaneLongi: Double(hastaneLongi)!, kanGruo: kanGrup)
-
-
-                            self.acilKanListesi.append(acilKan)
-
-                            DispatchQueue.main.async {
-
-                                self.acilKanTableView.reloadData()
-                                self.acilKanListesiYazdir()
-                            }
-                        }else{
-
-                            print("nesne eşleştirme başarısız")
-                        }
-                    }
-                }else{
-                    print("doc getirme başarısız")
-                }
-
-            }
-        }
-
-    }
+//    func acilKanYukle(){//birkez
+//
+//        print("acil kan yukle calısıyor")
+//        firestoreDB.collection("Acil").getDocuments() {
+//
+//            (QuerySnapshot,error) in
+//
+//            self.acilKanListesi.removeAll()
+//
+//            if let e = error{
+//
+//                print("acil kan verisi getirme başarısız!.hata kodu :\(e)")
+//            }else{
+//
+//                print("veri getirme başarılı")
+//
+//                if let snapShotDoc = QuerySnapshot?.documents{
+//
+//                    for doc in snapShotDoc{
+//
+//                        let data = doc.data()
+//                        //firestoreDB.collection("Acil").addDocument(data: ["Hastane_ad":hAd,"latitude":lati,"longitude":longi,"kan":kan])
+//                        if let hastaneAd = data["Hastane_ad"] as? String, let hastaneLati = data["latitude"] as? String, let hastaneLongi = data["longitude"] as? String,let kanGrup = data["kan"] as? String{
+//
+//                            let acilKan = AcilKan(hastaneAd: hastaneAd, hastaneLati: Double(hastaneLati)!, hastaneLongi: Double(hastaneLongi)!, kanGruo: kanGrup)
+//
+//
+//                            self.acilKanListesi.append(acilKan)
+//
+//                            DispatchQueue.main.async {
+//
+//                                self.acilKanTableView.reloadData()
+//                                self.acilKanListesiYazdir()
+//                            }
+//                        }else{
+//
+//                            print("nesne eşleştirme başarısız")
+//                        }
+//                    }
+//                }else{
+//                    print("doc getirme başarısız")
+//                }
+//
+//            }
+//        }
+//
+//    }
 
     
    
 }
 
+//MARK: - tableview protocols
 
 extension HaritaAcilViewController:UITableViewDelegate,UITableViewDataSource{
     
@@ -254,7 +260,25 @@ extension HaritaAcilViewController:UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "acilCell",for:indexPath) as! TableViewCellAcil
         
         cell.acilLabel.text = "\(indexPath.row + 1)- \(String(describing: acilKanListesi[indexPath.row].getHastaneAd()!)): \(String(describing: acilKanListesi[indexPath.row].getKanGrup()!))"
+       mesafeAl(lati: acilKanListesi[indexPath.row].getHastaneLati()!,
+                              longi: acilKanListesi[indexPath.row].getHastaneLongi()!, completion: { mesafe in
+           cell.mesafeLabel.text = "Mesafe: \(mesafe!) km"
+           
+        })
         
+        cell.tarihLabel.text = "Oluşturulma Tarihi: \(acilKanListesi[indexPath.row].getTarih()!)"
+        
+        
+        cell.layer.transform = CATransform3DMakeScale(0.1,0.1,1)
+        UIView.animate(withDuration: 0.5, animations: {
+            cell.layer.transform = CATransform3DMakeScale(1.05,1.05,1)
+            },completion: { finished in
+                UIView.animate(withDuration: 0.3, animations: {
+                    cell.layer.transform = CATransform3DMakeScale(1,1,1)
+                })
+        })
+        
+        cell.selectionStyle = .none
         cell.backgroundColor = UIColor(rgb: 0xFFE1E1)
         return cell
     }
@@ -265,10 +289,29 @@ extension HaritaAcilViewController:UITableViewDelegate,UITableViewDataSource{
         
         performSegue(withIdentifier: K.ha1Toha2, sender: acilKanListesi[indexPath.row])
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        //TV cell boyutunu cihazın yatay ve dikey konumuna göre ayarladık.
+        let screenWidth = UIScreen.main.bounds.width
+        let screenHeight = UIScreen.main.bounds.height
+        
+        var rowHeight:CGFloat = screenHeight/6
+        let currentDevice = UIDevice.current
+
+        if currentDevice.orientation.isPortrait {
+            // Dikey modda
+            rowHeight = screenHeight/6
+        } else if currentDevice.orientation.isLandscape {
+            // Yatay modda
+            rowHeight = screenWidth/6
+        }
+        
+        return rowHeight
+    }
     
 }
 
-
+//MARK: - usernotification center
 extension HaritaAcilViewController:UNUserNotificationCenterDelegate{
     
     //arkaplanda bildiirm çalışması
@@ -298,4 +341,42 @@ extension HaritaAcilViewController:UNUserNotificationCenterDelegate{
         completionHandler()
             
     }
+}
+
+
+extension HaritaAcilViewController{
+    func mesafeAl(lati:Double,longi:Double, completion: @escaping (Double?) -> Void) {
+        if let currentLocation = locationManagerAcil.location {
+            let sourceLocation = currentLocation.coordinate
+            let destinationLocation = CLLocationCoordinate2D(latitude: lati, longitude: longi)
+
+            let sourcePlacemark = MKPlacemark(coordinate: sourceLocation)
+            let destinationPlacemark = MKPlacemark(coordinate: destinationLocation)
+
+            let directionRequest = MKDirections.Request()
+            directionRequest.source = MKMapItem(placemark: sourcePlacemark)
+            directionRequest.destination = MKMapItem(placemark: destinationPlacemark)
+            directionRequest.transportType = .automobile
+
+            let directions = MKDirections(request: directionRequest)
+            directions.calculate { (response, error) in
+                guard let response = response else {
+                    if let error = error {
+                        print("Bir hata oluştu: \(error.localizedDescription)")
+                        completion(nil)
+                    }
+                    return
+                }
+
+                let route = response.routes[0]
+                let distanceInMeters = route.distance
+                let distanceInKilometers = distanceInMeters / 1000.0
+                print("MMESAFE: \(distanceInKilometers) km")
+                completion(distanceInKilometers)
+            }
+        } else {
+            completion(nil)
+        }
+    }
+
 }

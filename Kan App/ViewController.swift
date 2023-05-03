@@ -112,6 +112,7 @@ class ViewController: UIViewController { //giriş ekranı VC
         }
         
     }
+
     
     override func viewWillAppear(_ animated: Bool) {
         
